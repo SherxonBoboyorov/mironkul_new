@@ -19,9 +19,10 @@
                     </div>
                 </li>
             </ul>
-            <div class="clearfix" style="background-color: #007bff; height: 57.5px;"></div>
+            <div class="clearfix" style="background-color: #182B45; height: 57.5px;"></div>
         </nav>
     </div>
+    {{-- #007bff --}}
 
             <div class="row">
                 <style>
@@ -36,7 +37,7 @@
                     <div class="page-title-box">
                         <div class="btn-group float-right">
                             <ol class="breadcrumb hide-phone p-0 m-2">
-                                <li class="breadcrumb-item"><a>Mironkul New</a></li>
+                                <li class="breadcrumb-item active">Mironkul New</li>
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>

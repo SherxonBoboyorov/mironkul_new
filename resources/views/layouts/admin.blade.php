@@ -26,12 +26,12 @@
         <a href="{{ route('homeAdmin') }}" class="brand-link">
             <style>
                 .brand-link {
-                    background-color: #007bff;
+                    background-color: #182B45;
                 }
             </style>
-            <span class="brand-text font-weight-light" style="margin-left: 56px">Mironkul New</span>
+            <span class="brand-text font-weight-light" style="margin-left: 50px">Mironkul New</span>
         </a>
-        <div class="sidebar">
+        <div class="sidebar" style="background-color: #182B45">
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 

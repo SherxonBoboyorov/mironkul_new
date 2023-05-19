@@ -20,13 +20,6 @@
     <div id="app" class="header__app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                {{-- <a class="navbar-brand" href="{{ url('/') }}">
-                    {{'Alpha Oil'}}
-                </a> --}}
-                {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button> --}}
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
@@ -41,42 +34,5 @@
             @yield('content')
         </main>
     </div>
-{{--
-    <style>
-        body{
-            background-image: url('admin/dist/img/Rectangle 78 (3).png');
-            width: 100%;
-            height: 100vh;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        .shadow-sm{
-            display: none;
-        }
-
-        .header__app{
-            width: 100%;
-            height: 100%;
-        }
-
-        .header__menu__from{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        .card-header {
-            text-align: center;
-            color: blue;
-            font-size: 12px
-        }
-
-
-
-    </style> --}}
 </body>
 </html>

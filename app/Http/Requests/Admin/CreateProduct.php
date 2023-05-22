@@ -11,9 +11,9 @@ class CreateProduct extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,10 +21,19 @@ class CreateProduct extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'image' => 'required|image|mimes:png,jpg,jpeg,webp',
+            'title_ru' => 'required|max:255',
+            'title_uz' => 'required|max:255',
+            'title_en' => 'required|max:255',
+            'info_ru' => 'required|max:255',
+            'info_uz' => 'required|max:255',
+            'info_en' => 'required|max:255',
+            'description_ru' => 'required',
+            'description_uz' => 'required',
+            'description_en' => 'required',
         ];
     }
 }

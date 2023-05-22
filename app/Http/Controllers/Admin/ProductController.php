@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\UpdateProduct;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -40,7 +41,16 @@ class ProductController extends Controller
      */
     public function store(CreateProduct $request)
     {
-        //
+        $data = $request->all();
+        $data['image'] = Product::uploadImage($request);
+        $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');
+        $data['slug_uz'] = Str::slug($request->title_uz, '-', 'uz');
+        $data['slug_en'] = Str::slug($request->title_en, '-', 'en');
+
+        if (Product::create($data)) {
+            return redirect()->route('product.index')->with('message', "Product created seccessfully");
+        }
+        return redirect()->route('product.index')->with('message', "unable to created Product");
     }
 
     /**

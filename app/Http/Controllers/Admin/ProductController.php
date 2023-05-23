@@ -72,7 +72,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('admin.product.edit', compact('product'));
     }
 
     /**
@@ -84,7 +85,23 @@ class ProductController extends Controller
      */
     public function update(UpdateProduct $request, $id)
     {
-        //
+        if (!Product::find($id)) {
+            return redirect()->route('product.index')->with('message', "Product not fount");
+        }
+
+        $product = Product::find($id);
+
+        $data = $request->all();
+        $data['image'] = Product::updateImage($request, $product);
+
+        $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');
+        $data['slug_uz'] = Str::slug($request->title_uz, '-', 'uz');
+        $data['slug_en'] = Str::slug($request->title_en, '-', 'en');
+
+        if ($product->update($data)) {
+            return redirect()->route('product.index')->with('message', "Product changed successfully");
+        }
+        return redirect()->route('product.index')->with('message', "Unable to update Product");
     }
 
     /**
@@ -95,6 +112,19 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (!Product::find($id)) {
+            return redirect()->route('product.index')->with('message', "Product not found");
+        }
+
+        $product = Product::find($id);
+
+        if (File::exists(public_path() . $product->image)) {
+            File::delete(public_path() . $product->image);
+        }
+
+        if ($product->delete()) {
+            return redirect()->route('product.index')->with('message', "Product deleted successfully");
+        }
+        return redirect()->route('product.index')->with('message', "unable to delete Product");
     }
 }

@@ -36,15 +36,15 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                     {{-- start  --}}
-                       {{-- <li class="nav-item">
-                        <a href="{{ route('slider.index') }}" class="nav-link">
+                       <li class="nav-item" >
+                        <a href="{{ route('product.index') }}" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
-                            Sliders
+                            Product
                              <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>
-                      </li> --}}
+                      </li>
                     {{-- end  --}}
 
                 </ul>

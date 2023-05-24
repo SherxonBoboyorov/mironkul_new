@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\CreateProductVideo;
-use App\Http\Requests\Admin\UpdateProductVideo;
 use App\Models\Product;
 use App\Models\ProductVideo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProductVideoController extends Controller
 {
@@ -19,8 +18,8 @@ class ProductVideoController extends Controller
      */
     public function index()
     {
-        $productvideos = ProductVideo::orderBy('id')->get();
-        return view('admin.productvideos.index', [
+        $productvideos = ProductVideo::orderBy('id')->paginate(10);
+        return view('admin.productvideo.index', [
             'productvideos' => $productvideos
         ]);
     }
@@ -41,12 +40,36 @@ class ProductVideoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  App\Http\Requests\Admin\CreateProductVideo  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateProductVideo $request)
+    public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'product_id' => 'required',
+            'video' => 'required|file|mimetypes:video/mp4',
+        ]);
+ 
+        $fileName = $request->video->getClientOriginalName();
+        $filePath = 'videos/' . $fileName;
+ 
+        $isFileUploaded = Storage::disk('public')->put($filePath, file_get_contents($request->video));
+ 
+        // File URL to access the video in frontend
+        $url = Storage::disk('public')->url($filePath);
+ 
+        if ($isFileUploaded) {
+            $video = new ProductVideo();
+            $video->product_id = $request->product_id;
+            $video->video = $filePath;
+            $video->save();
+ 
+            return redirect()->route('productvideo.index')
+            ->with('success','Video has been successfully uploaded.');
+        }
+ 
+        return redirect()->route('productvideo.index')
+            ->with('error','Unexpected error occured');
     }
 
     /**
@@ -66,19 +89,23 @@ class ProductVideoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProductVideo $productvideo)
     {
-        //
+        $product = Product::all();
+        return view('admin.productvideo.edit', [
+            'product' => $product,
+            'productvideo' => $productvideo
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  App\Http\Requests\Admin\UpdateProductVideo $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductVideo $request, $id)
+    public function update(Request $request, $id)
     {
         //
     }

@@ -88,7 +88,19 @@ class ProductImageController extends Controller
      */
     public function update(UpdateProductImage $request, $id)
     {
-        //
+        if (!ProductImage::find($id)) {
+            return redirect()->route('productimage.index')->with('message', "Product Image not fount");
+        }
+
+        $productimage = ProductImage::find($id);
+
+        $data = $request->all();
+        $data['image'] = ProductImage::updateImage($request, $productimage);
+
+        if ($productimage->update($data)) {
+            return redirect()->route('productimage.index')->with('message', "Product Image changed successfully");
+        }
+        return redirect()->route('productimage.index')->with('message', "Unable to update Product Image");
     }
 
     /**
@@ -99,6 +111,19 @@ class ProductImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (!ProductImage::find($id)) {
+            return redirect()->route('productimage.index')->with('message', "Product Image not found");
+        }
+
+        $productimage = ProductImage::find($id);
+
+        if (File::exists(public_path() . $productimage->image)) {
+            File::delete(public_path() . $productimage->image);
+        }
+
+        if ($productimage->delete()) {
+            return redirect()->route('productimage.index')->with('message', "Product Image deleted successfully");
+        }
+        return redirect()->route('productimage.index')->with('message', "unable to delete Product Image ");
     }
 }

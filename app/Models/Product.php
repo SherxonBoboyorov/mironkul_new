@@ -34,6 +34,12 @@ class Product extends Model
         'meta_description_en'
     ];
 
+    public function product_images()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
+
+
 
     
     public static function uploadImage($request): ?string

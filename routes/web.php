@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductImageController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
@@ -18,7 +19,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
     Route::get('/', [HomeController::class, 'index'])->name('homeAdmin');
     Route::resources([
         'options' => OptionsController::class,
-        'product' => ProductController::class
+        'product' => ProductController::class,
+        'productimage' => ProductImageController::class
     ]);
 });
 

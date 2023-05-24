@@ -32,8 +32,10 @@ class ProductImageController extends Controller
      */
     public function create()
     {
-        $prodcuts = Product::all();
-        return view('admin.productimage.create', compact('prodcuts'));
+        $products = Product::all();
+        return view('admin.productimage.create', [
+            'products' => $products
+        ]);
     }
 
     /**

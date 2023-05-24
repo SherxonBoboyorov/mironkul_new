@@ -17,6 +17,10 @@ class ProductImage extends Model
         'image'
     ];
 
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 
     public static function uploadImage($request): ?string
     {

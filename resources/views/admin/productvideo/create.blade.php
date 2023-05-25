@@ -19,7 +19,6 @@
             @csrf
             <div class="card">
                 <div class="card-body">
-                     <div class="col-md-12">
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-3">
                                 <label>Products</label>
@@ -39,10 +38,21 @@
                             </div>
                          </div><br>
 
-                        <div class="col-md-6 form-group">
-                           <label>Select Video:</label>
-                           <input type="file" name="video" class="form-control"/>
-                        </div>
+                         <div class="row" style="margin-top: 15px">
+                            <div class="col-md-6">
+                                <label for="video">Video upload</label>
+                                <input type="file" name="video" class="form-control-file">
+                                @if($errors->has('video'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {{ $errors->first('video') }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div><br>
+
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-success btn-block">Save</button>

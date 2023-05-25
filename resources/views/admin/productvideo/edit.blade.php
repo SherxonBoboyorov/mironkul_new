@@ -41,7 +41,7 @@
                       
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="video">File</label>
+                            <label for="video">Video Update</label>
                             <input type="file" name="video" class="form-control-file">
                             @if($errors->has('video'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">

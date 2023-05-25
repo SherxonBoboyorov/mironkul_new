@@ -31,7 +31,7 @@ class ProductVideo extends Model
                     public_path() . '/upload/productvideo/' . date('d-m-Y'),
                     $request->file('video')->getClientOriginalName()
                 );
-            return '/upload/productvideo/' . date('d-m-Y') . '/' . $request->file('video')->getClientOriginalExtension();
+            return '/upload/productvideo/' . date('d-m-Y') . '/' . $request->file('video')->getClientOriginalName();
         }
 
         return null;
@@ -47,9 +47,9 @@ class ProductVideo extends Model
             $request->file('video')
                 ->move(
                     public_path() . '/upload/productvideo/' . date('d-m-Y'),
-                    $request->file('video')->getClientOriginalExtension()
+                    $request->file('video')->getClientOriginalName()
                 );
-            return '/upload/productvideo/' . date('d-m-Y') . '/' . $request->file('video')->getClientOriginalExtension();
+            return '/upload/productvideo/' . date('d-m-Y') . '/' . $request->file('video')->getClientOriginalName();
         }
 
         return $productvideo->video;

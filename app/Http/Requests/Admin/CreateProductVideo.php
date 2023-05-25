@@ -25,7 +25,7 @@ class CreateProductVideo extends FormRequest
     {
         return [
             'product_id' => 'required',
-            'video' => 'required|'
+            'video' => 'required|file|mimetypes:video/mp4,mkv',
         ];
     }
 }

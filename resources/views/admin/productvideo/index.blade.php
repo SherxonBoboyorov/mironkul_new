@@ -45,7 +45,7 @@
                         <tr>
                             <td>{{ $productvideo->id }}</td>
                             <td>
-                                <a href="\storage\app\videos\{{ $productvideo->video }}"></a>
+                                <video src="{{ asset($productvideo->video) }}" width="35" height="35">
                             </td>
                             <td>{{ $productvideo->product->title_en ?? "" }}</td>
                             <td>

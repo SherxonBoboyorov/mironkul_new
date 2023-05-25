@@ -40,6 +40,11 @@ class Product extends Model
     }
 
 
+    public function product_videos()
+    {
+        return $this->hasMany(ProductVideo::class);
+    }
+
 
     
     public static function uploadImage($request): ?string

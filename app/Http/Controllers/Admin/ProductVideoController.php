@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreateProductVideo;
+use App\Http\Requests\Admin\UpdateProductVideo;
 use App\Models\Product;
 use App\Models\ProductVideo;
 use Illuminate\Http\Request;
@@ -40,36 +42,18 @@ class ProductVideoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\Admin\CreateProductVideo  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProductVideo $request)
     {
-        $this->validate($request, [
-            'product_id' => 'required',
-            'video' => 'required|file|mimetypes:video/mp4',
-        ]);
- 
-        $fileName = $request->video->getClientOriginalName();
-        $filePath = 'videos/' . $fileName;
- 
-        $isFileUploaded = Storage::disk('public')->put($filePath, file_get_contents($request->video));
- 
-        // File URL to access the video in frontend
-        $url = Storage::disk('public')->url($filePath);
- 
-        if ($isFileUploaded) {
-            $video = new ProductVideo();
-            $video->product_id = $request->product_id;
-            $video->video = $filePath;
-            $video->save();
- 
-            return redirect()->route('productvideo.index')
-            ->with('success','Video has been successfully uploaded.');
+        $data = $request->all();
+        $data['video'] = ProductVideo::uploadVideo($request);
+
+        if (ProductVideo::create($data)) {
+            return redirect()->route('productvideo.index')->with('message', "Product Video created seccessfully");
         }
- 
-        return redirect()->route('productvideo.index')
-            ->with('error','Unexpected error occured');
+        return redirect()->route('productvideo.index')->with('message', "unable to created Product Video");
     }
 
     /**
@@ -101,13 +85,25 @@ class ProductVideoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\Admin\UpdateProductVideo  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProductVideo $request, $id)
     {
-        //
+        if (!ProductVideo::find($id)) {
+            return redirect()->route('productvideo.index')->with('message', "Product Video not fount");
+        }
+
+        $productvideo = ProductVideo::find($id);
+
+        $data = $request->all();
+        $data['video'] = ProductVideo::updateVideo($request, $productvideo);
+
+        if ($productvideo->update($data)) {
+            return redirect()->route('productvideo.index')->with('message', "Product Video changed successfully");
+        }
+        return redirect()->route('productvideo.index')->with('message', "Unable to update Product Video");
     }
 
     /**
@@ -118,6 +114,16 @@ class ProductVideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productvideo = ProductVideo::find($id);
+
+        if (File::exists(public_path() . $productvideo->video)) {
+            File::delete(public_path() . $productvideo->video);
+        }
+
+        if ($productvideo->delete()) {
+            return redirect()->route('productvideo.index')->with('message', "deleted successfully!!!");
+        }
+
+        return redirect()->route('productvideo.index')->with('message', "failed to delete successfully!!!");
     }
 }

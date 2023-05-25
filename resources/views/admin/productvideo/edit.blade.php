@@ -41,19 +41,19 @@
                       
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-6">
-                            <label for="image">File</label>
-                            <input type="file" name="image" class="form-control-file">
-                            @if($errors->has('image'))
+                            <label for="video">File</label>
+                            <input type="file" name="video" class="form-control-file">
+                            @if($errors->has('video'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                    {{ $errors->first('image') }}
+                                    {{ $errors->first('video') }}
                                 </div>
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <img src="{{ asset($productvideo->image) }}" width="150" height="150" alt="">
+                            <video src="{{ asset($productvideo->video) }}" width="150" height="150" alt="">
                         </div>
                     </div><br>
 

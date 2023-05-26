@@ -31,6 +31,17 @@ class Portfolio extends Model
         'meta_description_en'
     ];
 
+    public function portfolio_images()
+    {
+        return $this->hasMany(PortfolioImage::class);
+    }
+
+
+    public function portfolio_videos()
+    {
+        return $this->hasMany(PortfolioVideo::class);
+    }
+
     public static function uploadImage($request): ?string
     {
         if ($request->hasFile('image')) {

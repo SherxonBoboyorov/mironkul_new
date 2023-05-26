@@ -17,9 +17,9 @@ class PortfolioImage extends Model
         'image'
     ];
 
-    public function product()
+    public function portfolio()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Portfolio::class);
     }
 
     public static function uploadImage($request): ?string

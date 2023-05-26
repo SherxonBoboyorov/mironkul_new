@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">All Product Image</h4>
+                    <h4 class="page-title">All Portfolio Image</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('portfolioimage.create')}}" class="btn bg-success mb-2">Add Product Image +</a>
+             <a href="{{ route('portfolioimage.create')}}" class="btn bg-success mb-2">Add Portfolio Image +</a>
 
 
         <div class="card">
@@ -36,25 +36,25 @@
                         <tr>
                             <th style="width: 2%;">#</th>
                             <th>Image</th>
-                            <th>Products</th>
+                            <th>Portfolios</th>
                             <th colspan="2" style="width: 2%;">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($productimages as $productimage)
+                        @foreach ($portfolioimages as $portfolioimage)
                         <tr>
-                            <td>{{ $productimage->id }}</td>
+                            <td>{{ $portfolioimage->id }}</td>
                             <td>
-                                <img src="{{ asset($productimage->image) }}" alt="" width="35" height="35">
+                                <img src="{{ asset($portfolioimage->image) }}" alt="" width="35" height="35">
                             </td>
-                            <td>{{ $productimage->product->title_en ?? "" }}</td>
+                            <td>{{ $portfolioimage->portfolio->title_en ?? "" }}</td>
                             <td>
-                                <a href="{{ route('productimage.edit', $productimage->id) }}" class="btn btn-primary btn-icon">
+                                <a href="{{ route('portfolioimage.edit', $portfolioimage->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Edit</i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('productimage.destroy', $productimage->id) }}" method="POST">
+                                <form action="{{ route('portfolioimage.destroy', $portfolioimage->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-icon">
@@ -66,7 +66,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {!! $productimages->links() !!}
+                {!! $portfolioimages->links() !!}
             </div>
         </div>
     </div>

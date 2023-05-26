@@ -83,6 +83,18 @@
                       </li>
                     {{-- end  --}}
 
+
+                       {{-- start  --}}
+                       <li class="nav-item" >
+                        <a href="{{ route('portfolioimage.index') }}" class="nav-link">
+                        <i class="nav-icon"></i>
+                        <p>
+                            Portfolio Image
+                             <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                      </li>
+                    {{-- end  --}}
                 </ul>
             </nav>
         </div>

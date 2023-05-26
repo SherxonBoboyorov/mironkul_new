@@ -85,7 +85,23 @@ class PortfolioController extends Controller
      */
     public function update(UpdatePortfolio $request, $id)
     {
-        //
+        if (!Portfolio::find($id)) {
+            return redirect()->route('portfolio.index')->with('message', "Portfolio not fount");
+        }
+
+        $portfolio = Portfolio::find($id);
+
+        $data = $request->all();
+        $data['image'] = Portfolio::updateImage($request, $portfolio);
+
+        $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');
+        $data['slug_uz'] = Str::slug($request->title_uz, '-', 'uz');
+        $data['slug_en'] = Str::slug($request->title_en, '-', 'en');
+
+        if ($portfolio->update($data)) {
+            return redirect()->route('portfolio.index')->with('message', "Portfolio changed successfully");
+        }
+        return redirect()->route('portfolio.index')->with('message', "Unable to update Portfolio");
     }
 
     /**
@@ -96,6 +112,19 @@ class PortfolioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (!Portfolio::find($id)) {
+            return redirect()->route('portfolio.index')->with('message', "Portfolio not found");
+        }
+
+        $portfolio = Portfolio::find($id);
+
+        if (File::exists(public_path() . $portfolio->image)) {
+            File::delete(public_path() . $portfolio->image);
+        }
+
+        if ($portfolio->delete()) {
+            return redirect()->route('portfolio.index')->with('message', "Portfolio deleted successfully");
+        }
+        return redirect()->route('portfolio.index')->with('message', "unable to delete Portfolio");
     }
 }

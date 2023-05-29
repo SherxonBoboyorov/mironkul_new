@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\CreatePage;
-use App\Http\Requests\Admin\UpdatePage;
+use App\Http\Requests\Admin\CreatePhoto;
+use App\Http\Requests\Admin\UpdatePhoto;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -19,7 +19,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        $photos = Photo::oderBy('id')->paginate(12);
+        $photos = Photo::orderBy('id')->paginate(12);
         return view('admin.photo.index', compact('photos'));
     }
 
@@ -36,10 +36,10 @@ class PhotoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  App\Http\Requests\Admin\CreatePage  $request
+     * @param  App\Http\Requests\Admin\CreatePhoto  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreatePage $request)
+    public function store(CreatePhoto $request)
     {
         $data = $request->all();
         $data['image'] = Photo::uploadImage($request);
@@ -72,17 +72,18 @@ class PhotoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $photo = Photo::find($id);
+        return view('admin.photo.edit', compact('photo'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  App\Http\Requests\Admin\UpdatePage $request
+     * @param  App\Http\Requests\Admin\UpdatePhoto $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePage $request, $id)
+    public function update(UpdatePhoto $request, $id)
     {
         if (!Photo::find($id)) {
             return redirect()->route('photo.index')->with('message', "Photo not fount");

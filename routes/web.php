@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioImageController;
 use App\Http\Controllers\Admin\PortfolioVideoController;
@@ -30,7 +31,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'portfolio' => PortfolioController::class,
         'portfolioimage' => PortfolioImageController::class,
         'portfoliovideo' => PortfolioVideoController::class,
-        'page' => PageController::class
+        'page' => PageController::class,
+        'photo' => PhotoController::class
     ]);
 });
 

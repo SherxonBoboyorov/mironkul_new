@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="title_uz">Title [Uzbek]</label>
                             <input type="text" id="title_uz" value="{{ $presentation->title_uz }}" class="form-control" name="title_uz">
                             @if($errors->has('title_uz'))
@@ -33,7 +33,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="title_ru">Title [Russian]</label>
                             <input type="text" id="title_ru" value="{{ $presentation->title_ru }}" class="form-control" name="title_ru">
                             @if($errors->has('title_ru'))
@@ -45,7 +45,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="title_en">Title [English]</label>
                             <input type="text" id="title_en" value="{{ $presentation->title_en }}" class="form-control" name="title_en">
                             @if($errors->has('title_en'))

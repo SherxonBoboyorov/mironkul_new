@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreatePage;
+use App\Http\Requests\Admin\UpdatePage;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class PhotoController extends Controller
 {
@@ -32,12 +36,21 @@ class PhotoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\Admin\CreatePage  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePage $request)
     {
-        //
+        $data = $request->all();
+        $data['image'] = Photo::uploadImage($request);
+        $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');
+        $data['slug_uz'] = Str::slug($request->title_uz, '-', 'uz');
+        $data['slug_en'] = Str::slug($request->title_en, '-', 'en');
+
+        if (Photo::create($data)) {
+            return redirect()->route('photo.index')->with('message', "Photo created seccessfully");
+        }
+        return redirect()->route('photo.index')->with('message', "unable to created Photo");
     }
 
     /**
@@ -65,13 +78,29 @@ class PhotoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\Admin\UpdatePage $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePage $request, $id)
     {
-        //
+        if (!Photo::find($id)) {
+            return redirect()->route('photo.index')->with('message', "Photo not fount");
+        }
+
+        $photo = Photo::find($id);
+
+        $data = $request->all();
+        $data['image'] = Photo::updateImage($request, $photo);
+
+        $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');
+        $data['slug_uz'] = Str::slug($request->title_uz, '-', 'uz');
+        $data['slug_en'] = Str::slug($request->title_en, '-', 'en');
+
+        if ($photo->update($data)) {
+            return redirect()->route('photo.index')->with('message', "Photo changed successfully");
+        }
+        return redirect()->route('photo.index')->with('message', "Unable to update Photo");
     }
 
     /**
@@ -82,6 +111,19 @@ class PhotoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (!Photo::find($id)) {
+            return redirect()->route('photo.index')->with('message', "Photo not found");
+        }
+
+        $photo = Photo::find($id);
+
+        if (File::exists(public_path() . $photo->image)) {
+            File::delete(public_path() . $photo->image);
+        }
+
+        if ($photo->delete()) {
+            return redirect()->route('photo.index')->with('message', "Photo deleted successfully");
+        }
+        return redirect()->route('photo.index')->with('message', "unable to delete Photo");
     }
 }

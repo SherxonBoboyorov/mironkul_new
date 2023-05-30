@@ -166,6 +166,21 @@
                             </div>
                         </div><br>
 
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="map">Map</label>
+                                <input type="text" id="map" value="{{ $office->map }}" class="form-control" name="map">
+                                @if($errors->has('map'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    {{ $errors->first('map') }}
+                                </div>
+                                @endif
+                            </div>
+                        </div>
+
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-success btn-block">Update</button>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\OfficeController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PhotoController;
@@ -36,7 +37,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'page' => PageController::class,
         'photo' => PhotoController::class,
         'video' => VideoController::class,
-        'presentation' => PresentationController::class
+        'presentation' => PresentationController::class,
+        'office' => OfficeController::class
     ]);
 });
 

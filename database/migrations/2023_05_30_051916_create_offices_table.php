@@ -16,11 +16,18 @@ return new class extends Migration
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
 
-            $table->string('addres')->nullable();
+            $table->string('title_ru');
+            $table->string('title_uz');
+            $table->string('title_en');
+
+            $table->string('addres_ru')->nullable();
+            $table->string('addres_uz')->nullable();
+            $table->string('addres_en')->nullable();
             $table->string('number')->nullable();
             $table->string('gmail')->nullable();
             $table->string('second_number')->nullable();
             $table->string('second_gmail')->nullable();
+            $table->text('map');
 
             $table->timestamps();
         });

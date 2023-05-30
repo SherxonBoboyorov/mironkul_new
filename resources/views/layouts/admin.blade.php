@@ -35,6 +35,19 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+
+                   {{-- start  --}}
+                   <li class="nav-item" >
+                    <a href="{{ route('category.index') }}" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                        Categories
+                         <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                  </li>
+                {{-- end  --}}
+
                     {{-- start  --}}
                        <li class="nav-item" >
                         <a href="{{ route('product.index') }}" class="nav-link">

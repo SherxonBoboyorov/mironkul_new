@@ -1,0 +1,141 @@
+// loading start
+
+#preloader{
+	position: fixed;
+	width: 100%;
+	height: 100vh !important;
+	z-index: 99999;
+	background: $title;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	text-align: center;
+	opacity: 1;
+	animation-delay: 0s;
+	animation-fill-mode: both;
+    @extend%transition;
+    padding: 0 10px;
+}
+
+.loading__img{
+    @include fiximg(205px,205px,false);
+    visibility: visible !important; 
+}
+
+.loading__list__img{
+    width: 800px;
+}
+
+#loading{
+    @extend%transition;
+    opacity: 1;
+}
+
+.icons2{
+    position: relative;
+}
+
+.index-html-page #preloader{
+    position: absolute;
+}
+
+#preloader.show-again{
+    animation-name: preloaderShown;
+    animation-duration: .3s;
+}
+
+@keyframes preloaderShown {
+    to {
+        opacity: 1;
+    }
+}
+
+.preloader-1 {
+    font-size: 100px;
+    fill: #fff;
+}
+
+.preloader-1, .preloader-3 {
+    text-anchor: middle;
+    font-family: 'MuseoSansCyrl-900';
+}
+
+.preloader-2, .preloader-3 {
+    font-size: 60px;
+}
+
+.preloader-3 {
+    fill: #fff;
+    font-family: 'MuseoSansCyrl-900';
+}
+
+.preloader-4 {
+    font-size: 30px;
+}
+
+#preloader svg.svg-1{
+    transform: translateY(50px) scale(1.05);
+    animation: translatePreloader .5s 1;
+    animation-fill-mode: both;
+    animation-delay: 2.5s;
+}
+
+#preloader svg.svg-2{
+    margin-top: -20px;
+}
+
+#preloader svg .preloader-1 tspan{
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+    animation: drawPreloader 2.5s 1;
+    animation-fill-mode: both;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transform: none;
+}
+    
+.ie-browser #preloader svg .preloader-1 tspan{
+    fill: #fff;
+}
+
+#preloader svg .preloader-3{
+    animation: showPreloader .7s 1;
+    animation-delay: 3s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+@keyframes translatePreloader {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+   @keyframes drawPreloader {
+    0% {
+      stroke-dasharray: 1000;
+      fill: transparent;
+    }
+    70% {
+      stroke-dasharray: 100,0;
+      stroke-dashoffset: 0;
+      fill: transparent;
+    }
+    100% {
+      fill: #ffffff;
+    }
+  }
+
+   @keyframes showPreloader {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+// loading end

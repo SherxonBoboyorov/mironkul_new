@@ -20,6 +20,10 @@ use App\Http\Controllers\Admin\VideoController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
+use App\Http\Controllers\Front\IndexController;
+
+
+
 
 Auth::routes();
 
@@ -50,7 +54,7 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
-         //
+         Route::get('/', [IndexController::class, 'homepage'])->name('/');
  });
 
 

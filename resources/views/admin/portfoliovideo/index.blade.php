@@ -37,6 +37,9 @@
                             <th style="width: 2%;">#</th>
                             <th>Video</th>
                             <th>Products</th>
+                            <th>Title [Uzbek]</th>
+                            <th>Title [Russian]</th>
+                            <th>Title [English]</th>
                             <th colspan="2" style="width: 2%;">Actions</th>
                         </tr>
                     </thead>
@@ -48,6 +51,9 @@
                                 <video src="{{ asset($portfoliovideo->video) }}" width="35" height="35">
                             </td>
                             <td>{{ $portfoliovideo->portfolio->title_en ?? "" }}</td>
+                            <td>{{ $portfoliovideo->title_uz }}</td>
+                            <td>{{ $portfoliovideo->title_ru }}</td>
+                            <td>{{ $portfoliovideo->title_en }}</td>
                             <td>
                                 <a href="{{ route('portfoliovideo.edit', $portfoliovideo->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Edit</i>

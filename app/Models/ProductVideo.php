@@ -14,7 +14,10 @@ class ProductVideo extends Model
 
     protected $fillable = [
         'product_id',
-        'video'
+        'video',
+        'title_ru',
+        'title_uz',
+        'title_en',
     ];
 
     public function product()

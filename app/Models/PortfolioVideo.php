@@ -14,7 +14,10 @@ class PortfolioVideo extends Model
 
     protected $fillable = [
         'portfolio_id',
-        'video'
+        'video',
+        'title_ru',
+        'title_uz',
+        'title_en',
     ];
 
     public function portfolio()

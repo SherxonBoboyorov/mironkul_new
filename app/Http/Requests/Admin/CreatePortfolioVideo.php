@@ -26,6 +26,9 @@ class CreatePortfolioVideo extends FormRequest
         return [
             'portfolio_id' => 'required',
             'video' => 'required|file|mimetypes:video/mp4,mkv',
+            'title_ru' => 'required|max:255',
+            'title_uz' => 'required|max:255',
+            'title_en' => 'required|max:255',
         ];
     }
 }

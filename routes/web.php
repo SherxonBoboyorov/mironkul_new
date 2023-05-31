@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CategoryTypeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -44,7 +45,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'video' => VideoController::class,
         'presentation' => PresentationController::class,
         'office' => OfficeController::class,
-        'category' => CategoryController::class
+        'category' => CategoryController::class,
+        'categorytype' => CategoryTypeController::class
     ]);
 });
 

@@ -22,6 +22,7 @@ use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
 use App\Http\Controllers\Front\IndexController;
+use App\Http\Controllers\Front\AboutController; 
 
 
 
@@ -57,6 +58,7 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
          Route::get('/', [IndexController::class, 'homepage'])->name('/');
+         Route::get('about', [AboutController::class, 'aboutCompany'])->name('about');
  });
 
 

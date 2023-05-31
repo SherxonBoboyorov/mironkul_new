@@ -189,7 +189,7 @@
                 </li>
 
                 <li class="header__menu__item wow">
-                  <a href="aboutCompany.html" class="header__menu__link">О компании</a>
+                  <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
                 </li>
 
                 <li class="header__menu__item wow">

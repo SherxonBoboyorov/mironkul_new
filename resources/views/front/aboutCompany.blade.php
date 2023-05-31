@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="foto/favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="foto/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="foto/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('front/foto/favicon/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front/foto/favicon/favicon-32x32.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('front/foto/favicon/favicon-16x16.png') }}" />
     <link rel="manifest" href="foto/favicon/site.webmanifest" />
     <link rel="mask-icon" href="foto/favicon/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#000000" />
@@ -15,11 +15,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/fancybox-main.css" />
-    <link rel="stylesheet" href="css/slick.css" />
-    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="{{ asset('front/css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('front/css/animate.css') }}" />
+    <link rel="stylesheet" href="{{ asset('front/css/fancybox-main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('front/css/slick.css') }}" />
+    <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}" />
     <title>О компании</title>
   </head>
   <body>
@@ -34,27 +34,23 @@
                     <div class="header_in__item__list">
 
                         <div class="header__logo">
-                            <a href="index.html">
+                            <a href="{{ route('/') }}">
                               <picture>
-                                <source srcset="foto/logo.svg"media="(max-width:1050px)">
-                                <img src="foto/logoBlick.svg" alt="logoBlick">
+                                <source srcset="{{ asset('front/foto/logo.svg') }}"media="(max-width:1050px)">
+                                <img src="{{ asset('front/foto/logoBlick.svg') }}" alt="logoBlick">
                               </picture>
                             </a>
-                        </div>
+                          </div>
 
                         <ul class="header__locales">
-                            <li>
-                              <a href="#!" class="header__locales__link active">uz</a>
-                            </li>
-              
-                            <li>
-                              <a href="#!" class="header__locales__link">ru</a>
-                            </li>
-              
-                            <li>
-                              <a href="#!" class="header__locales__link">en </a>
-                            </li>
-                        </ul>
+                          @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                          <li>
+                             <a rel="alternate"class="header__locales__link active" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                               {{ $properties['native'] }}
+                            </a>
+                        </li>
+                       @endforeach
+                      </ul>
 
                     </div>
                 </section>
@@ -66,11 +62,11 @@
 
                         <ul class="header_in__menu">
                             <li>
-                                <a href="index.html" class="header_in__menu__link">Главная</a>
+                                <a href="{{ route('/')}}" class="header_in__menu__link">Главная</a>
                             </li>
 
                             <li>
-                                <a href="aboutCompany.html" class="header_in__menu__link">о компании</a>
+                                <a class="header_in__menu__link">о компании</a>
                             </li>
                         </ul>
 
@@ -188,9 +184,9 @@
     <div class="products__list">
       <div class="products__list__scrull">
         <section class="container_in">
-          <dev class="products__aboutCompany__item">
+          <div class="products__aboutCompany__item">
             <h2 class="products__title__h2">О компании</h2>
-          </dev>
+          </div>
         </section>
 
         <div class="products__foto__video products__aboutCompany__menu">
@@ -229,17 +225,18 @@
         <section class="container_in">
           <div class="products__item clearfix">
             <div class="products__item__text">
-                <p>
-                    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
-                    At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est
+              @foreach ($pages as $page)
+                <p> 
+                  {!! $page->{'content_' . app()->getLocale()} !!}
                 </p>
+              @endforeach
             </div>
           </div>
         </section>
       </div>
       
         <div class="products__item__cart">
-          <section class="products__cart__fons" style="background-image: url(foto/fon_2.png);"></section>
+          <section class="products__cart__fons" style="background-image: url({{ asset('front/foto/fon_2.png') }});"></section>
 
           <section></section>
 
@@ -275,16 +272,16 @@
 
   <!-- footer end -->
  
-  <script src="js/jquery-3.6.1.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/index.js"></script>
-  <script src="js/loading.js"></script>
-  <script src="js/fancyapps-ui.js"></script>
-  <script src="js/fancybox_main.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <script src="js/slick.min.js"></script>
-  <script src="js/owl.carousel.js"></script>
-  <script src="js/slic.js"></script>
+  <script src="{{ asset('front/js/jquery-3.6.1.min.js') }}"></script>
+  <script src="{{ asset('front/js/wow.min.js') }}"></script>
+  <script src="{{ asset('front/js/index.js') }}"></script>
+  <script src="{{ asset('front/js/loading.js') }}"></script>
+  <script src="{{ asset('front/js/fancyapps-ui.js') }}"></script>
+  <script src="{{ asset('front/js/fancybox_main.js') }}"></script>
+  <script src="{{ asset('front/js/materialize.min.js') }}"></script>
+  <script src="{{ asset('front/js/slick.min.js') }}"></script>
+  <script src="{{ asset('front/js/owl.carousel.js') }}"></script>
+  <script src="{{ asset('front/js/slic.js') }}"></script>
   <script> new WOW().init(); </script>
   </body>
 </html>

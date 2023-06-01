@@ -155,11 +155,11 @@
                             </li>
             
                             <li class="header__menu__item wow">
-                              <a href="aboutCompany.html" class="header__menu__link">О компании</a>
+                              <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
                             </li>
             
                             <li class="header__menu__item wow">
-                              <a href="contacts.html" class="header__menu__link">Контакты</a>
+                              <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
                             </li>
                           </ul>
                         </div>

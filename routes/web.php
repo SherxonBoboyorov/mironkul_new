@@ -22,10 +22,8 @@ use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 
 use App\Http\Controllers\Front\IndexController;
-use App\Http\Controllers\Front\AboutController; 
-
-
-
+use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\ContactController;
 
 Auth::routes();
 
@@ -61,6 +59,10 @@ Route::group(
          Route::get('about', [AboutController::class, 'aboutCompany'])->name('about');
          Route::get('aboutCompanyPhotos', [AboutController::class, 'aboutCompanyPhoto'])->name('aboutCompanyPhotos');
          Route::get('aboutCompanyPhotos/{slug}', [AboutController::class, 'show'])->name('aboutCompanyPhoto');
+         Route::get('aboutCompanyVideos', [AboutController::class, 'aboutCompanyVideo'])->name('aboutCompanyVideos');
+         Route::get('presentations', [AboutController::class, 'aboutCompanyPresentation'])->name('presentations');
+         Route::get('contact', [ContactController::class, 'contact'])->name('contact');
+
  });
 
 

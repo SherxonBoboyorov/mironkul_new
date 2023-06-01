@@ -62,6 +62,9 @@
 
                         <ul class="header_in__menu">
                             <li>
+                              <a href="{{ route('about') }}" class="header_in__menu__link">о компании</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('aboutCompanyPhotos') }}" class="header_in__menu__link">Фото материалы</a>
                             </li>
 
@@ -109,7 +112,7 @@
                             </li>
             
                             <li class="header__menu__item wow">
-                              <a href="contacts.html" class="header__menu__link">Контакты</a>
+                              <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
                             </li>
                           </ul>
                         </div>
@@ -148,7 +151,7 @@
                     </div>
 
                     <div class="products__item__video wow">
-                        <a href="aboutCompanyVideo.html">
+                        <a href="{{ route('aboutCompanyVideos') }}">
                             <div class="products__foto__img">
                               <i class="far fa-play-circle"></i>
                             </div>
@@ -157,7 +160,7 @@
                     </div>
 
                     <div class="products__item__video wow">
-                        <a href="aboutCompanyPresentation.html">
+                        <a href="{{ route('presentations') }}">
                             <div class="products__foto__img">
                               <i class="far fa-file-powerpoint"></i>
                             </div>
@@ -171,10 +174,11 @@
         <section class="container_in">
           <div class="products__item clearfix">
             <div class="products__item__text">
-                <p>
-                    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
-                    At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est
-                </p>
+              @foreach ($pages as $page)
+              <p> 
+                {!! $page->{'content_' . app()->getLocale()} !!}
+              </p>
+            @endforeach
             </div>
           </div>
         </section>

@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="products__item__video wow">
-                        <a href="aboutCompanyVideo.html">
+                        <a href="{{ route('aboutCompanyVideos') }}">
                             <div class="products__foto__img">
                               <i class="far fa-play-circle"></i>
                             </div>
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="products__item__video wow">
-                        <a href="aboutCompanyPresentation.html">
+                        <a href="{{ route('presentations') }}">
                             <div class="products__foto__img">
                               <i class="far fa-file-powerpoint"></i>
                             </div>

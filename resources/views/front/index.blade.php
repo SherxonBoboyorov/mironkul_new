@@ -13,7 +13,13 @@
     <meta name="msapplication-TileColor" content="#000000" />
     <meta name="theme-color" content="#000000" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link rel="stylesheet" href="{{ asset('front/css/index.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/animate.css') }}" />
@@ -22,279 +28,298 @@
     <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}" />
     <title>Mirankul</title>
   </head>
+
   <body>
-  
-  <!-- loading start -->
+    <!-- loading start -->
 
-  <section id="loading">
-    <div id="preloader" class="start-animation loaded hidden" style="height: 1594px;">
-      <div class="loading__img wow fadeInLeft">
-        <img src="{{ asset('front/foto/icons/loading.svg') }}" alt="">
-      </div>
-      <section class="loading__list__img">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 120" class="icons1 svg-1">
-          <defs>
-          </defs>
-          <text id="MIRONKUL" data-name="M I R O N K U L" class="preloader-1" x="402" y="96">
-              <tspan x="402">M
-                  <tspan class="preloader-2"></tspan>
-                  I
-                  <tspan class="preloader-2"></tspan>
-                  R
-                  <tspan class="preloader-2"></tspan>
-                  O
-                  <tspan class="preloader-2"></tspan>
-                  N
-                  <tspan class="preloader-2"></tspan>
-                  K
-                  <tspan class="preloader-2"></tspan>
-                  U
-                  <tspan class="preloader-2"></tspan>
-                  L
-          </tspan></text>
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 100" class="icons2 svg-2">
-          <text id="GROUP" data-name="G R O U P" class="preloader-3" x="399" y="81">
-              <tspan x="390">G
-                  <tspan class="preloader-4"></tspan>
-                  R
-                  <tspan class="preloader-4"></tspan>
-                  O
-                  <tspan class="preloader-4"></tspan>
-                  U
-                  <tspan class="preloader-4"></tspan>
-                  P
+    <section id="loading">
+      <div id="preloader" class="start-animation loaded hidden" style="height: 1594px">
+        <div class="loading__img wow fadeInLeft">
+          <img src="{{ asset('front/foto/icons/loading.svg') }}" alt="" />
+        </div>
+        <section class="loading__list__img">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 800 120"
+            class="icons1 svg-1"
+          >
+            <defs></defs>
+            <text id="MIRONKUL" data-name="M I R O N K U L" class="preloader-1" x="402" y="96">
+              <tspan x="402">
+                M
+                <tspan class="preloader-2"></tspan>
+                I
+                <tspan class="preloader-2"></tspan>
+                R
+                <tspan class="preloader-2"></tspan>
+                A
+                <tspan class="preloader-2"></tspan>
+                N
+                <tspan class="preloader-2"></tspan>
+                K
+                <tspan class="preloader-2"></tspan>
+                U
+                <tspan class="preloader-2"></tspan>
+                L
               </tspan>
-          </text>
-      </svg>
-      </section>
-    </div>
-  </section>
+            </text>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 800 100"
+            class="icons2 svg-2"
+          >
+            <text id="GROUP" data-name="G R O U P" class="preloader-3" x="399" y="81">
+              <tspan x="390">
+                G
+                <tspan class="preloader-4"></tspan>
+                R
+                <tspan class="preloader-4"></tspan>
+                O
+                <tspan class="preloader-4"></tspan>
+                U
+                <tspan class="preloader-4"></tspan>
+                P
+              </tspan>
+            </text>
+          </svg>
+        </section>
+      </div>
+    </section>
 
-  <!-- loading end -->
-  
-  <!-- header start -->
+    <!-- loading end -->
 
-  <header>
-    <div class="header">
-      <section class="container">
-        <div class="header__cart">
-          <div class="header__list">
-            <ul class="header__locales">
-              <li>
-                <a href="#!" class="header__locales__link active">uz</a>
+    <!-- header start -->
+
+    <header>
+      <div class="header">
+        <section class="container">
+          <div class="header__cart">
+            <div class="header__list">
+              <ul class="header__locales">
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <li>
+                   <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                     {{ $properties['native'] }}
+                  </a>
               </li>
-
-              <li>
-                <a href="#!" class="header__locales__link">ru</a>
-              </li>
-
-              <li>
-                <a href="#!" class="header__locales__link">en </a>
-              </li>
+             @endforeach
             </ul>
 
-            <div class="header__logo">
-              <a href="{{ route('/') }}">
-                <img src="{{ asset('front/foto/logo.svg') }}" alt="logo">
-              </a>
-            </div>
+              <div class="header__logo">
+                <a href="{{ route('/') }}">
+                  <img src="{{ asset('front/foto/logo.svg') }}" alt="logo" />
+                </a>
+              </div>
 
-            <button class="header__burger__menu">
-              <i class="fas fa-bars"></i>
-            </button>
-
-            <div class="header__menu">
-              <ul class="header__locales">
-                <li>
-                  <a href="#!" class="header__locales__link active">uz</a>
-                </li>
-  
-                <li>
-                  <a href="#!" class="header__locales__link">ru</a>
-                </li>
-  
-                <li>
-                  <a href="#!" class="header__locales__link">en </a>
-                </li>
-              </ul>
-              <button class="header__menu__none">
-                <i class="fas fa-times"></i>
+              <button class="header__burger__menu">
+                <i class="fas fa-bars"></i>
               </button>
-              
-              <ul class="header__menu__list">
-                <li class="header__menu__item wow">
-                  <a href="#!" class="header__menu__link">Сэндвич панели</a>
-                  <ul class="header__none__menu">
-                    <li>
-                      <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                    </li>
 
-                    <li>
-                      <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                    </li>
-                  </ul>
+              <div class="header__menu">
+                <ul class="header__locales">
+                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                  <li>
+                     <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                       {{ $properties['native'] }}
+                    </a>
                 </li>
-
-                <li class="header__menu__item wow">
-                  <a href="#!" class="header__menu__link">Металлоконструкции</a>
-                  <ul class="header__none__menu">
-                    <li>
-                      <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                    </li>
-
-                    <li>
-                      <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="header__menu__item wow">
-                  <a href="#!" class="header__menu__link">Кисловодск</a>
-                  <ul class="header__none__menu">
-                    <li>
-                      <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                    </li>
-
-                    <li>
-                      <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="header__menu__item wow">
-                  <a href="#!" class="header__menu__link">Кабельные лотки</a>
-                  <ul class="header__none__menu">
-                    <li>
-                      <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                    </li>
-
-                    <li>
-                      <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="header__menu__item wow">
-                  <a href="#!" class="header__menu__link">Система вентиляции</a>
-                  <ul class="header__none__menu">
-                    <li>
-                      <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                    </li>
-
-                    <li>
-                      <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                    </li>
-                  </ul>
-                </li>
-
-                <li class="header__menu__item wow">
-                  <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
-                </li>
-
-                <li class="header__menu__item wow">
-                  <a href="contacts.html" class="header__menu__link">Контакты</a>
-                </li>
+               @endforeach
               </ul>
+                <button class="header__menu__none">
+                  <i class="fas fa-times"></i>
+                </button>
+
+                <ul class="header__menu__list">
+                  <li class="header__menu__item wow">
+                    <a href="aboutCompany.html" class="header__menu__link">О компании</a>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Сэндвич панели</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Металлоконструкции</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Кисловодск</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Кабельные лотки</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Система вентиляции</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="contacts.html" class="header__menu__link">Контакты</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
-    <section class="sidenav-overlay"></section>
-  </header>
+        </section>
+      </div>
+      <section class="sidenav-overlay"></section>
+    </header>
 
-  <!-- header end -->
-  
-  <!-- slider start -->
-  
-  <div class="slider">
-    <div class="slider__cart">
-      <div class="slider__list">
-        @foreach($categories as $category)
-        <div class="slide" style="background-image: url({{ asset($category->image) }})"></div>
+    <!-- header end -->
 
-        
-        <section class="slider__center">
-          <div class="slider__menu">
-            <section class="container">
-              <div class="slider__menu__list">
+    <!-- slider start -->
 
-                <div class="slider__button">
-                  <h3 class="slider__title__h3">{{ $category->{'title_' . app()->getLocale()}  }}</h3>
-                  <h4 class="slider__title__h4">{{ $category->{'name_' . app()->getLocale()}  }}</h4>
+    <div class="slider">
+      <div class="slider__cart">
+        <div class="slider__list">
+          <div class="slide active" style="background-image: url('foto/slide.png')"></div>
+
+          <div class="slide" style="background-image: url('foto/slide_2.png')"></div>
+
+          <div class="slide" style="background-image: url('foto/slide_3.png')"></div>
+
+          <div class="slide" style="background-image: url('foto/slide_4.png')"></div>
+
+          <div class="slide" style="background-image: url('foto/slide_5.png')"></div>
+
+          <section class="slider__center">
+            <div class="slider__menu">
+              <section class="container">
+                <div class="slider__menu__list">
+                  @foreach($categories as $category)
+                  <div class="slider__button">
+                    <h3 class="slider__title__h3">{{ $category->{'title_' . app()->getLocale()} }}</h3>
+                    <h4 class="slider__title__h4">{{ $category->{'name_' . app()->getLocale()} }}</h4>
+                  </div> 
+                  @endforeach
                 </div>
-                
+              </section>
+            </div>
+
+            <section class="container">
+              <div class="slider__menu__cart">
+                <ul class="slider__list__cart">
+                  <li class="wow">
+                    <a href="SandwichProducts.html" class="slider__list__link">
+                      <div class="slider__list__img">
+                        <img src="foto/icons/icons_1.svg" alt="icons" />
+                      </div>
+                      О продукции
+                    </a>
+                  </li>
+
+                  <li class="wow">
+                    <a href="SandwichPortfolio.html" class="slider__list__link">
+                      <div class="slider__list__img">
+                        <img src="foto/icons/icons_2.svg" alt="icons" />
+                      </div>
+                      Портфолио
+                    </a>
+                  </li>
+                </ul>
+
+               
               </div>
             </section>
-          </div>
-  
-          <section class="container">
-            <div class="slider__menu__cart">
-              <ul class="slider__list__cart">
-                <li class="wow">
-                  <a href="SandwichProducts.html" class="slider__list__link">
-                    <div class="slider__list__img">
-                      <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons">
-                    </div>
-                    Продукции
-                  </a>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- slider end -->
+
+    <!-- footer start -->
+
+    <footer>
+      <div class="footer">
+        <section class="container">
+          <div class="footer__cart">
+            <div class="footer__list">
+              <ul class="footer__menu__icons">
+                <li>
+                  <a href="#!" class="footer__link__icons"><i class="fab fa-instagram"></i></a>
                 </li>
-      
-                <li class="wow">
-                  <a href="SandwichPortfolio.html" class="slider__list__link">
-                    <div class="slider__list__img">
-                      <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons">
-                    </div>
-                    Портфолио
-                  </a>
+
+                <li>
+                  <a href="#!" class="footer__link__icons"><i class="fab fa-facebook-f"></i></a>
+                </li>
+
+                <li>
+                  <a href="#!" class="footer__link__icons"><i class="fab fa-telegram-plane"></i></a>
                 </li>
               </ul>
 
+              <a href="tel:97 442 27 26" class="footer__contacts__link">
+                <span><i class="fas fa-phone"></i></span>
+                <section>
+                  <p>97</p>
+                  442 27 26
+                </section>
+              </a>
+
+              <h4 class="footer__title__h4">
+                © Copyright <span></span> - Web developed by
+                <a href="https://sos.uz/" target="_blank">SOS Group</a>
+              </h4>
             </div>
-          </section>
-        </section>
-        @endforeach
-      </div>
-    </div>
-  </div>
-
-  <!-- slider end -->
-
-  <footer>
-    <div class="footer">
-      <section class="container">
-        <div class="footer__cart">
-          <div class="footer__list">
-            <ul class="footer__menu__icons">
-              <li>
-                <a href="#!" class="footer__link__icons"><i class="fab fa-instagram"></i></a>
-              </li>
-
-              <li>
-                <a href="#!" class="footer__link__icons"><i class="fab fa-facebook-f"></i></a>
-              </li>
-
-              <li>
-                <a href="#!" class="footer__link__icons"><i class="fab fa-telegram-plane"></i></a>
-              </li>
-            </ul>
-
-            <a href="tel:97 442 27 26" class="footer__contacts__link">
-              <span><i class="fas fa-phone"></i></span>
-              <section><p>97</p>442 27 26</section>
-            </a>
-
-            <h4 class="footer__title__h4">
-              © Copyright <span></span> - Web developed by <a href="https://sos.uz/" target="_blank">SOS Group</a>
-            </h4>
           </div>
-        </div>
-      </section>
-    </div>
-  </footer>
+        </section>
+      </div>
+    </footer>
 
-  <!-- footer end -->
+    <!-- footer end -->
+    
   <script src="{{ asset('front/js/jquery-3.6.1.min.js') }}"></script>
   <script src="{{ asset('front/js/wow.min.js') }}"></script>
   <script src="{{ asset('front/js/index.js') }}"></script>
@@ -308,5 +333,3 @@
   <script> new WOW().init(); </script>
   </body>
 </html>
-
- 

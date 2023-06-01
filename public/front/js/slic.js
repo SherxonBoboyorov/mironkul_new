@@ -1,47 +1,45 @@
-const slider = document.querySelector('.slider');
+const slider = document.querySelector('.slider')
 if (slider) {
-  const slides = document.querySelectorAll(".slide");
-  const controls = document.querySelectorAll(".slider__button");
-  const menuList = document.querySelectorAll(".slider__list__cart");
-  const activeMenu = document.querySelector(".slider__menu__cart");
-  let activeSlide = 0;
-  let prevActive = 0;
+  const slides = document.querySelectorAll('.slide')
+  const controls = document.querySelectorAll('.slider__button')
+  const menuList = document.querySelectorAll('.slider__list__cart')
+  const activeMenu = document.querySelector('.slider__menu__cart')
+  let activeSlide = 0
+  let prevActive = 0
 
-  changeSlides();
-  listActive();
-  let int = setInterval(changeSlides, 60000);
-  let max = setInterval(listActive, 6000);
+  let int = setInterval(changeSlides, 60000)
+  let max = setInterval(listActive, 6000)
 
   function changeSlides() {
-    slides[prevActive].classList.remove("active");
-    controls[prevActive].classList.remove("active");
-    menuList[prevActive].classList.remove("active");
+    slides[prevActive].classList.remove('active')
+    controls[prevActive].classList.remove('active')
+    menuList[prevActive].classList.remove('active')
 
-    slides[activeSlide].classList.add("active");
-    controls[activeSlide].classList.add("active");
-    menuList[activeSlide].classList.add("active");
+    slides[activeSlide].classList.add('active')
+    controls[activeSlide].classList.add('active')
+    menuList[activeSlide].classList.add('active')
 
-    prevActive = activeSlide++;
+    prevActive = activeSlide++
 
     if (activeSlide >= slides.length) {
-      activeSlide = 0;
+      activeSlide = 0
     }
   }
 
   function listActive() {
-    const item = activeMenu.querySelectorAll(".slider__list__cart");
+    const item = activeMenu.querySelectorAll('.slider__list__cart')
     for (let i = 0; i < item.length; i++) {
-      if (item[i].className == "slider__list__cart active") {
-        const itemIn = item[i].querySelectorAll("li");
+      if (item[i].className == 'slider__list__cart active') {
+        const itemIn = item[i].querySelectorAll('li')
 
         // item style start
 
-        var counter = 0;
-        const media1 = window.matchMedia('(min-width: 1280px)');
-        const media2 = window.matchMedia('(min-width: 1000px)');
-        const media3 = window.matchMedia('(min-width: 600px)');
-        const media4 = window.matchMedia('(min-width: 350px)');
-        const media5 = window.matchMedia('(min-width: 200px)');
+        var counter = 0
+        const media1 = window.matchMedia('(min-width: 1280px)')
+        const media2 = window.matchMedia('(min-width: 1000px)')
+        const media3 = window.matchMedia('(min-width: 600px)')
+        const media4 = window.matchMedia('(min-width: 350px)')
+        const media5 = window.matchMedia('(min-width: 200px)')
         if (media1.matches) {
           if (itemIn.length <= 5) {
             counter = itemIn.length
@@ -81,18 +79,18 @@ if (slider) {
         // item style end
 
         for (const i of itemIn) {
-          i.classList.add("fadeInDown")
+          i.classList.add('fadeInDown')
         }
-        itemIn[0].classList.add("fadeInLeft")
-        itemIn[itemIn.length - 1].classList.add("fadeInRight")
+        itemIn[0].classList.add('fadeInLeft')
+        itemIn[itemIn.length - 1].classList.add('fadeInRight')
       } else {
-        const itemIn = item[i].querySelectorAll("li");
+        const itemIn = item[i].querySelectorAll('li')
         for (const i of itemIn) {
           i.classList.add('animated')
-          i.classList.remove("fadeInDown")
+          i.classList.remove('fadeInDown')
         }
-        itemIn[0].classList.remove("fadeInLeft")
-        itemIn[itemIn.length - 1].classList.remove("fadeInRight")
+        itemIn[0].classList.remove('fadeInLeft')
+        itemIn[itemIn.length - 1].classList.remove('fadeInRight')
 
         itemIn[0].classList.add('animated')
         itemIn[itemIn.length - 1].classList.add('animated')
@@ -101,18 +99,18 @@ if (slider) {
   }
 
   controls.forEach((control) => {
-    control.addEventListener("click", () => {
-      let idx = [...controls].findIndex((c) => c === control);
-      activeSlide = idx;
+    control.addEventListener('click', () => {
+      let idx = [...controls].findIndex((c) => c === control)
+      activeSlide = idx
 
-      changeSlides();
-      listActive();
+      changeSlides()
+      listActive()
 
-      clearInterval(int, max);
-      int = setInterval(changeSlides, 60000);
-      max = setInterval(listActive, 60000);
-    });
-  });
+      clearInterval(int, max)
+      int = setInterval(changeSlides, 60000)
+      max = setInterval(listActive, 60000)
+    })
+  })
 }
 
 $(document).ready(function () {
@@ -122,8 +120,8 @@ $(document).ready(function () {
     infinite: false,
     arrows: true,
     fade: true,
-    asNavFor: '.fotogalereya_in__list2'
-  });
+    asNavFor: '.fotogalereya_in__list2',
+  })
 
   $('.fotogalereya_in__list2').slick({
     arrows: false,
@@ -141,41 +139,40 @@ $(document).ready(function () {
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: false
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 1250,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 1,
+        },
       },
 
       {
         breakpoint: 1050,
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 1,
+        },
       },
 
       {
         breakpoint: 850,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 1,
+        },
       },
 
       {
         breakpoint: 500,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 1,
+        },
       },
-    ]
-  });
-
+    ],
+  })
 })

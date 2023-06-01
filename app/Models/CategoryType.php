@@ -20,6 +20,7 @@ class CategoryType extends Model
         'title_en'
     ];
 
+
     public static function uploadImage($request): ?string
     {
         if ($request->hasFile('image')) {

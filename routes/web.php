@@ -59,6 +59,8 @@ Route::group(
     ], function(){
          Route::get('/', [IndexController::class, 'homepage'])->name('/');
          Route::get('about', [AboutController::class, 'aboutCompany'])->name('about');
+         Route::get('aboutCompanyPhotos', [AboutController::class, 'aboutCompanyPhoto'])->name('aboutCompanyPhotos');
+         Route::get('aboutCompanyPhotos/{slug}', [AboutController::class, 'show'])->name('aboutCompanyPhoto');
  });
 
 

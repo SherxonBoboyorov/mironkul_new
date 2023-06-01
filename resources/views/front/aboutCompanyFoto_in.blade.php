@@ -40,7 +40,7 @@
                                 <img src="{{ asset('front/foto/logoBlick.svg') }}" alt="logoBlick">
                               </picture>
                             </a>
-                          </div>
+                        </div>
 
                         <ul class="header__locales">
                           @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -62,11 +62,11 @@
 
                         <ul class="header_in__menu">
                             <li>
-                                <a href="{{ route('/')}}" class="header_in__menu__link">Главная</a>
+                                <a href="{{ route('aboutCompanyPhotos') }}" class="header_in__menu__link">Фото материалы</a>
                             </li>
 
                             <li>
-                                <a class="header_in__menu__link">о компании</a>
+                                <a class="header_in__menu__link">{{ $photo->{'title_' . app()->getLocale()} }}</a>
                             </li>
                         </ul>
 
@@ -82,13 +82,14 @@
                                  {{ $properties['native'] }}
                               </a>
                           </li>
-                          @endforeach
+                         @endforeach
                         </ul>
                           <button class="header__menu__none">
                             <i class="fas fa-times"></i>
                           </button>
                           
                           <ul class="header__menu__list">
+
                             <li class="header__menu__item wow">
                               <a href="#!" class="header__menu__link">Сэндвич панели</a>
                               <ul class="header__none__menu">
@@ -102,60 +103,9 @@
                               </ul>
                             </li>
             
-                            <li class="header__menu__item wow">
-                              <a href="#!" class="header__menu__link">Металлоконструкции</a>
-                              <ul class="header__none__menu">
-                                <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                                </li>
-            
-                                <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                                </li>
-                              </ul>
-                            </li>
             
                             <li class="header__menu__item wow">
-                              <a href="#!" class="header__menu__link">Кисловодск</a>
-                              <ul class="header__none__menu">
-                                <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                                </li>
-            
-                                <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                                </li>
-                              </ul>
-                            </li>
-            
-                            <li class="header__menu__item wow">
-                              <a href="#!" class="header__menu__link">Кабельные лотки</a>
-                              <ul class="header__none__menu">
-                                <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                                </li>
-            
-                                <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                                </li>
-                              </ul>
-                            </li>
-            
-                            <li class="header__menu__item wow">
-                              <a href="#!" class="header__menu__link">Система вентиляции</a>
-                              <ul class="header__none__menu">
-                                <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                                </li>
-            
-                                <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                                </li>
-                              </ul>
-                            </li>
-            
-                            <li class="header__menu__item wow">
-                              <a href="aboutCompany.html" class="header__menu__link">О компании</a>
+                              <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
                             </li>
             
                             <li class="header__menu__item wow">
@@ -174,14 +124,117 @@
 
   <!-- header end -->
 
-  @yield('content')
+  <!-- Products start -->
+
+  <div class="products">
+    <div class="products__list">
+      <div class="products__list__scrull">
+        <section class="container_in">
+          <div class="products__aboutCompany__item">
+            <h2 class="products__title__h2">О компании</h2>
+          </div>
+        </section>
+
+        <div class="products__foto__video products__aboutCompany__menu">
+            <section class="container_in">
+                <div class="products__aboutCompany__list">
+                    <div class="products__item__video wow active">
+                        <a href="{{ route('aboutCompanyPhotos') }}">
+                            <div class="products__foto__img">
+                              <i class="far fa-images"></i>
+                            </div>
+                            <h3 class="products__title__foto">Фото материалы</h3>
+                        </a>
+                    </div>
+
+                    <div class="products__item__video wow">
+                        <a href="aboutCompanyVideo.html">
+                            <div class="products__foto__img">
+                              <i class="far fa-play-circle"></i>
+                            </div>
+                            <h3 class="products__title__foto">Видео материалы</h3>
+                        </a>
+                    </div>
+
+                    <div class="products__item__video wow">
+                        <a href="aboutCompanyPresentation.html">
+                            <div class="products__foto__img">
+                              <i class="far fa-file-powerpoint"></i>
+                            </div>
+                            <h3 class="products__title__foto">Презентация</h3>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+          
+        <section class="container_in">
+          <div class="products__item clearfix">
+            <div class="products__item__text">
+                <p>
+                    Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.
+                    At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est
+                </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="container_in">
+          <div class="fotoVideoMideo"></div>
+        </section>
+      </div>
+      
+        <div class="products__item__cart">
+
+          <div class="products__list__scrull">
+            <section class="container_in">
+                <section class="products__foto__video__all">
+                  <div class="products__foto">
+                    <div class="fotogalereya_in__list1">
+                      @foreach($photos as $photo)
+                        <div class="fotogalereya_in__item1">
+                            <img src="{{ asset($photo->image) }}" alt="fotogalereya_in">
+                        </div>
+                      @endforeach
+    
+                    </div>
+    
+                    <div class="fotogalereya_in__list2">
+                      @foreach($photos as $photo)
+                        <div class="fotogalereya_in__item2">
+                            <img src="{{ asset($photo->image) }}" alt="fotogalereya_in">
+                        </div>
+                     @endforeach
+                    </div>
+                  </div>
+              </section>
+            </section>
+          </div>
+
+          <section class="container_in">
+            <section class="products__footer">
+              <div class="footer__list">
+                <a href="tel:97 442 27 26" class="footer__contacts__link">
+                  <span><i class="fas fa-phone"></i></span>
+                  <section><p>97</p>442 27 26</section>
+                </a>
+    
+                <h4 class="footer__title__h4">
+                  © Copyright <span></span> - Web developed by <a href="https://sos.uz/" target="_blank">SOS Group</a>
+                </h4>
+              </div>
+            </section>
+          </section>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Products end -->
+
 
   <!-- footer start -->
 
-
-   <!-- footer start -->
-
-   <footer> 
+  <footer> 
     <div class="footer_in">
       <section class="container">
         <div class="footer_in__cart"></div>
@@ -204,5 +257,3 @@
   <script> new WOW().init(); </script>
   </body>
 </html>
-
-  

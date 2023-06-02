@@ -6,7 +6,7 @@
 Swal.fire({
 position: 'center',
 icon: 'success',
-title: 'Sent successfully',
+title: 'MUVAFFAQIYATLI YUBORILDI <br><br> Tashakkur!',
 showConfirmButton: false,
 timer: 1500
 })

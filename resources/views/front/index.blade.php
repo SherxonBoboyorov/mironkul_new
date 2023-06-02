@@ -136,20 +136,7 @@
 
                 <ul class="header__menu__list">
                   <li class="header__menu__item wow">
-                    <a href="aboutCompany.html" class="header__menu__link">О компании</a>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Сэндвич панели</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
-                      </li>
-
-                      <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                      </li>
-                    </ul>
+                    <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
                   </li>
 
                   <li class="header__menu__item wow">
@@ -166,46 +153,7 @@
                   </li>
 
                   <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Кисловодск</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
-                      </li>
-
-                      <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Кабельные лотки</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
-                      </li>
-
-                      <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Система вентиляции</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
-                      </li>
-
-                      <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="contacts.html" class="header__menu__link">Контакты</a>
+                    <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
                   </li>
                 </ul>
               </div>
@@ -223,15 +171,15 @@
     <div class="slider">
       <div class="slider__cart">
         <div class="slider__list">
-          <div class="slide active" style="background-image: url('foto/slide.png')"></div>
+          <div class="slide active" style="background-image: url('{{ asset('front/foto/slide.png') }}')"></div>
 
-          <div class="slide" style="background-image: url('foto/slide_2.png')"></div>
+          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_2.png') }}')"></div>
 
-          <div class="slide" style="background-image: url('foto/slide_3.png')"></div>
+          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_3.png') }}')"></div>
 
-          <div class="slide" style="background-image: url('foto/slide_4.png')"></div>
+          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_4.png') }}')"></div>
 
-          <div class="slide" style="background-image: url('foto/slide_5.png')"></div>
+          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_5.png') }}')"></div>
 
           <section class="slider__center">
             <div class="slider__menu">

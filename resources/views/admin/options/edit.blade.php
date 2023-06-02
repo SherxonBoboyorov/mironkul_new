@@ -26,6 +26,9 @@
                             <div class="col-md-8">
                                 <label for="key">Key</label>
                                 <select name="key" id="key" class="form-control">
+                                    <option value="title_uz" @if($option->key == 'Main Office Name Uz') selected @endif>Main Office Name Uz</option>
+                                    <option value="title_ru" @if($option->key == 'Main Office Name RU') selected @endif>Main Office Name Ru</option>
+                                    <option value="title_en" @if($option->key == 'Main Office Name En') selected @endif>Main Office Name En</option> 
                                     <option value="address_uz" @if($option->key == 'address_uz') selected @endif>Address UZ</option>
                                     <option value="address_ru" @if($option->key == 'address_ru') selected @endif>Address RU</option>
                                     <option value="address_en" @if($option->key == 'address_en') selected @endif>Address EN</option>

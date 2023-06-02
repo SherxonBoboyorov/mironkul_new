@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+@extends('layouts.front')
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('front/foto/favicon/apple-touch-icon.png') }}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('front/foto/favicon/favicon-32x32.png') }}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('front/foto/favicon/favicon-16x16.png') }}" />
-    <link rel="manifest" href="{{ asset('front/foto/favicon/site.webmanifest') }}" />
-    <link rel="mask-icon" href="{{ asset('front/foto/favicon/safari-pinned-tab.svg') }}" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta name="theme-color" content="#000000" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <link rel="stylesheet" href="{{ asset('front/css/index.css') }}" />
-    <link rel="stylesheet" href="{{ asset('front/css/animate.css') }}" />
-    <link rel="stylesheet" href="{{ asset('front/css/fancybox-main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('front/css/slick.css') }}" />
-    <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}" />
-    <title>ОФИС В ТАШКЕНТЕ</title>
-  </head>
-
-  <body>
-    <!-- header start -->
+@section('content')
 
     <header>
       <div class="header_in">
@@ -185,34 +155,36 @@
             <div class="products__item">
               <div class="contacts__list">
                 <div class="contacts__item wow">
-                  <h2 class="products__title__h2">ОФИС В ТАШКЕНТЕ</h2>
+                  <h2 class="products__title__h2">{{ $options->where('key', 'title_' . app()->getLocale())->first()->value }}</h2>
                   <ul class="contacts__address__list">
                     <li>
-                      <a href="#!" class="contacts__address__link">
+                      <a class="contacts__address__link">
                         <span>Адрес</span>
-                        10080, Узбекистан, г. Ташкент, Яккасарайский район, ул. Минглар, 49
+                        {{ $options->where('key', 'address_' . app()->getLocale())->first()->value }}
                       </a>
                     </li>
 
                     <li>
-                      <a href="tel:+998 97 442 27 26" class="contacts__address__link">
+                      <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="contacts__address__link">
                         <span>телефон</span>
-                        +998 97 442 27 26
+                        {{ $options->where('key', 'phone')->first()->value }}
                       </a>
                     </li>
 
                     <li>
-                      <a href="mailto:temur@mironkul.uz" class="contacts__address__link">
+                      <a href="mailto:{{ $options->where('key', 'email')->first()->value }}" class="contacts__address__link">
                         <span>Email</span>
-                        temur@mironkul.uz
+                        {{ $options->where('key', 'email')->first()->value }}
                       </a>
                     </li>
+                    
                   </ul>
-                  <a href="#!" class="contacts__link__map">
+                  <a href="{{ $options->where('key', 'map')->first()->value }}" class="contacts__link__map" target="{{ $options->where('key', 'map')->first()->value }}">
                     Показать на карте
                     <span><i class="fas fa-map-marker-alt"></i></span>
                   </a>
                 </div>
+                
 
                 <div class="contacts__item wow">
                   @foreach($offices as $office)
@@ -269,20 +241,22 @@
         <div class="products__item__cart">
           <section
             class="products__cart__fons"
-            style="background-image: url(foto/contacts.png)"
+            style="background-image: url({{ asset('front/foto/contacts.png') }})"
           ></section>
 
+          @include('alert')
           <section class="products__list__scrull">
             <section class="container_in">
               <div class="contacts__cart">
                 <h2 class="products__title__h2">Обратная связь</h2>
 
-                <form action="#!" class="contacts__form">
-                  <input type="text" class="contacts__input wow fadeInLeft" placeholder="ФИО" />
-                  <input type="tel" class="contacts__input wow fadeInRight" placeholder="Телефон" />
+                <form action="{{ route('yourSave') }}" class="contacts__form" method="POST">
+                  <input type="text" name="fullname" class="contacts__input wow fadeInLeft" placeholder="ФИО" required/>
+                  <input type="tel" name="phone" class="contacts__input wow fadeInRight" placeholder="Телефон" required/>
                   <textarea
                     class="contacts__textarea wow fadeInLeft"
                     placeholder="Комментарий"
+                    name="comment" required
                   ></textarea>
                   <button class="contacts__button wow fadeInRight">
                     Отправить
@@ -317,28 +291,4 @@
 
     <!-- Products end -->
 
-    <!-- footer start -->
-
-    <footer>
-      <div class="footer_in">
-        <section class="container">
-          <div class="footer_in__cart"></div>
-        </section>
-      </div>
-    </footer>
-
-    <!-- footer end -->
-
-    <script src="{{ asset('front/js/jquery-3.6.1.min.js') }}"></script>
-    <script src="{{ asset('front/js/wow.min.js') }}"></script>
-    <script src="{{ asset('front/js/index.js') }}"></script>
-    <script src="{{ asset('front/js/loading.js') }}"></script>
-    <script src="{{ asset('front/js/fancyapps-ui.js') }}"></script>
-    <script src="{{ asset('front/js/fancybox_main.js') }}"></script>
-    <script src="{{ asset('front/js/materialize.min.js') }}"></script>
-    <script src="{{ asset('front/js/slick.min.js') }}"></script>
-    <script src="{{ asset('front/js/owl.carousel.js') }}"></script>
-    <script src="{{ asset('front/js/slic.js') }}"></script>
-    <script> new WOW().init(); </script>
-  </body>
-</html>
+   @endsection

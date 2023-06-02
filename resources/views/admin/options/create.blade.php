@@ -25,6 +25,9 @@
                             <div class="col-md-8">
                               <label for="key">Key</label>
                               <select name="key" id="key" class="form-control">
+                                  <option value="title_uz">Main Office Name Uz</option>
+                                  <option value="title_ru">Main Office Name Ru</option>
+                                  <option value="title_en">Main Office Name En</option>
                                   <option value="address_uz">Address Uz</option>
                                   <option value="address_ru">Address Ru</option>
                                   <option value="address_en">Address En</option>

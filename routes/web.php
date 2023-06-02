@@ -62,6 +62,7 @@ Route::group(
          Route::get('aboutCompanyVideos', [AboutController::class, 'aboutCompanyVideo'])->name('aboutCompanyVideos');
          Route::get('presentations', [AboutController::class, 'aboutCompanyPresentation'])->name('presentations');
          Route::get('contact', [ContactController::class, 'contact'])->name('contact');
+         Route::post('save_yourSave', [ContactController::class, 'yourSave'])->name('yourSave');
 
  });
 

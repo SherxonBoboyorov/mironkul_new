@@ -108,7 +108,7 @@
                         <div class="row" style="margin-top: 15px">
                             <div class="col-md-8">
                                 <label for="addres_ru">Address [Russian]</label>
-                                <input type="text" id="addres_ru" {{ $office->addres_ru }} class="form-control" name="addres_ru">
+                                <input type="text" id="addres_ru" value="{{ $office->addres_ru }}" class="form-control" name="addres_ru">
                                 @if($errors->has('addres_ru'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

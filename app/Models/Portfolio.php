@@ -32,6 +32,12 @@ class Portfolio extends Model
         'meta_description_en'
     ];
 
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    
     public function portfolio_images()
     {
         return $this->hasMany(PortfolioImage::class);

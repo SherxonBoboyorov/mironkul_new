@@ -14,6 +14,7 @@ class ProductVideo extends Model
 
     protected $fillable = [
         'product_id',
+        'image',
         'video',
         'title_ru',
         'title_uz',
@@ -56,5 +57,53 @@ class ProductVideo extends Model
         }
 
         return $productvideo->video;
+    }
+
+
+
+    public static function uploadImage($request): ?string
+    {
+        if ($request->hasFile('image')) {
+
+            self::checkDirectory();
+
+            $request->file('image')
+                ->move(
+                    public_path() . '/upload/videoimage/' . date('d-m-Y'),
+                    $request->file('image')->getClientOriginalName()
+                );
+            return '/upload/videoimage/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+        }
+
+        return null;
+    }
+
+    public static function updateImage($request, $videoimage): string
+    {
+        if ($request->hasFile('image')) {
+            if (File::exists(public_path() . $videoimage->image)) {
+                File::delete(public_path() . $videoimage->image);
+            }
+
+            self::checkDirectory();
+
+            $request->file('image')
+                ->move(
+                    public_path() . '/upload/videoimage/' . date('d-m-Y'),
+                    $request->file('image')->getClientOriginalName()
+                );
+            return '/upload/videoimage/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+        }
+
+        return $videoimage->image;
+    }
+
+    private static function checkDirectory(): bool
+    {
+        if (!File::exists(public_path() . '/upload/videoimage/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/videoimage/' . date('d-m-Y'), $mode = 0777, true, true);
+        }
+
+        return true;
     }
 }

@@ -48,6 +48,7 @@ class ProductVideoController extends Controller
     public function store(CreateProductVideo $request)
     {
         $data = $request->all();
+        $data['image'] = ProductVideo::uploadImage($request);
         $data['video'] = ProductVideo::uploadVideo($request);
 
         if (ProductVideo::create($data)) {
@@ -98,6 +99,7 @@ class ProductVideoController extends Controller
         $productvideo = ProductVideo::find($id);
 
         $data = $request->all();
+        $data['image'] = ProductVideo::updateImage($request, $productvideo);
         $data['video'] = ProductVideo::updateVideo($request, $productvideo);
 
         if ($productvideo->update($data)) {

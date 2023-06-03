@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CreatePortfolio;
 use App\Http\Requests\Admin\UpdatePortfolio;
+use App\Models\Category;
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -20,7 +21,9 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios = Portfolio::orderBy('id')->paginate(12);
-        return view('admin.portfolio.index', compact('portfolios'));
+        return view('admin.portfolio.index', [
+            'portfolios' => $portfolios
+        ]);
     }
 
     /**
@@ -30,7 +33,11 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        return view('admin.portfolio.create');
+        $categories = Category::all();
+
+        return view('admin.portfolio.create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -70,10 +77,13 @@ class PortfolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Portfolio $portfolio)
     {
-        $portfolio = Portfolio::find($id);
-        return view('admin.portfolio.edit', compact('portfolio'));
+        $category = Category::all();
+        return view('admin.portfolio.edit', [
+            'category' => $category,
+            'portfolio' => $portfolio
+        ]);
     }
 
     /**

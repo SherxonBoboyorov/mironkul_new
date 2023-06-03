@@ -13,6 +13,7 @@ class Portfolio extends Model
     protected $table = 'portfolios';
 
     protected $fillable = [
+        'category_id',
         'image',
         'title_ru',
         'title_uz',

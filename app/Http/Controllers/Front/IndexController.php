@@ -15,7 +15,6 @@ class IndexController extends Controller
        
         return view('front.index', [
             'categories' => $categories,
-
         ]);
     }
 }

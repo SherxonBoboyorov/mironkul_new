@@ -24,6 +24,7 @@ class UpdatePortfolio extends FormRequest
     public function rules(): array
     {
         return [
+            'category_id' => 'required',
             'title_ru' => 'required|max:255',
             'title_uz' => 'required|max:255',
             'title_en' => 'required|max:255',

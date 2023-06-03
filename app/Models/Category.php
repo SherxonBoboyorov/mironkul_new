@@ -22,6 +22,11 @@ class Category extends Model
         'name_en'
     ];
 
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
 
     public static function uploadImage($request): ?string
     {

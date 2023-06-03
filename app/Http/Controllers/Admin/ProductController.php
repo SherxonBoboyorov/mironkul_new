@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CreateProduct;
 use App\Http\Requests\Admin\UpdateProduct;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -20,7 +21,9 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::orderBy('id')->paginate(12);
-        return view('admin.product.index', compact('products'));
+        return view('admin.product.index', [
+            'products' => $products
+        ]);
     }
 
     /**
@@ -30,7 +33,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $categorires = Category::all();
+
+        return view('admin.product.create', [
+            'categories' => $categorires
+        ]);
     }
 
     /**
@@ -70,10 +77,13 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        $product = Product::find($id);
-        return view('admin.product.edit', compact('product'));
+        $category = Category::all();
+        return view('admin.product.edit', [
+            'category' => $category,
+            'product' => $product
+        ]);
     }
 
     /**

@@ -36,6 +36,7 @@
                         <tr>
                             <th style="width: 2%;">#</th>
                             <th>Image</th>
+                            <th>Categories</th>
                             <th>Title [Uzbek]</th>
                             <th>Title [Russian]</th>
                             <th>Title [English]</th>
@@ -49,6 +50,7 @@
                             <td>
                                 <img src="{{ asset($product->image) }}" alt="" width="35" height="35">
                             </td>
+                            <td>{{ $product->category->title_en ?? "" }}</td>
                             <td>{{ $product->title_uz }}</td>
                             <td>{{ $product->title_ru }}</td>
                             <td>{{ $product->title_en }}</td>

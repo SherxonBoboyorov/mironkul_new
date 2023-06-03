@@ -13,6 +13,7 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = [
+        'category_id',
         'image',
         'title_ru',
         'title_uz',
@@ -33,6 +34,12 @@ class Product extends Model
         'meta_description_uz',
         'meta_description_en'
     ];
+
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function product_images()
     {

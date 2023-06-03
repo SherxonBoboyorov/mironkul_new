@@ -24,6 +24,7 @@ class CreateProduct extends FormRequest
     public function rules(): array
     {
         return [
+            'category_id' => 'required',
             'image' => 'required|image|mimes:png,jpg,jpeg,webp',
             'title_ru' => 'required|max:255',
             'title_uz' => 'required|max:255',

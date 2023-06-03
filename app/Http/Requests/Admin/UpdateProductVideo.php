@@ -25,7 +25,6 @@ class UpdateProductVideo extends FormRequest
     {
         return [
             'product_id' => 'required',
-            'image' => 'required|image|mimes:png,jpg,jpeg,webp',
             'title_ru' => 'required|max:255',
             'title_uz' => 'required|max:255',
             'title_en' => 'required|max:255',

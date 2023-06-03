@@ -35,7 +35,7 @@
                     <thead>
                         <tr>
                             <th style="width: 2%;">#</th>
-                            <th>Video</th>
+                            <th>Image</th>
                             <th>Products</th>
                             <th>Title [Uzbek]</th>
                             <th>Title [Russian]</th>
@@ -48,7 +48,7 @@
                         <tr>
                             <td>{{ $portfoliovideo->id }}</td>
                             <td>
-                                <video src="{{ asset($portfoliovideo->video) }}" width="35" height="35">
+                                <img src="{{ asset($portfoliovideo->image) }}" alt="" width="35" height="35">
                             </td>
                             <td>{{ $portfoliovideo->portfolio->title_en ?? "" }}</td>
                             <td>{{ $portfoliovideo->title_uz }}</td>

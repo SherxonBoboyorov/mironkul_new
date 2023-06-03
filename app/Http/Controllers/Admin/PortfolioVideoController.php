@@ -47,6 +47,7 @@ class PortfolioVideoController extends Controller
     public function store(CreatePortfolioVideo $request)
     {
         $data = $request->all();
+        $data['image'] = PortfolioVideo::uploadImage($request);
         $data['video'] = PortfolioVideo::uploadVideo($request);
 
         if (PortfolioVideo::create($data)) {
@@ -97,6 +98,7 @@ class PortfolioVideoController extends Controller
         $portfoliovideo = PortfolioVideo::find($id);
 
         $data = $request->all();
+        $data['image'] = PortfolioVideo::updateImage($request, $portfoliovideo);
         $data['video'] = PortfolioVideo::updateVideo($request, $portfoliovideo);
 
         if ($portfoliovideo->update($data)) {

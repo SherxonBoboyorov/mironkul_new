@@ -41,9 +41,7 @@
                   </li>
 
                   <li>
-                    <a class="header_in__menu__link"
-                      >{{ $product->{'title_' . app()->getLocale()} }}  {{ $product->{'info_' . app()->getLocale()} }}</a
-                    >
+                    <a class="header_in__menu__link">{{ $product->{'title_' . app()->getLocale()} }}  {{ $product->{'info_' . app()->getLocale()} }}</a>
                   </li>
                 </ul>
 
@@ -78,7 +76,7 @@
                         </li>
 
                         <li>
-                          <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                          <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
                         </li>
                       </ul>
                     </li>
@@ -115,7 +113,7 @@
                 <h4 class="products__iten__title">{{ $product->{'info_' . app()->getLocale()} }}</h4>
                 <div class="products__item__text">
                   <p>
-                    {!! $product->{'content_' . app()->getLocale()} !!}
+                    {!! $product->{'description_' . app()->getLocale()} !!}
                   </p>
                 </div>
               </section>
@@ -139,7 +137,7 @@
                   <h3 class="products__title__foto">Видео материалы</h3>
                 </div>
 
-                <a href="SandwichPortfolio.html" class="products__item__video wow">
+                <a href="{{ route('portfolios') }}" class="products__item__video wow">
                   <div class="products__foto__img">
                     <i class="far fa-images"></i>
                   </div>
@@ -174,14 +172,15 @@
                 </div>
 
                 <div class="products__item__list products__foto" data-item="videoItem">
+                  @foreach($productvideos as $productvideo)
                   
                   <section class="products__item__wowjs wow">
                     <div class="products__video__item">
                       <p class="text-center">
-                        <a data-fancybox class="about__item__video" href="https://youtu.be/G4qaiWGeO5w?list=RDUWw40cW4_tg&t=2">
+                        <a data-fancybox class="about__item__video" href="{{ $productvideo->video }}">
                           <section>
-                            <h3 class="products__list__title__h3">Lorem ipsum dolor sit amet</h3>
-                            <img class="inline" src="foto/products_1.png" alt="videoItem" />
+                            <h3 class="products__list__title__h3">{{ $productvideo->{'title_' . app()->getLocale()} }}</h3>
+                            <img class="inline" src="{{ asset($productvideo->image) }}" alt="videoItem" />
                             <!-- play start -->
 
                             <div class="button__min is-play">
@@ -189,7 +188,7 @@
                               <div
                                 class="button-outer-circle has-scale-animation has-delay-short"></div>
                               <div class="button-icon is-play">
-                                <img class="about__item__img__play"  alt="All" src="foto/icons/pley.svg"/>
+                                <img class="about__item__img__play"  alt="All" src="{{ asset('front/foto/icons/pley.svg') }}"/>
                               </div>
                             </div>
 
@@ -199,8 +198,7 @@
                       </p>
                     </div>
                   </section>
-
-
+                  @endforeach
                 </div>
               </section>
             </section>

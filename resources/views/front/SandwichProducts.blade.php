@@ -72,11 +72,11 @@
                         <a href="#!" class="header__menu__link">Сэндвич панели</a>
                         <ul class="header__none__menu">
                           <li>
-                            <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
+                            <a href="{{ route('products') }}" class="header__none__link">О продукции</a>
                           </li>
   
                           <li>
-                            <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                            <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
                           </li>
                         </ul>
                       </li>
@@ -145,7 +145,7 @@
                     </li>
   
                     <li class="wow">
-                      <a href="SandwichPortfolio.html" class="products__menu__link"> Портфолио </a>
+                      <a href="{{ route('portfolios') }}" class="products__menu__link"> Портфолио </a>
                     </li>
                   </ul>
                 </div>

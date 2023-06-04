@@ -25,6 +25,7 @@ use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\ParfolioController;
 
 Auth::routes();
 
@@ -66,6 +67,8 @@ Route::group(
          Route::post('save_yourSave', [ContactController::class, 'yourSave'])->name('yourSave');
          Route::get('products', [BlogController::class, 'products'])->name('products');
          Route::get('products/{slug}', [BlogController::class, 'show'])->name('product');
+         Route::get('portfolios', [ParfolioController::class, 'portfolios'])->name('portfolios');
+         Route::get('portfolios/{slug}', [ParfolioController::class, 'show'])->name('portfolio');
 
 
  });

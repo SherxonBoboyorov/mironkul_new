@@ -23,7 +23,6 @@ class ProductImage extends Model
         return $this->belongsTo('App\Models\Product', 'product_id');
     }
 
-
     public static function uploadImage($request): ?string
     {
         if ($request->hasFile('image')) {

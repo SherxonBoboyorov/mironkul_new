@@ -11,27 +11,23 @@
           <section class="container_in">
             <div class="header_in__item__list">
               <div class="header__logo">
-                <a href="index.html">
+                <a href="{{ route('/') }}">
                   <picture>
-                    <source srcset="foto/logo.svg" media="(max-width:1050px)" />
-                    <img src="foto/logoBlick.svg" alt="logoBlick" />
+                    <source srcset="{{ asset('front/foto/logo.svg') }}" media="(max-width:1050px)" />
+                    <img src="{{ asset('front/foto/logoBlick.svg') }}" alt="logoBlick" />
                   </picture>
                 </a>
               </div>
 
               <ul class="header__locales">
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <li>
-                  <a href="#!" class="header__locales__link active">uz</a>
-                </li>
-
-                <li>
-                  <a href="#!" class="header__locales__link">ru</a>
-                </li>
-
-                <li>
-                  <a href="#!" class="header__locales__link">en </a>
-                </li>
-              </ul>
+                   <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                     {{ $properties['native'] }}
+                  </a>
+              </li>
+             @endforeach
+            </ul>
             </div>
           </section>
         </div>
@@ -41,13 +37,11 @@
             <div class="header_in__item__list">
               <ul class="header_in__menu">
                 <li>
-                  <a href="SandwichPortfolio.html" class="header_in__menu__link">Портфолио</a>
+                  <a href="{{ route('portfolios') }}" class="header_in__menu__link">Портфолио</a>
                 </li>
 
                 <li>
-                  <a href="SandwichPortfolio_in.html" class="header_in__menu__link"
-                    >Lorem ipsum dolor sit amet 75мм</a
-                  >
+                  <a class="header_in__menu__link">{{ $portfolio->{'title_' . app()->getLocale()} }}</a>
                 </li>
               </ul>
 
@@ -57,94 +51,38 @@
 
               <div class="header__menu">
                 <ul class="header__locales">
+                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                   <li>
-                    <a href="#!" class="header__locales__link active">uz</a>
-                  </li>
-
-                  <li>
-                    <a href="#!" class="header__locales__link">ru</a>
-                  </li>
-
-                  <li>
-                    <a href="#!" class="header__locales__link">en </a>
-                  </li>
-                </ul>
+                     <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                       {{ $properties['native'] }}
+                    </a>
+                </li>
+               @endforeach
+              </ul>
                 <button class="header__menu__none">
                   <i class="fas fa-times"></i>
                 </button>
 
                 <ul class="header__menu__list">
                   <li class="header__menu__item wow">
-                    <a href="aboutCompany.html" class="header__menu__link">О компании</a>
+                    <a href="{{ route('/') }}" class="header__menu__link">О компании</a>
                   </li>
 
                   <li class="header__menu__item wow">
                     <a href="#!" class="header__menu__link">Сэндвич панели</a>
                     <ul class="header__none__menu">
                       <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                      </li>
+                        <a href="{{ route('products') }}" class="header__none__link">О продукции</a>
+                      </li> 
 
                       <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                        <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
                       </li>
                     </ul>
                   </li>
 
                   <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Металлоконструкции</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                      </li>
-
-                      <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Кисловодск</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                      </li>
-
-                      <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Кабельные лотки</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                      </li>
-
-                      <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Система вентиляции</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                      </li>
-
-                      <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="contacts.html" class="header__menu__link">Контакты</a>
+                    <a href="{{ route('/') }}" class="header__menu__link">Контакты</a>
                   </li>
                 </ul>
               </div>
@@ -166,24 +104,10 @@
         <section class="container_in">
           <div class="products__item clearfix">
             <section>
-              <h2 class="products__title__h2">Lorem ipsum dolor sit amet</h2>
+              <h2 class="products__title__h2">{{ $portfolio->{'title_' . app()->getLocale()} }}</h2>
               <div class="products__item__text">
                 <p>
-                  Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-                  doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore
-                  veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim
-                  ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia
-                  consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque
-                  porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur,
-                  adipisci velit, sed quia non numquam eius modi tempora incidunt, ut labore et
-                  dolore magnam aliquam quaerat voluptatem. At vero eos et accusamus et iusto odio
-                  dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque
-                  corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate
-                  non provident, similique sunt in culpa, qui officia deserunt mollitia animi, id
-                  est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-                  distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque
-                  nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis
-                  voluptas assumenda est
+                  {!! $portfolio->{'description_' . app()->getLocale()} !!}
                 </p>
               </div>
             </section>
@@ -218,11 +142,12 @@
           <section class="container_in">
             <section class="products__foto__video__all">
               <div class="products__item__list products__foto active" data-item="fotoItem">
+                @foreach($portfolioimages as $portfolioimage)
                 <section class="products__item__wowjs wow">
                   <div class="products__list__item">
-                    <a href="foto/products_2.png" data-fancybox="gallery">
+                    <a href="{{ asset($portfolioimage->image) }}" data-fancybox="gallery">
                       <div class="products__foto__item__img">
-                        <img src="foto/products_2.png" alt="gallery" />
+                        <img src="{{ asset($portfolioimage->image) }}" alt="gallery" />
                         <h4 class="products__foto__eye">
                           <i class="fas fa-eye"></i>
                         </h4>
@@ -230,72 +155,26 @@
                     </a>
                   </div>
                 </section>
+                @endforeach
 
-                <section class="products__item__wowjs wow">
-                  <div class="products__list__item">
-                    <a href="foto/products_3.png" data-fancybox="gallery">
-                      <div class="products__foto__item__img">
-                        <img src="foto/products_3.png" alt="gallery" />
-                        <h4 class="products__foto__eye">
-                          <i class="fas fa-eye"></i>
-                        </h4>
-                      </div>
-                    </a>
-                  </div>
-                </section>
-
-                <section class="products__item__wowjs wow">
-                  <div class="products__list__item">
-                    <a href="foto/products_4.png" data-fancybox="gallery">
-                      <div class="products__foto__item__img">
-                        <img src="foto/products_4.png" alt="gallery" />
-                        <h4 class="products__foto__eye">
-                          <i class="fas fa-eye"></i>
-                        </h4>
-                      </div>
-                    </a>
-                  </div>
-                </section>
-
-                <section class="products__item__wowjs wow">
-                  <div class="products__list__item">
-                    <a href="foto/products_5.png" data-fancybox="gallery">
-                      <div class="products__foto__item__img">
-                        <img src="foto/products_5.png" alt="gallery" />
-                        <h4 class="products__foto__eye">
-                          <i class="fas fa-eye"></i>
-                        </h4>
-                      </div>
-                    </a>
-                  </div>
-                </section>
               </div>
 
               <div class="products__item__list products__foto" data-item="videoItem">
+                @foreach($portfolioimages as $portfolioimage)
                 <section class="products__item__wowjs wow">
                   <div class="products__video__item">
                     <p class="text-center">
-                      <a
-                        data-fancybox
-                        class="about__item__video"
-                        href="https://youtu.be/G4qaiWGeO5w?list=RDUWw40cW4_tg&t=2"
-                      >
+                      <a data-fancybox class="about__item__video" href="{{ $portfolioimage->video }}">
                         <section>
-                          <h3 class="products__list__title__h3">Lorem ipsum dolor sit amet</h3>
-                          <img class="inline" src="foto/products_1.png" alt="videoItem" />
+                          <h3 class="products__list__title__h3">{{ $portfolioimage->{'title_' . app()->getLocale()} }}</h3>
+                          <img class="inline" src="{{ asset($portfolioimage->image) }}" alt="videoItem" />
                           <!-- play start -->
 
                           <div class="button__min is-play">
                             <div class="button-outer-circle has-scale-animation"></div>
-                            <div
-                              class="button-outer-circle has-scale-animation has-delay-short"
-                            ></div>
+                            <div class="button-outer-circle has-scale-animation has-delay-short"></div>
                             <div class="button-icon is-play">
-                              <img
-                                class="about__item__img__play"
-                                alt="All"
-                                src="foto/icons/pley.svg"
-                              />
+                              <img class="about__item__img__play" alt="All" src="{{ asset('front/foto/icons/pley.svg') }}"/>
                             </div>
                           </div>
 
@@ -305,108 +184,8 @@
                     </p>
                   </div>
                 </section>
+                @endforeach
 
-                <section class="products__item__wowjs wow">
-                  <div class="products__video__item">
-                    <p class="text-center">
-                      <a
-                        data-fancybox
-                        class="about__item__video"
-                        href="https://youtu.be/G4qaiWGeO5w?list=RDUWw40cW4_tg&t=2"
-                      >
-                        <section>
-                          <h3 class="products__list__title__h3">Duis aute irure dolor</h3>
-                          <img class="inline" src="foto/products_2.png" alt="videoItem" />
-                          <!-- play start -->
-
-                          <div class="button__min is-play">
-                            <div class="button-outer-circle has-scale-animation"></div>
-                            <div
-                              class="button-outer-circle has-scale-animation has-delay-short"
-                            ></div>
-                            <div class="button-icon is-play">
-                              <img
-                                class="about__item__img__play"
-                                alt="All"
-                                src="foto/icons/pley.svg"
-                              />
-                            </div>
-                          </div>
-
-                          <!-- play end -->
-                        </section>
-                      </a>
-                    </p>
-                  </div>
-                </section>
-
-                <section class="products__item__wowjs wow">
-                  <div class="products__video__item">
-                    <p class="text-center">
-                      <a
-                        data-fancybox
-                        class="about__item__video"
-                        href="https://youtu.be/G4qaiWGeO5w?list=RDUWw40cW4_tg&t=2"
-                      >
-                        <section>
-                          <h3 class="products__list__title__h3">Excepteur sint occaecat</h3>
-                          <img class="inline" src="foto/products_3.png" alt="videoItem" />
-                          <!-- play start -->
-
-                          <div class="button__min is-play">
-                            <div class="button-outer-circle has-scale-animation"></div>
-                            <div
-                              class="button-outer-circle has-scale-animation has-delay-short"
-                            ></div>
-                            <div class="button-icon is-play">
-                              <img
-                                class="about__item__img__play"
-                                alt="All"
-                                src="foto/icons/pley.svg"
-                              />
-                            </div>
-                          </div>
-
-                          <!-- play end -->
-                        </section>
-                      </a>
-                    </p>
-                  </div>
-                </section>
-
-                <section class="products__item__wowjs wow">
-                  <div class="products__video__item">
-                    <p class="text-center">
-                      <a
-                        data-fancybox
-                        class="about__item__video"
-                        href="https://youtu.be/G4qaiWGeO5w?list=RDUWw40cW4_tg&t=2"
-                      >
-                        <section>
-                          <h3 class="products__list__title__h3">Lorem ipsum dolor sit amet</h3>
-                          <img class="inline" src="foto/products_4.png" alt="videoItem" />
-                          <!-- play start -->
-
-                          <div class="button__min is-play">
-                            <div class="button-outer-circle has-scale-animation"></div>
-                            <div
-                              class="button-outer-circle has-scale-animation has-delay-short"
-                            ></div>
-                            <div class="button-icon is-play">
-                              <img
-                                class="about__item__img__play"
-                                alt="All"
-                                src="foto/icons/pley.svg"
-                              />
-                            </div>
-                          </div>
-
-                          <!-- play end -->
-                        </section>
-                      </a>
-                    </p>
-                  </div>
-                </section>
               </div>
             </section>
           </section>

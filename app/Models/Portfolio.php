@@ -40,13 +40,12 @@ class Portfolio extends Model
     
     public function portfolio_images()
     {
-        return $this->hasMany(PortfolioImage::class);
+        return $this->hasMany(PortfolioImage::class, 'id', 'portfolio_id');
     }
-
 
     public function portfolio_videos()
     {
-        return $this->hasMany(PortfolioVideo::class);
+        return $this->hasMany(PortfolioVideo::class, 'id', 'portfolio_id');
     }
 
     public static function uploadImage($request): ?string

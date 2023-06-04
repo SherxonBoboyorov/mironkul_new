@@ -49,7 +49,7 @@ class Product extends Model
 
     public function product_videos()
     {
-        return $this->hasMany(ProductVideo::class);
+        return $this->hasMany(ProductVideo::class, 'id', 'product_id');
     }
 
 

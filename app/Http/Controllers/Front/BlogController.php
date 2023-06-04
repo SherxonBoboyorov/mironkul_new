@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\ProductVideo;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -24,6 +25,12 @@ class BlogController extends Controller
 
         $productimages = ProductImage::where('product_id', $product->id)->get();
 
-       return view('front.SandwichProducts_In', compact('product', 'productimages'));
+        $productvideos = ProductVideo::where('product_id', $product->id)->get();
+
+        return view('front.SandwichProducts_in', compact(
+            'product',
+            'productimages',
+            'productvideos'
+        ));
     }
 }

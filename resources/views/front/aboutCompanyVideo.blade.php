@@ -178,7 +178,7 @@
                             <a data-fancybox class="about__item__video" href="{{ asset($video->video) }}">
                                 <section>
                                   <h3 class="products__list__title__h3">{{ $video->{'title_' . app()->getLocale()} }}</h3>
-                                  <video class="inline" src="{{ asset($video->video) }}" alt="videoItem">
+                                  <img class="inline" src="{{ asset($video->image) }}" alt="videoItem">
                                   <!-- play start -->
                                     
                                     <div class="button__min is-play">

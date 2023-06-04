@@ -35,7 +35,7 @@
                     <thead>
                         <tr>
                             <th style="width: 2%;">#</th>
-                            <th>Image</th>
+                            <th>Video Image</th>
                             <th>Products</th>
                             <th>Title [Uzbek]</th>
                             <th>Title [Russian]</th>

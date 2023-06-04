@@ -24,6 +24,7 @@ class CreateVideo extends FormRequest
     public function rules(): array
     {
         return [
+            'image' => 'required|image|mimes:png,jpg,jpeg,webp',
             'video' => 'required|file|mimetypes:video/mp4,mkv',
             'title_ru' => 'required|max:255',
             'title_uz' => 'required|max:255',

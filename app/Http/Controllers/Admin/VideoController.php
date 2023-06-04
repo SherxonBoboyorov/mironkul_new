@@ -43,6 +43,7 @@ class VideoController extends Controller
     {
         $data = $request->all();
 
+        $data['image'] = Video::uploadImage($request);
         $data['video'] = Video::uploadVideo($request);
         $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');
         $data['slug_uz'] = Str::slug($request->title_uz, '-', 'uz');
@@ -93,6 +94,8 @@ class VideoController extends Controller
         $video = Video::find($id);
 
         $data = $request->all();
+
+        $data['image'] = Video::updateImage($request, $video);
 
         $data['video'] = Video::updateVideo($request, $video);
         $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');

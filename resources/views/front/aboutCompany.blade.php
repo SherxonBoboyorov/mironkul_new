@@ -2,6 +2,109 @@
 
 @section('content')
 
+ 
+ <!-- header start -->
+
+ <header>
+  <div class="header_in">
+    <div class="header_in__list">
+      <div class="header_in__item">
+        <section class="container_in">
+          <div class="header_in__item__list">
+            <div class="header__logo">
+              <a href="{{ route('/') }}">
+                <picture>
+                  <source srcset="{{ asset('front/foto/logo.svg') }}" media="(max-width:1050px)" />
+                  <img src="{{ asset('front/foto/logoBlick.svg') }}" alt="logoBlick" />
+                </picture>
+              </a>
+            </div>
+
+          
+            <ul class="header__locales">
+              @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+              <li>
+                 <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                   {{ $properties['native'] }}
+                </a>
+            </li>
+           @endforeach
+          </ul>
+          </div>
+        </section>
+      </div>
+
+      <div class="header_in__item">
+        <section class="container_in">
+          <div class="header_in__item__list">
+            <ul class="header_in__menu">
+              <li>
+                <a href="{{ route('/') }}" class="header_in__menu__link">Главная</a>
+              </li>
+
+              <li>
+                <a href="{{ route('about') }}" class="header_in__menu__link">о компании</a>
+              </li>
+            </ul>
+
+            <button class="header__burger__menu">
+              <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="header__menu">
+             
+              <ul class="header__locales">
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <li>
+                   <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                     {{ $properties['native'] }}
+                  </a>
+              </li>
+             @endforeach
+            </ul>
+              <button class="header__menu__none">
+                <i class="fas fa-times"></i>
+              </button>
+
+              <ul class="header__menu__list">
+                <li class="header__menu__item wow">
+                  <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
+                </li>
+
+                <li class="header__menu__item wow">
+                  <a href="#!" class="header__menu__link">Сэндвич панели</a>
+                  <ul class="header__none__menu">
+                    <li>
+                      <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
+                    </li>
+
+                    <li>
+                      <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                    </li>
+                  </ul>
+                </li>
+
+               
+
+                
+
+
+
+                <li class="header__menu__item wow">
+                  <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <section class="sidenav-overlay"></section>
+</header>
+
+<!-- header end -->
+
   <!-- Products start -->
 
   <div class="products"> 

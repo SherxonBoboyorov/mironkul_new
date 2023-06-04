@@ -17,10 +17,12 @@ class ProductImage extends Model
         'image'
     ];
 
+    
     public function product()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo('App\Models\Product', 'product_id');
     }
+
 
     public static function uploadImage($request): ?string
     {

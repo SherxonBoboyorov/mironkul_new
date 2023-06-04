@@ -67,7 +67,10 @@
                             <i class="fas fa-times"></i>
                           </button>
                           
-                          <ul class="header__menu__list">
+                          <ul class="header__menu__list"> 
+                            <li class="header__menu__item wow">
+                            <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
+                          </li>
 
                             <li class="header__menu__item wow">
                               <a href="#!" class="header__menu__link">Сэндвич панели</a>
@@ -80,11 +83,6 @@
                                   <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
                                 </li>
                               </ul>
-                            </li>
-            
-            
-                            <li class="header__menu__item wow">
-                              <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
                             </li>
             
                             <li class="header__menu__item wow">

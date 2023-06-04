@@ -11,27 +11,23 @@
               <section class="container_in">
                 <div class="header_in__item__list">
                   <div class="header__logo">
-                    <a href="index.html">
+                    <a href="{{ route('/') }}">
                       <picture>
-                        <source srcset="foto/logo.svg" media="(max-width:1050px)" />
-                        <img src="foto/logoBlick.svg" alt="logoBlick" />
+                        <source srcset="{{ asset('front/foto/logo.svg') }}" media="(max-width:1050px)" />
+                        <img src="{{ asset('front/foto/logoBlick.svg') }}" alt="logoBlick" />
                       </picture>
                     </a>
                   </div>
   
                   <ul class="header__locales">
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li>
-                      <a href="#!" class="header__locales__link active">uz</a>
-                    </li>
-  
-                    <li>
-                      <a href="#!" class="header__locales__link">ru</a>
-                    </li>
-  
-                    <li>
-                      <a href="#!" class="header__locales__link">en </a>
-                    </li>
-                  </ul>
+                       <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                         {{ $properties['native'] }}
+                      </a>
+                  </li>
+                 @endforeach
+                </ul>
                 </div>
               </section>
             </div>
@@ -41,7 +37,7 @@
                 <div class="header_in__item__list">
                   <ul class="header_in__menu">
                     <li>
-                      <a href="#!" class="header_in__menu__link">Сэндвич панели</a>
+                      <a class="header_in__menu__link">Сэндвич панели</a>
                     </li>
   
                     <li>
@@ -55,25 +51,21 @@
   
                   <div class="header__menu">
                     <ul class="header__locales">
+                      @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                       <li>
-                        <a href="#!" class="header__locales__link active">uz</a>
-                      </li>
-  
-                      <li>
-                        <a href="#!" class="header__locales__link">ru</a>
-                      </li>
-  
-                      <li>
-                        <a href="#!" class="header__locales__link">en </a>
-                      </li>
-                    </ul>
+                         <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                           {{ $properties['native'] }}
+                        </a>
+                    </li>
+                   @endforeach
+                  </ul>
                     <button class="header__menu__none">
                       <i class="fas fa-times"></i>
                     </button>
   
                     <ul class="header__menu__list">
                       <li class="header__menu__item wow">
-                        <a href="aboutCompany.html" class="header__menu__link">О компании</a>
+                        <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
                       </li>
   
                       <li class="header__menu__item wow">
@@ -90,59 +82,7 @@
                       </li>
   
                       <li class="header__menu__item wow">
-                        <a href="#!" class="header__menu__link">Металлоконструкции</a>
-                        <ul class="header__none__menu">
-                          <li>
-                            <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                          </li>
-  
-                          <li>
-                            <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                          </li>
-                        </ul>
-                      </li>
-  
-                      <li class="header__menu__item wow">
-                        <a href="#!" class="header__menu__link">Кисловодск</a>
-                        <ul class="header__none__menu">
-                          <li>
-                            <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                          </li>
-  
-                          <li>
-                            <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                          </li>
-                        </ul>
-                      </li>
-  
-                      <li class="header__menu__item wow">
-                        <a href="#!" class="header__menu__link">Кабельные лотки</a>
-                        <ul class="header__none__menu">
-                          <li>
-                            <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                          </li>
-  
-                          <li>
-                            <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                          </li>
-                        </ul>
-                      </li>
-  
-                      <li class="header__menu__item wow">
-                        <a href="#!" class="header__menu__link">Система вентиляции</a>
-                        <ul class="header__none__menu">
-                          <li>
-                            <a href="SandwichProducts.html" class="header__none__link">О продукции</a>
-                          </li>
-  
-                          <li>
-                            <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                          </li>
-                        </ul>
-                      </li>
-  
-                      <li class="header__menu__item wow">
-                        <a href="contacts.html" class="header__menu__link">Контакты</a>
+                        <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
                       </li>
                     </ul>
                   </div>
@@ -166,80 +106,24 @@
                 <h2 class="products__title__h2">О продукции</h2>
   
                 <div class="products__item__list">
+                  @foreach($products as $product)
+                    
                   <section class="products__item__wowjs wow">
                     <div class="products__list__item">
                       <div class="products__list__img">
-                        <img src="foto/products_1.png" alt="products" />
-                        <h3 class="products__list__title__h3">Сэндвич панели</h3>
-                        <h4 class="products__list__title__h4">50 мм</h4>
+                        <img src="{{ asset($product->image) }}" alt="products" />
+                        <h3 class="products__list__title__h3">{{ $product->{'title_' . app()->getLocale()} }}</h3>
+                        <h4 class="products__list__title__h4">{{ $product->{'info_' . app()->getLocale()} }}</h4>
                       </div>
   
-                      <a href="SandwichProducts_in.html" class="products__list__link">
+                      <a href="{{ route('product', $product->{'slug_' . app()->getLocale()}) }}" class="products__list__link">
                         Подробнее
                         <span><i class="fas fa-angle-double-right"></i></span>
                       </a>
                     </div>
                   </section>
-  
-                  <section class="products__item__wowjs wow">
-                    <div class="products__list__item">
-                      <div class="products__list__img">
-                        <img src="foto/products_2.png" alt="products" />
-                        <h3 class="products__list__title__h3">Сэндвич панели</h3>
-                        <h4 class="products__list__title__h4">100 мм</h4>
-                      </div>
-  
-                      <a href="SandwichProducts_in.html" class="products__list__link">
-                        Подробнее
-                        <span><i class="fas fa-angle-double-right"></i></span>
-                      </a>
-                    </div>
-                  </section>
-  
-                  <section class="products__item__wowjs wow">
-                    <div class="products__list__item">
-                      <div class="products__list__img">
-                        <img src="foto/products_3.png" alt="products" />
-                        <h3 class="products__list__title__h3">Сэндвич панели</h3>
-                        <h4 class="products__list__title__h4">150 мм</h4>
-                      </div>
-  
-                      <a href="SandwichProducts_in.html" class="products__list__link">
-                        Подробнее
-                        <span><i class="fas fa-angle-double-right"></i></span>
-                      </a>
-                    </div>
-                  </section>
-  
-                  <section class="products__item__wowjs wow">
-                    <div class="products__list__item">
-                      <div class="products__list__img">
-                        <img src="foto/products_4.png" alt="products" />
-                        <h3 class="products__list__title__h3">Сэндвич панели</h3>
-                        <h4 class="products__list__title__h4">125 мм</h4>
-                      </div>
-  
-                      <a href="SandwichProducts_in.html" class="products__list__link">
-                        Подробнее
-                        <span><i class="fas fa-angle-double-right"></i></span>
-                      </a>
-                    </div>
-                  </section>
-  
-                  <section class="products__item__wowjs wow">
-                    <div class="products__list__item">
-                      <div class="products__list__img">
-                        <img src="foto/products_5.png" alt="products" />
-                        <h3 class="products__list__title__h3">Сэндвич панели</h3>
-                        <h4 class="products__list__title__h4">125 мм</h4>
-                      </div>
-  
-                      <a href="SandwichProducts_in.html" class="products__list__link">
-                        Подробнее
-                        <span><i class="fas fa-angle-double-right"></i></span>
-                      </a>
-                    </div>
-                  </section>
+                  @endforeach
+
                 </div>
               </div>
             </section>
@@ -248,14 +132,14 @@
           <div class="products__item__cart">
             <section
               class="products__cart__fons"
-              style="background-image: url(foto/fon.png)"
+              style="background-image: url({{ asset('front/foto/fon.png') }})"
             ></section>
             <div class="products__cart__item">
               <section class="container_in">
                 <div>
                   <ul class="products__menu">
                     <li class="wow">
-                      <a href="SandwichProducts.html" class="products__menu__link active">
+                      <a href="{{ route('products') }}" class="products__menu__link active">
                         о Продукции
                       </a>
                     </li>

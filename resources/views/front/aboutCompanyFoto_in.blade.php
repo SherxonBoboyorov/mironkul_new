@@ -69,6 +69,11 @@
                           
                           <ul class="header__menu__list">
 
+
+                            <li class="header__menu__item wow">
+                              <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
+                            </li>
+
                             <li class="header__menu__item wow">
                               <a href="#!" class="header__menu__link">Сэндвич панели</a>
                               <ul class="header__none__menu">
@@ -83,9 +88,7 @@
                             </li>
             
             
-                            <li class="header__menu__item wow">
-                              <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
-                            </li>
+                          
             
                             <li class="header__menu__item wow">
                               <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>

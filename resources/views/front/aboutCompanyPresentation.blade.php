@@ -70,6 +70,10 @@
                           
                           <ul class="header__menu__list">
                             <li class="header__menu__item wow">
+                              <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
+                            </li>
+                            
+                            <li class="header__menu__item wow">
                               <a href="#!" class="header__menu__link">Сэндвич панели</a>
                               <ul class="header__none__menu">
                                 <li>
@@ -80,62 +84,6 @@
                                   <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
                                 </li>
                               </ul>
-                            </li>
-            
-                            <li class="header__menu__item wow">
-                              <a href="#!" class="header__menu__link">Металлоконструкции</a>
-                              <ul class="header__none__menu">
-                                <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                                </li>
-            
-                                <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                                </li>
-                              </ul>
-                            </li>
-            
-                            <li class="header__menu__item wow">
-                              <a href="#!" class="header__menu__link">Кисловодск</a>
-                              <ul class="header__none__menu">
-                                <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                                </li>
-            
-                                <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                                </li>
-                              </ul>
-                            </li>
-            
-                            <li class="header__menu__item wow">
-                              <a href="#!" class="header__menu__link">Кабельные лотки</a>
-                              <ul class="header__none__menu">
-                                <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                                </li>
-            
-                                <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                                </li>
-                              </ul>
-                            </li>
-            
-                            <li class="header__menu__item wow">
-                              <a href="#!" class="header__menu__link">Система вентиляции</a>
-                              <ul class="header__none__menu">
-                                <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
-                                </li>
-            
-                                <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
-                                </li>
-                              </ul>
-                            </li>
-            
-                            <li class="header__menu__item wow">
-                              <a href="aboutCompany.html" class="header__menu__link">О компании</a>
                             </li>
             
                             <li class="header__menu__item wow">

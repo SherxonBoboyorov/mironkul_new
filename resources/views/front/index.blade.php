@@ -143,7 +143,7 @@
                     <a href="#!" class="header__menu__link">Сэндвич панели</a>
                     <ul class="header__none__menu">
                       <li>
-                        <a href="SandwichProducts.html" class="header__none__link">О О продукции</a>
+                        <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
                       </li>
 
                       <li>

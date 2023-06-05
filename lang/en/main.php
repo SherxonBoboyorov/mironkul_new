@@ -11,5 +11,7 @@ return [
    'show_on_the_map' => 'Show on the map',
    'presentation' => 'Presentation',
    'feedback' => 'Feedback', 
-   'more' => 'More'
+   'more' => 'More',
+   'photo_materials' => 'Photo materials',
+   'video_materials' => 'Video materials'
 ];

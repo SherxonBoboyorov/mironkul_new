@@ -11,5 +11,7 @@ return [
     'show_on_the_map' => 'Xaritada ko\'rsatish',
     'presentation' => 'Taqdimot',
     'feedback' => 'Qayta aloqa',
-    'more' => 'Ko\'proq'
+    'more' => 'Ko\'proq',
+    'photo_materials' => 'Foto materiallar',
+    'video_materials' => 'Video materiallar'
 ];

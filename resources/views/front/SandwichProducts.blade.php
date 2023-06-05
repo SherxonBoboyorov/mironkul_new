@@ -117,7 +117,7 @@
                       </div>
   
                       <a href="{{ route('product', $product->{'slug_' . app()->getLocale()}) }}" class="products__list__link">
-                        Подробнее
+                        @lang('main.more')
                         <span><i class="fas fa-angle-double-right"></i></span>
                       </a>
                     </div>

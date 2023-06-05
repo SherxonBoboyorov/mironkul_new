@@ -121,14 +121,14 @@
                 <div class="products__foto__img">
                   <i class="far fa-images"></i>
                 </div>
-                <h3 class="products__title__foto">Фото материалы</h3>
+                <h3 class="products__title__foto">@lang('main.photo_materials')</h3>
               </div>
 
               <div class="products__item__video wow" data-item="videoItem">
                 <div class="products__foto__img">
                   <i class="far fa-play-circle"></i>
                 </div>
-                <h3 class="products__title__foto">Видео материалы</h3>
+                <h3 class="products__title__foto">@lang('main.video_materials')</h3>
               </div>
             </div>
           </section>

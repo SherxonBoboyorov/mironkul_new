@@ -78,17 +78,15 @@
                               <a href="#!" class="header__menu__link">Сэндвич панели</a>
                               <ul class="header__none__menu">
                                 <li>
-                                  <a href="SandwichProducts.html" class="header__none__link">Продукция</a>
+                                  <a href="{{ route('products') }}" class="header__none__link">Продукция</a>
                                 </li>
             
                                 <li>
-                                  <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                                  <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
                                 </li>
                               </ul>
                             </li>
-            
-            
-                          
+
             
                             <li class="header__menu__item wow">
                               <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>

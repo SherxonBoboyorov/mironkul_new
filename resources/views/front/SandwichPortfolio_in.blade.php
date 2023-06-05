@@ -160,14 +160,14 @@
               </div>
 
               <div class="products__item__list products__foto" data-item="videoItem">
-                @foreach($portfolioimages as $portfolioimage)
+                @foreach($portfoliovideos as $portfoliovideo)
                 <section class="products__item__wowjs wow">
                   <div class="products__video__item">
                     <p class="text-center">
-                      <a data-fancybox class="about__item__video" href="{{ $portfolioimage->video }}">
+                      <a data-fancybox class="about__item__video" href="{{ $portfoliovideo->video }}">
                         <section>
-                          <h3 class="products__list__title__h3">{{ $portfolioimage->{'title_' . app()->getLocale()} }}</h3>
-                          <img class="inline" src="{{ asset($portfolioimage->image) }}" alt="videoItem" />
+                          <h3 class="products__list__title__h3">{{ $portfoliovideo->{'title_' . app()->getLocale()} }}</h3>
+                          <img class="inline" src="{{ asset($portfoliovideo->image) }}" alt="videoItem" />
                           <!-- play start -->
 
                           <div class="button__min is-play">

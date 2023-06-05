@@ -147,7 +147,7 @@
                       </li>
 
                       <li>
-                        <a href="SandwichPortfolio.html" class="header__none__link">Портфолио</a>
+                        <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
                       </li>
                     </ul>
                   </li>

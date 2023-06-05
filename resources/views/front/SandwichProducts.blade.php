@@ -41,7 +41,7 @@
                     </li>
   
                     <li>
-                      <a href="SandwichProducts.html" class="header_in__menu__link">О продукции</a>
+                      <a href="{{ route('products') }}" class="header_in__menu__link">О продукции</a>
                     </li>
                   </ul>
   

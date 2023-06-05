@@ -37,7 +37,7 @@
               <div class="header_in__item__list">
                 <ul class="header_in__menu">
                   <li>
-                    <a href="{{ route('products') }}" class="header_in__menu__link">О продукции</a>
+                    <a href="{{ route('products') }}" class="header_in__menu__link">@lang('main.aboutproducts')</a>
                   </li>
 
                   <li>
@@ -65,25 +65,25 @@
 
                   <ul class="header__menu__list">
                     <li class="header__menu__item wow">
-                      <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
+                      <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
                     </li>
 
                     <li class="header__menu__item wow">
                       <a href="#!" class="header__menu__link">Сэндвич панели</a>
                       <ul class="header__none__menu">
                         <li>
-                          <a href="{{ route('products') }}" class="header__none__link">О продукции</a>
+                          <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                         </li>
 
                         <li>
-                          <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                          <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                         </li>
                       </ul>
                     </li>
 
 
                     <li class="header__menu__item wow">
-                      <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
+                      <a href="{{ route('contact') }}" class="header__menu__link">@lang('main.contacts')</a>
                     </li>
                   </ul>
                 </div>
@@ -141,7 +141,7 @@
                   <div class="products__foto__img">
                     <i class="far fa-images"></i>
                   </div>
-                  <h3 class="products__title__foto">Портфолио</h3>
+                  <h3 class="products__title__foto">@lang('main.portfolio')</h3>
                 </a>
               </div>
             </section>

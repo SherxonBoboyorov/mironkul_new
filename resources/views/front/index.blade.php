@@ -38,13 +38,7 @@
           <img src="{{ asset('front/foto/icons/loading.svg') }}" alt="" />
         </div>
         <section class="loading__list__img">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="100%"
-            viewBox="0 0 800 120"
-            class="icons1 svg-1"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 120" class="icons1 svg-1">
             <defs></defs>
             <text id="MIRONKUL" data-name="M I R O N K U L" class="preloader-1" x="402" y="96">
               <tspan x="402">
@@ -66,13 +60,7 @@
               </tspan>
             </text>
           </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="100%"
-            viewBox="0 0 800 100"
-            class="icons2 svg-2"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 100" class="icons2 svg-2">
             <text id="GROUP" data-name="G R O U P" class="preloader-3" x="399" y="81">
               <tspan x="390">
                 G
@@ -136,25 +124,29 @@
 
                 <ul class="header__menu__list">
                   <li class="header__menu__item wow">
-                    <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
+                    <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
                   </li>
 
                   <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Сэндвич панели</a>
+                    @foreach($categories as $category)
+                      
+                    <a href="#!" class="header__menu__link">{{ $category->{'title_' . app()->getLocale()} }}</a>
                     <ul class="header__none__menu">
                       <li>
-                        <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                        <a href="post={{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                       </li>
 
                       <li>
-                        <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                        <a href="post={{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                       </li>
                     </ul>
+                    @endforeach
+
                   </li>
 
 
                   <li class="header__menu__item wow">
-                    <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
+                    <a href="{{ route('contact') }}" class="header__menu__link">@lang('main.contacts')</a>
                   </li>
                 </ul>
               </div>
@@ -172,15 +164,11 @@
     <div class="slider">
       <div class="slider__cart">
         <div class="slider__list">
+          @foreach($categories as $category)
+            
           <div class="slide active" style="background-image: url('{{ asset('front/foto/slide.png') }}')"></div>
+          @endforeach
 
-          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_2.png') }}')"></div>
-
-          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_3.png') }}')"></div>
-
-          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_4.png') }}')"></div>
-
-          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_5.png') }}')"></div>
 
           <section class="slider__center">
             <div class="slider__menu">
@@ -200,28 +188,28 @@
               <div class="slider__menu__cart">
                 <ul class="slider__list__cart">
                   <li class="wow">
-                    <a href="SandwichProducts.html" class="slider__list__link">
+                    <a href="{{ route('products') }}" class="slider__list__link">
                       <div class="slider__list__img">
-                        <img src="foto/icons/icons_1.svg" alt="icons" />
+                        <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
                       </div>
-                      О продукции
+                      @lang('main.aboutproducts')
                     </a>
                   </li>
 
                   <li class="wow">
-                    <a href="SandwichPortfolio.html" class="slider__list__link">
+                    <a href="{{ route('portfolios') }}" class="slider__list__link">
                       <div class="slider__list__img">
-                        <img src="foto/icons/icons_2.svg" alt="icons" />
+                        <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
                       </div>
-                      Портфолио
+                      @lang('main.portfolio')
                     </a>
                   </li>
                 </ul>
-
-               
               </div>
             </section>
+
           </section>
+
         </div>
       </div>
     </div>

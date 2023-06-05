@@ -35,11 +35,11 @@
               <div class="header_in__item__list">
                 <ul class="header_in__menu">
                   <li>
-                    <a href="{{ route('/') }}" class="header_in__menu__link">Главная</a>
+                    <a href="{{ route('/') }}" class="header_in__menu__link">@lang('main.main')</a>
                   </li>
 
                   <li>
-                    <a href="{{ route('contact') }}" class="header_in__menu__link">контакты</a>
+                    <a class="header_in__menu__link">@lang('main.contacts')</a>
                   </li>
                 </ul>
 
@@ -63,25 +63,25 @@
 
                   <ul class="header__menu__list">
                     <li class="header__menu__item wow">
-                      <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
+                      <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
                     </li>
 
                     <li class="header__menu__item wow">
                       <a href="#!" class="header__menu__link">Кабельные лотки</a>
                       <ul class="header__none__menu">
                         <li>
-                          <a href="{{ route('products') }}" class="header__none__link">О продукции</a>
+                          <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                         </li>
 
                         <li>
-                          <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                          <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                         </li>
                       </ul>
                     </li>
 
 
                     <li class="header__menu__item wow">
-                      <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
+                      <a href="{{ route('contact') }}" class="header__menu__link">@lang('main.contacts')</a>
                     </li>
                   </ul>
                 </div>
@@ -129,7 +129,7 @@
                     
                   </ul>
                   <a href="{{ $options->where('key', 'map')->first()->value }}" class="contacts__link__map" target="{{ $options->where('key', 'map')->first()->value }}">
-                    Показать на карте
+                    @lang('main.show_on_the_map')
                     <span><i class="fas fa-map-marker-alt"></i></span>
                   </a>
                 </div>
@@ -176,7 +176,7 @@
                     </li>
                   </ul>
                   <a href="{{ $office->map }}!#" class="contacts__link__map" target="{{ $office->map }}">
-                    Показать на карте
+                   @lang('main.show_on_the_map')
                     <span><i class="fas fa-map-marker-alt"></i></span>
                   </a>
                   @endforeach
@@ -190,14 +190,13 @@
         <div class="products__item__cart">
           <section
             class="products__cart__fons"
-            style="background-image: url({{ asset('front/foto/contacts.png') }})"
-          ></section>
+            style="background-image: url({{ asset('front/foto/contacts.png') }})" ></section>
 
           @include('alert')
           <section class="products__list__scrull">
             <section class="container_in">
               <div class="contacts__cart">
-                <h2 class="products__title__h2">Обратная связь</h2>
+                <h2 class="products__title__h2">@lang('main.feedback')</h2>
 
                 <form action="{{ route('yourSave') }}" class="contacts__form" method="POST">
                   <input type="text" name="fullname" class="contacts__input wow fadeInLeft" placeholder="ФИО" required/>

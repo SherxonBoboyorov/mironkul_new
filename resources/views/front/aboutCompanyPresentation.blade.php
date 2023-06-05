@@ -38,15 +38,15 @@
 
                         <ul class="header_in__menu">
                             <li>
-                              <a href="{{ route('/') }}" class="header_in__menu__link">Главная</a>
+                              <a href="{{ route('/') }}" class="header_in__menu__link">@lang('main.main')</a>
                            </li>
 
                             <li>
-                                <a href="{{ route('about') }}" class="header_in__menu__link">о компании</a>
+                                <a href="{{ route('about') }}" class="header_in__menu__link">@lang('main.contacts')</a>
                             </li>
 
                             <li>
-                              <a class="header_in__menu__link">Презентация</a>
+                              <a class="header_in__menu__link">@lang('main.presentation')</a>
                             </li>
                         </ul>
 
@@ -70,24 +70,24 @@
                           
                           <ul class="header__menu__list">
                             <li class="header__menu__item wow">
-                              <a href="{{ route('about') }}" class="header__menu__link">О компании</a>
+                              <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
                             </li>
                             
                             <li class="header__menu__item wow">
                               <a href="#!" class="header__menu__link">Сэндвич панели</a>
                               <ul class="header__none__menu">
                                 <li>
-                                  <a href="{{ route('products') }}" class="header__none__link">Продукция</a>
+                                  <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                                 </li>
             
                                 <li>
-                                  <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                                  <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                                 </li>
                               </ul>
                             </li>
             
                             <li class="header__menu__item wow">
-                              <a href="{{ route('contact') }}" class="header__menu__link">Контакты</a>
+                              <a href="{{ route('contact') }}" class="header__menu__link">@lang('main.contacts')</a>
                             </li>
                           </ul>
                         </div>
@@ -109,7 +109,7 @@
       <div class="products__list__scrull">
         <section class="container_in">
           <div class="products__aboutCompany__item">
-            <h2 class="products__title__h2">Презентация</h2>
+            <h2 class="products__title__h2">@lang('main.presentation')</h2>
           </div>
         </section>
 

@@ -11,7 +11,7 @@ class IndexController extends Controller
 {
     public function homepage() 
     {
-        $categories = Category::orderBy('created_at', 'DESC')->get();
+        $categories = Category::orderBy('id')->get();
        
         return view('front.index', [
             'categories' => $categories,

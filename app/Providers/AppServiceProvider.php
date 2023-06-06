@@ -26,10 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $options = Options::all();
+        $options = Options::all();
 
-        // View::share('options', $options);
+        View::share('options', $options);
 
-        // Paginator::useBootstrap();
+        Paginator::useBootstrap();
     }
 }

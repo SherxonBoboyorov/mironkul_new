@@ -195,9 +195,9 @@
           <section class="container_in">
             <section class="products__footer">
               <div class="footer__list">
-                <a href="tel:97 442 27 26" class="footer__contacts__link">
+                <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="footer__contacts__link">
                   <span><i class="fas fa-phone"></i></span>
-                  <section><p>97</p>442 27 26</section>
+                  <section><p>{{ $options->where('key', 'phone')->first()->value }}</p></section>
                 </a>
     
                 <h4 class="footer__title__h4">

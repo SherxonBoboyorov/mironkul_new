@@ -13,20 +13,15 @@
     <meta name="msapplication-TileColor" content="#000000" />
     <meta name="theme-color" content="#000000" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <link rel="stylesheet" href="{{ asset('front/css/index.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/animate.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/fancybox-main.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/slick.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}" />
-    <title>Mirankul</title>
+    
+    {!! Meta::toHtml() !!}
   </head>
 
   <body>
@@ -133,11 +128,11 @@
                     <a href="#!" class="header__menu__link">{{ $category->{'title_' . app()->getLocale()} }}</a>
                     <ul class="header__none__menu">
                       <li>
-                        <a href="post={{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                        <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                       </li>
 
                       <li>
-                        <a href="post={{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
+                        <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                       </li>
                     </ul>
                     @endforeach
@@ -164,22 +159,17 @@
     <div class="slider">
       <div class="slider__cart">
         <div class="slider__list">
-          @foreach($categories as $category)
             
-          <div class="slide active" style="background-image: url('{{ asset('front/foto/slide.png') }}')"></div>
-          @endforeach
-
+          <div class="slide active" style="background-image: url('{{ asset($category->image) }}')"></div>
 
           <section class="slider__center">
             <div class="slider__menu">
               <section class="container">
                 <div class="slider__menu__list">
-                  @foreach($categories as $category)
                   <div class="slider__button">
                     <h3 class="slider__title__h3">{{ $category->{'title_' . app()->getLocale()} }}</h3>
                     <h4 class="slider__title__h4">{{ $category->{'name_' . app()->getLocale()} }}</h4>
                   </div> 
-                  @endforeach
                 </div>
               </section>
             </div>
@@ -225,23 +215,23 @@
             <div class="footer__list">
               <ul class="footer__menu__icons">
                 <li>
-                  <a href="#!" class="footer__link__icons"><i class="fab fa-instagram"></i></a>
+                  <a href="{{ $options->where('key', 'instagram')->first()->value }}" class="footer__link__icons"><i class="fab fa-instagram"></i></a>
                 </li>
 
                 <li>
-                  <a href="#!" class="footer__link__icons"><i class="fab fa-facebook-f"></i></a>
+                  <a href="{{ $options->where('key', 'facebook')->first()->value }}" class="footer__link__icons"><i class="fab fa-facebook-f"></i></a>
                 </li>
 
                 <li>
-                  <a href="#!" class="footer__link__icons"><i class="fab fa-telegram-plane"></i></a>
+                  <a href="{{ $options->where('key', 'telegram')->first()->value }}" class="footer__link__icons"><i class="fab fa-telegram-plane"></i></a>
                 </li>
               </ul>
 
-              <a href="tel:97 442 27 26" class="footer__contacts__link">
+              <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="footer__contacts__link">
                 <span><i class="fas fa-phone"></i></span>
                 <section>
-                  <p>97</p>
-                  442 27 26
+                  <p>{{ $options->where('key', 'phone')->first()->value }}</p>
+          
                 </section>
               </a>
 

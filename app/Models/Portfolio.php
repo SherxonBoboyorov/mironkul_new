@@ -13,7 +13,6 @@ class Portfolio extends Model
     protected $table = 'portfolios';
 
     protected $fillable = [
-        'category_id',
         'image',
         'title_ru',
         'title_uz',
@@ -31,12 +30,6 @@ class Portfolio extends Model
         'meta_description_uz',
         'meta_description_en'
     ];
-
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
     
     public function portfolio_images()
     {

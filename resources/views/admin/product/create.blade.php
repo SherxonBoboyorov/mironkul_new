@@ -20,23 +20,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
-                        <div class="col-md-3">
-                            <label>Categories</label>
-                            <select name="category_id" id="category_id" class="form-control">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->title_en }}</option>
-                                @endforeach
-                            </select>
-                            @if($errors->has('category_id'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                {{ $errors->first('category_id') }}
-                            </div>
-                            @endif
-                        </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="title_uz">Title [Uzbek]</label>
                             <input type="text" id="title_uz" class="form-control" name="title_uz">
                             @if($errors->has('title_uz'))
@@ -48,7 +32,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="title_ru">Title [Russian]</label>
                             <input type="text" id="title_ru" class="form-control" name="title_ru">
                             @if($errors->has('title_ru'))
@@ -60,7 +44,7 @@
                             </div>
                             @endif
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label for="title_en">Title [English]</label>
                             <input type="text" id="title_en" class="form-control" name="title_en">
                             @if($errors->has('title_en'))

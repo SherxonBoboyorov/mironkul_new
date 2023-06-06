@@ -21,9 +21,7 @@ class PortfolioController extends Controller
     public function index()
     {
         $portfolios = Portfolio::orderBy('id')->paginate(12);
-        return view('admin.portfolio.index', [
-            'portfolios' => $portfolios
-        ]);
+        return view('admin.portfolio.index', compact('portfolios'));
     }
 
     /**
@@ -33,11 +31,7 @@ class PortfolioController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-
-        return view('admin.portfolio.create', [
-            'categories' => $categories
-        ]);
+        return view('admin.portfolio.create');
     }
 
     /**
@@ -77,13 +71,10 @@ class PortfolioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Portfolio $portfolio)
+    public function edit($id)
     {
-        $category = Category::all();
-        return view('admin.portfolio.edit', [
-            'category' => $category,
-            'portfolio' => $portfolio
-        ]);
+        $portfolio = Portfolio::find($id);
+        return view('admin.portfolio.edit', compact('portfolio'));
     }
 
     /**

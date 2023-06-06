@@ -20,11 +20,9 @@ class IndexController extends Controller
         Meta::setDescription(Options::where('key', 'meta_description_' . LaravelLocalization::getCurrentLocale())->first()->value);
 
         $categories = Category::orderBy('id')->get();
-        // $products = Product::where('category_id', $categories->id)->get();
        
         return view('front.index', [
-            'categories' => $categories,
-            // 'products' => $products
+            'categories' => $categories
         ]);
     }
 }

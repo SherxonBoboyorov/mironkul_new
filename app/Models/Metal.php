@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 
-class Product extends Model
+class Metal extends Model
 {
     use HasFactory;
 
-    protected $table = 'products';
+    protected $table = 'metals';
 
     protected $fillable = [
         'image',
@@ -34,19 +34,6 @@ class Product extends Model
         'meta_description_en'
     ];
 
-
-    public function product_images() {
-        return $this->hasMany(ProductImage::class, 'id', 'product_id');
-    }
-
-
-    public function product_videos()
-    {
-        return $this->hasMany(ProductVideo::class, 'id', 'product_id');
-    }
-
-
-    
     public static function uploadImage($request): ?string
     {
         if ($request->hasFile('image')) {
@@ -55,39 +42,39 @@ class Product extends Model
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/product/' . date('d-m-Y'),
+                    public_path() . '/upload/metal/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/product/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/metal/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
         return null;
     }
 
-    public static function updateImage($request, $product): string
+    public static function updateImage($request, $metal): string
     {
         if ($request->hasFile('image')) {
-            if (File::exists(public_path() . $product->image)) {
-                File::delete(public_path() . $product->image);
+            if (File::exists(public_path() . $metal->image)) {
+                File::delete(public_path() . $metal->image);
             }
 
             self::checkDirectory();
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/product/' . date('d-m-Y'),
+                    public_path() . '/upload/metal/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/product/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/metal/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
-        return $product->image;
+        return $metal->image;
     }
 
     private static function checkDirectory(): bool
     {
-        if (!File::exists(public_path() . '/upload/product/' . date('d-m-Y'))) {
-            File::makeDirectory(public_path() . '/upload/product/' . date('d-m-Y'), $mode = 0777, true, true);
+        if (!File::exists(public_path() . '/upload/metal/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/metal/' . date('d-m-Y'), $mode = 0777, true, true);
         }
 
         return true;

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\MetalController;
+use App\Http\Controllers\Admin\MetalImageController;
 use App\Http\Controllers\Admin\OfficeController;
 use App\Http\Controllers\Admin\OptionsController;
 use App\Http\Controllers\Admin\PageController;
@@ -49,7 +50,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'office' => OfficeController::class,
         'category' => CategoryController::class,
         'categorytype' => CategoryTypeController::class,
-        'metal' => MetalController::class
+        'metal' => MetalController::class,
+        'metalimage' => MetalImageController::class
     ]);
 });
 

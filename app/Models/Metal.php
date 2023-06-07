@@ -34,6 +34,17 @@ class Metal extends Model
         'meta_description_en'
     ];
 
+
+    public function pmetal_images() {
+        return $this->hasMany(MetalImage::class, 'id', 'metal_id');
+    }
+
+
+    public function metal_videos()
+    {
+        return $this->hasMany(MetalVideo::class, 'id', 'metal_id');
+    }
+
     public static function uploadImage($request): ?string
     {
         if ($request->hasFile('image')) {

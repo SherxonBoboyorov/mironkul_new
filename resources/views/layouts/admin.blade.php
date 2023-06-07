@@ -37,7 +37,7 @@
 
 
                     {{-- start  --}}
-                       <li class="nav-item" >
+                       <li class="nav-item">
                         <a href="{{ route('product.index') }}" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
@@ -118,7 +118,7 @@
                       <a href="{{ route('metal.index') }}" class="nav-link">
                       <i class="nav-icon"></i>
                       <p>
-                          Metals
+                        Product
                            <i class="right fas fa-angle-left"></i>
                       </p>
                       </a>
@@ -130,7 +130,7 @@
                     <a href="{{ route('metalimage.index') }}" class="nav-link">
                     <i class="nav-icon"></i>
                     <p>
-                        Metal Image
+                      Product Image
                          <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>
@@ -143,7 +143,19 @@
                     <a href="{{ route('metalvideo.index') }}" class="nav-link">
                     <i class="nav-icon"></i>
                     <p>
-                        Metal Video
+                      Product Video
+                         <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                  </li>
+                {{-- end  --}}
+
+                   {{-- start  --}}
+                   <li class="nav-item" >
+                    <a href="{{ route('portfoliometal.index') }}" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                        Partfolio
                          <i class="right fas fa-angle-left"></i>
                     </p>
                     </a>

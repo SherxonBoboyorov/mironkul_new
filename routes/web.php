@@ -33,6 +33,7 @@ use App\Http\Controllers\Front\Blog1Controller;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\ParfolioController;
+use App\Http\Controllers\Front\Partfolio1Controller;
 
 Auth::routes();
 
@@ -84,8 +85,8 @@ Route::group(
          Route::get('portfolios/{slug}', [ParfolioController::class, 'show'])->name('portfolio');
          Route::get('products1', [Blog1Controller::class, 'products1'])->name('products1');
          Route::get('products1/{slug}', [Blog1Controller::class, 'show'])->name('product1');
-         Route::get('portfolios1', [ParfolioController::class, 'portfolios1'])->name('portfolios1');
-         Route::get('portfolios1/{slug}', [ParfolioController::class, 'show'])->name('portfolio1');
+         Route::get('portfolios1', [Partfolio1Controller::class, 'portfolios1'])->name('portfolios1');
+         Route::get('portfolios1/{slug}', [Partfolio1Controller::class, 'show'])->name('portfolio1');
 
 
  });

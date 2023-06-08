@@ -68,18 +68,71 @@
                       <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
                     </li>
 
-                    <li class="header__menu__item wow">
-                      <a href="#!" class="header__menu__link">МЕТАЛЛОКОНСТРУКЦИИ</a>
-                      <ul class="header__none__menu">
-                        <li>
-                          <a href="{{ route('products1') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                        </li>
+                        
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Сэндвич панели</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                      </li>
 
-                        <li>
-                          <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
-                        </li>
-                      </ul>
-                    </li>
+                      <li>
+                        <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Металлоконструкции</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="{{ route('products1') }}" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="{{ route('portfolios1') }}" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Кисловодск</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Кабельные лотки</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="header__menu__item wow">
+                    <a href="#!" class="header__menu__link">Система вентиляции</a>
+                    <ul class="header__none__menu">
+                      <li>
+                        <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                      </li>
+
+                      <li>
+                        <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                      </li>
+                    </ul>
+                  </li>
 
 
                     <li class="header__menu__item wow">
@@ -137,7 +190,7 @@
                   <h3 class="products__title__foto">@lang('main.video_materials')</h3>
                 </div>
 
-                <a href="{{ route('portfolios') }}" class="products__item__video wow">
+                <a href="{{ route('portfolios1') }}" class="products__item__video wow">
                   <div class="products__foto__img">
                     <i class="far fa-images"></i>
                   </div>

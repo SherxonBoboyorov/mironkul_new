@@ -69,7 +69,7 @@ class PortfoliometalVideo extends Model
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/portfolioportfoliometalvideoimage/' . date('d-m-Y'),
+                    public_path() . '/upload/portfoliometalvideoimage/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
             return '/upload/portfoliometalvideoimage/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();

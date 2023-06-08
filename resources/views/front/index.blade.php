@@ -225,7 +225,7 @@
 
                 <ul class="slider__list__cart">
                   <li class="wow">
-                    <a href="{{ route('products') }}" class="slider__list__link">
+                    <a href="{{ route('products1') }}" class="slider__list__link">
                       <div class="slider__list__img">
                         <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
                       </div>

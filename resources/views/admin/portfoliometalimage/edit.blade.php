@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-3">
-                            <label for="portfoliometal_id">Products</label>
+                            <label for="portfoliometal_id">Portfolios</label>
                             <select name="portfoliometal_id" id="portfoliometal_id" class="form-control">
                                 @foreach ($portfoliometal as $portfoliometal)
                                 <option @if($portfoliometal->id == $portfoliometalimage->portfoliometal_id) selected @endif value="{{ $portfoliometal->id }}">{{ $portfoliometal->title_en }}</option>

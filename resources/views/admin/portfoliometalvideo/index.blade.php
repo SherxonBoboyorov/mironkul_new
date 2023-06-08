@@ -14,7 +14,7 @@
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('portfoliovideo.create')}}" class="btn bg-success mb-2">Add Portfolio Video +</a>
+             <a href="{{ route('portfoliometalvideo.create')}}" class="btn bg-success mb-2">Add Portfolio Video +</a>
 
 
         <div class="card">
@@ -44,23 +44,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($portfoliovideos as $portfoliovideo)
+                        @foreach ($portfoliometalvideos as $portfoliometalvideo)
                         <tr>
-                            <td>{{ $portfoliovideo->id }}</td>
+                            <td>{{ $portfoliometalvideo->id }}</td>
                             <td>
-                                <img src="{{ asset($portfoliovideo->image) }}" alt="" width="35" height="35">
+                                <img src="{{ asset($portfoliometalvideo->image) }}" alt="" width="35" height="35">
                             </td>
-                            <td>{{ $portfoliovideo->portfolio->title_en ?? "" }}</td>
-                            <td>{{ $portfoliovideo->title_uz }}</td>
-                            <td>{{ $portfoliovideo->title_ru }}</td>
-                            <td>{{ $portfoliovideo->title_en }}</td>
+                            <td>{{ $portfoliometalvideo->portfolio->title_en ?? "" }}</td>
+                            <td>{{ $portfoliometalvideo->title_uz }}</td>
+                            <td>{{ $portfoliometalvideo->title_ru }}</td>
+                            <td>{{ $portfoliometalvideo->title_en }}</td>
                             <td>
-                                <a href="{{ route('portfoliovideo.edit', $portfoliovideo->id) }}" class="btn btn-primary btn-icon">
+                                <a href="{{ route('portfoliometalvideo.edit', $portfoliometalvideo->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Edit</i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('portfoliovideo.destroy', $portfoliovideo->id) }}" method="POST">
+                                <form action="{{ route('portfoliometalvideo.destroy', $portfoliometalvideo->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-icon">
@@ -72,7 +72,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {!! $portfoliovideos->links() !!}
+                {!! $portfoliometalvideos->links() !!}
             </div>
         </div>
     </div>

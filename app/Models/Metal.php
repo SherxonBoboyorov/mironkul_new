@@ -35,7 +35,7 @@ class Metal extends Model
     ];
 
 
-    public function pmetal_images() {
+    public function metal_images() {
         return $this->hasMany(MetalImage::class, 'id', 'metal_id');
     }
 

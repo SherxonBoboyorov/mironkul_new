@@ -35,9 +35,22 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+                   {{-- start--}}
+                   <li class="nav-item">
 
-                    {{-- start  --}}
-                       <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                       СЭНДВИЧ ПАНЕЛИ
+                         <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      
+
+                    <li class="nav-item">
+
+                      <li class="nav-item">
                         <a href="{{ route('product.index') }}" class="nav-link">
                         <i class="nav-icon"></i>
                         <p>
@@ -46,9 +59,7 @@
                         </p>
                         </a>
                       </li>
-                    {{-- end  --}}
-
-                     {{-- start  --}}
+      
                      <li class="nav-item" >
                         <a href="{{ route('productimage.index') }}" class="nav-link">
                         <i class="nav-icon"></i>
@@ -58,9 +69,7 @@
                         </p>
                         </a>
                       </li>
-                    {{-- end  --}}
-
-                      {{-- start  --}}
+      
                       <li class="nav-item" >
                         <a href="{{ route('productvideo.index') }}" class="nav-link">
                         <i class="nav-icon"></i>
@@ -69,53 +78,73 @@
                              <i class="right fas fa-angle-left"></i>
                         </p>
                         </a>
-                      </li>
-                    {{-- end  --}}
+                      </li> 
 
-                     {{-- start  --}}
+                      
                      <li class="nav-item" >
-                        <a href="{{ route('portfolio.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Portfolio
-                             <i class="right fas fa-angle-left"></i>
-                        </p>
-                        </a>
-                      </li>
-                    {{-- end  --}}
+                      <a href="{{ route('portfolio.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Portfolio
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
 
 
-                       {{-- start  --}}
-                       <li class="nav-item" >
-                        <a href="{{ route('portfolioimage.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Portfolio Image
-                             <i class="right fas fa-angle-left"></i>
-                        </p>
-                        </a>
-                      </li>
-                    {{-- end  --}}
 
 
-                    {{-- start  --}}
+                     <li class="nav-item" >
+                      <a href="{{ route('portfolioimage.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Portfolio Image
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+
+
+
+
+                  <li class="nav-item" >
+                      <a href="{{ route('portfoliovideo.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Portfolio Video
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+
+                     </li>
+
+                    </ul>
+                 </li>
+                 {{-- end--}}
+                 <br>
+                 
+                 
+
+
+                  {{-- start--}}
+                  <li class="nav-item">
+
+                    <a href="#" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                      МЕТАЛЛОКОНСТРУКЦИИ
+                         <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      
+
+                    <li class="nav-item">
+
+
                     <li class="nav-item" >
-                        <a href="{{ route('portfoliovideo.index') }}" class="nav-link">
-                        <i class="nav-icon"></i>
-                        <p>
-                            Portfolio Video
-                             <i class="right fas fa-angle-left"></i>
-                        </p>
-                        </a>
-                      </li>
-                    {{-- end  --}}
-
-                    <br><br>
-
-
-                     {{-- start  --}}
-                     <li class="nav-item" >
-                      <a href="{{ route('metal.index') }}" class="nav-link">
+                      <a href="{{ route('metal.index') }}" class="nav-link"> 
                       <i class="nav-icon"></i>
                       <p>
                         Product
@@ -123,9 +152,7 @@
                       </p>
                       </a>
                     </li>
-                  {{-- end  --}}
 
-                   {{-- start  --}}
                    <li class="nav-item" >
                     <a href="{{ route('metalimage.index') }}" class="nav-link">
                     <i class="nav-icon"></i>
@@ -135,10 +162,7 @@
                     </p>
                     </a>
                   </li>
-                {{-- end  --}}
 
-                
-                   {{-- start  --}}
                    <li class="nav-item" >
                     <a href="{{ route('metalvideo.index') }}" class="nav-link">
                     <i class="nav-icon"></i>
@@ -148,9 +172,7 @@
                     </p>
                     </a>
                   </li>
-                {{-- end  --}}
 
-                   {{-- start  --}}
                    <li class="nav-item" >
                     <a href="{{ route('portfoliometal.index') }}" class="nav-link">
                     <i class="nav-icon"></i>
@@ -160,10 +182,8 @@
                     </p>
                     </a>
                   </li>
-                {{-- end  --}}
 
-                
-                   {{-- start  --}}
+
                    <li class="nav-item" >
                     <a href="{{ route('portfoliometalimage.index') }}" class="nav-link">
                     <i class="nav-icon"></i>
@@ -173,7 +193,26 @@
                     </p>
                     </a>
                   </li>
+
+
+                
+                   <li class="nav-item" >
+                    <a href="{{ route('portfoliometalvideo.index') }}" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>
+                        Partfolio Video
+                         <i class="right fas fa-angle-left"></i>
+                    </p>
+                    </a>
+                  </li>
+                </li>
+
+               </ul>
+             </li>
                 {{-- end  --}}
+                <br>
+
+           
 
 
                      {{-- start  --}}
@@ -277,17 +316,17 @@
 
 <script src="/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
 <script>
-     $(window).on('load', function () {
+//      $(window).on('load', function () {
 
-if (feather) {
-    feather.replace({
-        width: 14,
-        height: 14
-    });
-}
+// if (feather) {
+//     feather.replace({
+//         width: 14,
+//         height: 14
+//     });
+// }
 
 
-})
+// })
     $.widget.bridge('uibutton', $.ui.button)
 </script>
 <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

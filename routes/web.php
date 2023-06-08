@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PortfolioImageController;
 use App\Http\Controllers\Admin\PortfoliometalController;
 use App\Http\Controllers\Admin\PortfoliometalImageController;
+use App\Http\Controllers\Admin\PortfoliometalVideoController;
 use App\Http\Controllers\Admin\PortfolioVideoController;
 use App\Http\Controllers\Admin\PresentationController;
 use App\Http\Controllers\Admin\ProductController;
@@ -28,6 +29,7 @@ use UniSharp\Laravel\LaravelFilemanager\Lfm;
 
 use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\Blog1Controller;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\ParfolioController;
@@ -57,7 +59,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'metalimage' => MetalImageController::class,
         'metalvideo' => MetalVideoController::class,
         'portfoliometal' => PortfoliometalController::class,
-        'portfoliometalimage' => PortfoliometalImageController::class
+        'portfoliometalimage' => PortfoliometalImageController::class,
+        'portfoliometalvideo' => PortfoliometalVideoController::class
     ]);
 });
 
@@ -79,6 +82,10 @@ Route::group(
          Route::get('products/{slug}', [BlogController::class, 'show'])->name('product');
          Route::get('portfolios', [ParfolioController::class, 'portfolios'])->name('portfolios');
          Route::get('portfolios/{slug}', [ParfolioController::class, 'show'])->name('portfolio');
+         Route::get('products1', [Blog1Controller::class, 'products1'])->name('products1');
+         Route::get('products1/{slug}', [Blog1Controller::class, 'show'])->name('product1');
+         Route::get('portfolios1', [ParfolioController::class, 'portfolios1'])->name('portfolios1');
+         Route::get('portfolios1/{slug}', [ParfolioController::class, 'show'])->name('portfolio1');
 
 
  });

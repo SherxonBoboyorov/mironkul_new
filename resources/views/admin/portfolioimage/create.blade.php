@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-3">
-                            <label>Portfolio</label>
+                            <label>Portfolios</label>
                             <select name="portfolio_id" id="portfolio_id" class="form-control">
                                 @foreach ($portfolios as $portfolio)
                                     <option value="{{ $portfolio->id }}">{{ $portfolio->title_en }}</option>

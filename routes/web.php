@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\Product1Controller;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImage1Controller;
 use App\Http\Controllers\Admin\ProductImageController;
+use App\Http\Controllers\Admin\ProductVideo1Controller;
 use App\Http\Controllers\Admin\ProductVideoController;
 use App\Http\Controllers\Admin\VideoController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
@@ -65,7 +66,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'portfoliometalimage' => PortfoliometalImageController::class,
         'portfoliometalvideo' => PortfoliometalVideoController::class,
         'product1' => Product1Controller::class,
-        'productimage1' => ProductImage1Controller::class
+        'productimage1' => ProductImage1Controller::class,
+        'productvideo1' => ProductVideo1Controller::class
     ]);
 });
 

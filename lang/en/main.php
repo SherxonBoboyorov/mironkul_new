@@ -15,5 +15,6 @@ return [
    'photo_materials' => 'Photo materials',
    'video_materials' => 'Video materials',
    'sandwich_panels' => 'Sandwich panels',
-   'send' => 'Send'
+   'send' => 'Send',
+   'metalstructures' => 'Metal structures'
 ];

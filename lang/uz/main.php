@@ -15,5 +15,6 @@ return [
     'photo_materials' => 'Foto materiallar',
     'video_materials' => 'Video materiallar',
     'sandwich_panels' => 'Sendvich panellar',
-    'send' => 'Yuborish'
+    'send' => 'Yuborish',
+    'metalstructures' => 'Metall konstruktsiyalar'
 ];

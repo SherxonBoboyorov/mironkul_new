@@ -37,7 +37,7 @@
                 <div class="header_in__item__list">
                   <ul class="header_in__menu">
                     <li>
-                      <a class="header_in__menu__link">МЕТАЛЛОКОНСТРУКЦИИ</a>
+                      <a class="header_in__menu__link">@lang('main.metalstructures')</a>
                     </li>
   
                     <li>
@@ -83,7 +83,7 @@
                   </li>
 
                   <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Металлоконструкции</a>
+                    <a href="#!" class="header__menu__link">@lang('main.metalstructures')</a>
                     <ul class="header__none__menu">
                       <li>
                         <a href="{{ route('products1') }}" class="header__none__link">@lang('main.aboutproducts')</a>

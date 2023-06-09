@@ -17,6 +17,12 @@ class PortfoliometalImage extends Model
         'image'
     ];
 
+        public function portfoliometal()
+    {
+        return $this->belongsTo(Portfoliometal::class);
+    }
+
+
 
     public static function uploadImage($request): ?string
     {

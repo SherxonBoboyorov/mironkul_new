@@ -47,7 +47,7 @@
                             <td>
                                 <img src="{{ asset($portfoliometalimage->image) }}" alt="" width="35" height="35">
                             </td>
-                            <td>{{ $portfoliometalimage->portfolio->title_en ?? "" }}</td>
+                            <td>{{ $portfoliometalimage->portfoliometal->title_en ?? "" }}</td>
                             <td>
                                 <a href="{{ route('portfoliometalimage.edit', $portfoliometalimage->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Edit</i>

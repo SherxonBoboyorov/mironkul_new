@@ -33,15 +33,15 @@ class Portfoliometal extends Model
 
 
 
-    // public function portfolio_images()
-    // {
-    //     return $this->hasMany(PortfolioImage::class, 'id', 'portfolio_id');
-    // }
+    public function portfoliometal_images()
+    {
+        return $this->hasMany(PortfoliometalImage::class, 'id', 'portfoliometal_id');
+    }
 
-    // public function portfolio_videos()
-    // {
-    //     return $this->hasMany(PortfolioVideo::class, 'id', 'portfolio_id');
-    // }
+    public function portfoliometal_videos()
+    {
+        return $this->hasMany(PortfoliometalVideo::class, 'id', 'portfoliometal_id');
+    }
 
     public static function uploadImage($request): ?string
     {

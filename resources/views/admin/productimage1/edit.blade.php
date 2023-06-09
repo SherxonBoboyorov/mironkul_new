@@ -15,25 +15,25 @@
         </div>
 
         <!-- end page title end breadcrumb -->
-        <form action="{{ route('productimage.update', $productimage->id) }}" enctype="multipart/form-data" method="POST">
+        <form action="{{ route('productimage1.update', $productimage1->id) }}" enctype="multipart/form-data" method="POST">
             @csrf
             @method('PUT')
             <div class="card">
                 <div class="card-body">
                     <div class="row" style="margin-top: 15px">
                         <div class="col-md-3">
-                            <label for="product_id">Products</label>
-                            <select name="product_id" id="product_id" class="form-control">
-                                @foreach ($product as $product)
-                                <option @if($product->id == $productimage->product_id) selected @endif value="{{ $product->id }}">{{ $product->title_en }}</option>
+                            <label for="product1_id">Products</label>
+                            <select name="product1_id" id="product1_id" class="form-control">
+                                @foreach ($product1 as $product1)
+                                <option @if($product1->id == $productimage1->product1_id) selected @endif value="{{ $product1->id }}">{{ $product1->title_en }}</option>
                                 @endforeach
                             </select>
-                            @if($errors->has('product_id'))
+                            @if($errors->has('product1_id'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                                {{ $errors->first('product_id') }}
+                                {{ $errors->first('product1_id') }}
                             </div>
                             @endif
                         </div>
@@ -53,7 +53,7 @@
                             @endif
                         </div>
                         <div class="col-md-6">
-                            <img src="{{ asset($productimage->image) }}" width="150" height="150" alt="">
+                            <img src="{{ asset($productimage1->image) }}" width="150" height="150" alt="">
                         </div>
                     </div><br>
 

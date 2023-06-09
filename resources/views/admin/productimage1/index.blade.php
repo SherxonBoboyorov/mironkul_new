@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">All Portfolio Video</h4>
+                    <h4 class="page-title">All Product Image</h4>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('portfoliometalvideo.create')}}" class="btn bg-success mb-2">Add Portfolio Video +</a>
+             <a href="{{ route('productimage1.create')}}" class="btn bg-success mb-2">Add Product Image +</a>
 
 
         <div class="card">
@@ -35,32 +35,26 @@
                     <thead>
                         <tr>
                             <th style="width: 2%;">#</th>
-                            <th>Video Image</th>
-                            <th>Portfolios</th>
-                            <th>Title [Uzbek]</th>
-                            <th>Title [Russian]</th>
-                            <th>Title [English]</th>
+                            <th>Image</th>
+                            <th>Products</th>
                             <th colspan="2" style="width: 2%;">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($portfoliometalvideos as $portfoliometalvideo)
+                        @foreach ($productimages1 as $productimage1)
                         <tr>
-                            <td>{{ $portfoliometalvideo->id }}</td>
+                            <td>{{ $productimage1->id }}</td>
                             <td>
-                                <img src="{{ asset($portfoliometalvideo->image) }}" alt="" width="35" height="35">
+                                <img src="{{ asset($productimage1->image) }}" alt="" width="35" height="35">
                             </td>
-                            <td>{{ $portfoliometalvideo->portfoliometal->title_en ?? "" }}</td>
-                            <td>{{ $portfoliometalvideo->title_uz }}</td>
-                            <td>{{ $portfoliometalvideo->title_ru }}</td>
-                            <td>{{ $portfoliometalvideo->title_en }}</td>
+                            <td>{{ $productimage1->product1->title_en ?? "" }}</td>
                             <td>
-                                <a href="{{ route('portfoliometalvideo.edit', $portfoliometalvideo->id) }}" class="btn btn-primary btn-icon">
+                                <a href="{{ route('productimage1.edit', $productimage1->id) }}" class="btn btn-primary btn-icon">
                                     <i class="fa fa-edit">Edit</i>
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('portfoliometalvideo.destroy', $portfoliometalvideo->id) }}" method="POST">
+                                <form action="{{ route('productimage1.destroy', $productimage1->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-icon">
@@ -72,7 +66,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {!! $portfoliometalvideos->links() !!}
+                {!! $productimages1->links() !!}
             </div>
         </div>
     </div>

@@ -35,14 +35,14 @@ class Product1 extends Model
     ];
 
 
-    // public function metal_images() {
-    //     return $this->hasMany(MetalImage::class, 'id', 'metal_id');
-    // }
+    public function product_image1s() {
+        return $this->hasMany(ProductImage1::class, 'id', 'product1_id');
+    }
 
 
-    // public function metal_videos()
+    // public function product1_videos()
     // {
-    //     return $this->hasMany(MetalVideo::class, 'id', 'metal_id');
+    //     return $this->hasMany(product1Video::class, 'id', 'product1_id');
     // }
 
     public static function uploadImage($request): ?string
@@ -53,39 +53,39 @@ class Product1 extends Model
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/metal/' . date('d-m-Y'),
+                    public_path() . '/upload/product1/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/metal/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/product1/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
         return null;
     }
 
-    public static function updateImage($request, $metal): string
+    public static function updateImage($request, $product1): string
     {
         if ($request->hasFile('image')) {
-            if (File::exists(public_path() . $metal->image)) {
-                File::delete(public_path() . $metal->image);
+            if (File::exists(public_path() . $product1->image)) {
+                File::delete(public_path() . $product1->image);
             }
 
             self::checkDirectory();
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/metal/' . date('d-m-Y'),
+                    public_path() . '/upload/product1/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/metal/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/product1/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
-        return $metal->image;
+        return $product1->image;
     }
 
     private static function checkDirectory(): bool
     {
-        if (!File::exists(public_path() . '/upload/metal/' . date('d-m-Y'))) {
-            File::makeDirectory(public_path() . '/upload/metal/' . date('d-m-Y'), $mode = 0777, true, true);
+        if (!File::exists(public_path() . '/upload/product1/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/product1/' . date('d-m-Y'), $mode = 0777, true, true);
         }
 
         return true;

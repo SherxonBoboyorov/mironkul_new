@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('product_image1s', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('product1_id')->nullable()->unsigned();
+            $table->foreign('product1_id')
+            ->references('id')
+            ->on('product1s')
+            ->onDelete('cascade');
+
+            $table->string('image');
+
             $table->timestamps();
         });
     }

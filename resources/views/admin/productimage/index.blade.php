@@ -14,7 +14,7 @@
             <div class="clearfix"></div>
         </div>
 
-             <a href="{{ route('portfolioimage.create')}}" class="btn bg-success mb-2">Add Product Image +</a>
+             <a href="{{ route('productimage.create')}}" class="btn bg-success mb-2">Add Product Image +</a>
 
 
         <div class="card">

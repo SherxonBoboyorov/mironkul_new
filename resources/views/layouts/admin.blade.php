@@ -212,6 +212,91 @@
                 {{-- end  --}}
                 <br>
 
+
+                    {{-- start--}}
+                    <li class="nav-item">
+
+                      <a href="#" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                        КИСЛОВОДСК
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        
+  
+                      <li class="nav-item">
+  
+  
+                      <li class="nav-item" >
+                        <a href="{{ route('product1.index') }}" class="nav-link"> 
+                        <i class="nav-icon"></i>
+                        <p>
+                          Product
+                             <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                      </li>
+  
+                     <li class="nav-item" >
+                      <a href="#!" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                        Product Image
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+  
+                     <li class="nav-item" >
+                      <a href="#!" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                        Product Video
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+  
+                     <li class="nav-item" >
+                      <a href="#!" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Partfolio
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+  
+  
+                     <li class="nav-item" >
+                      <a href="#!" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Partfolio Image
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+  
+  
+                  
+                     <li class="nav-item" >
+                      <a href="#!" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Partfolio Video
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+                  </li>
+  
+                 </ul>
+               </li>
+                  {{-- end  --}}
+                  <br>
            
 
 

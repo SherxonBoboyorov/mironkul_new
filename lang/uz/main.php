@@ -13,5 +13,7 @@ return [
     'feedback' => 'Qayta aloqa',
     'more' => 'Ko\'proq',
     'photo_materials' => 'Foto materiallar',
-    'video_materials' => 'Video materiallar'
+    'video_materials' => 'Video materiallar',
+    'sandwich_panels' => 'Sendvich panellar',
+    'send' => 'Yuborish'
 ];

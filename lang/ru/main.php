@@ -13,5 +13,7 @@ return [
    'feedback' => 'Обратная связь',
    'more' => 'Подробнее',
    'photo_materials' => 'Фото материалы',
-   'video_materials' => 'Видео материалы'
+   'video_materials' => 'Видео материалы',
+   'sandwich_panels' => 'Сэндвич панели',
+   'send' => 'Отправить'
 ]; 

@@ -68,14 +68,14 @@
 
                        
                     <li class="header__menu__item wow">
-                      <a href="#!" class="header__menu__link">Сэндвич панели</a>
+                      <a href="#!" class="header__menu__link">@lang('main.sandwich_panels')</a>
                       <ul class="header__none__menu">
                         <li>
-                          <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                          <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                         </li>
   
                         <li>
-                          <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                          <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                         </li>
                       </ul>
                     </li>
@@ -84,11 +84,11 @@
                       <a href="#!" class="header__menu__link">Металлоконструкции</a>
                       <ul class="header__none__menu">
                         <li>
-                          <a href="{{ route('products1') }}" class="header__none__link">О О продукции</a>
+                          <a href="{{ route('products1') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                         </li>
   
                         <li>
-                          <a href="{{ route('portfolios1') }}" class="header__none__link">Портфолио</a>
+                          <a href="{{ route('portfolios1') }}" class="header__none__link">@lang('main.portfolio')</a>
                         </li>
                       </ul>
                     </li>
@@ -97,11 +97,11 @@
                       <a href="#!" class="header__menu__link">Кисловодск</a>
                       <ul class="header__none__menu">
                         <li>
-                          <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                          <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                         </li>
   
                         <li>
-                          <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                          <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                         </li>
                       </ul>
                     </li>
@@ -110,11 +110,11 @@
                       <a href="#!" class="header__menu__link">Кабельные лотки</a>
                       <ul class="header__none__menu">
                         <li>
-                          <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                          <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                         </li>
   
                         <li>
-                          <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                          <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                         </li>
                       </ul>
                     </li>
@@ -123,11 +123,11 @@
                       <a href="#!" class="header__menu__link">Система вентиляции</a>
                       <ul class="header__none__menu">
                         <li>
-                          <a href="{{ route('products') }}" class="header__none__link">О О продукции</a>
+                          <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                         </li>
   
                         <li>
-                          <a href="{{ route('portfolios') }}" class="header__none__link">Портфолио</a>
+                          <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
                         </li>
                       </ul>
                     </li>
@@ -254,13 +254,9 @@
                 <form action="{{ route('yourSave') }}" class="contacts__form" method="POST">
                   <input type="text" name="fullname" class="contacts__input wow fadeInLeft" placeholder="ФИО" required/>
                   <input type="tel" name="phone" class="contacts__input wow fadeInRight" placeholder="Телефон" required/>
-                  <textarea
-                    class="contacts__textarea wow fadeInLeft"
-                    placeholder="Комментарий"
-                    name="comment" required
-                  ></textarea>
+                  <textarea class="contacts__textarea wow fadeInLeft" placeholder="Комментарий"name="comment" required></textarea>
                   <button class="contacts__button wow fadeInRight">
-                    Отправить
+                    @lang('main.send')
                     <span><i class="fas fa-angle-double-right"></i></span>
                   </button>
                 </form>

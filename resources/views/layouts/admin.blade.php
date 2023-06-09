@@ -258,7 +258,7 @@
                     </li>
   
                      <li class="nav-item" >
-                      <a href="#!" class="nav-link">
+                      <a href="{{ route('portfolio1.index') }}" class="nav-link">
                       <i class="nav-icon"></i>
                       <p>
                           Partfolio

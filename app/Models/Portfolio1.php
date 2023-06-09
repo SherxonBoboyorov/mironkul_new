@@ -32,10 +32,10 @@ class Portfolio1 extends Model
         'meta_description_en'
     ];
     
-    // public function portfolio_images()
-    // {
-    //     return $this->hasMany(PortfolioImage::class, 'id', 'portfolio_id');
-    // }
+    public function portfolio_image1s()
+    {
+        return $this->hasMany(PortfolioImage1::class, 'id', 'portfolio1_id');
+    }
 
     // public function portfolio_videos()
     // {

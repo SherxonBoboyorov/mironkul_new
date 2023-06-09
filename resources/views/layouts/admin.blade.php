@@ -40,7 +40,7 @@
 
                     <a href="#" class="nav-link">
                     <i class="nav-icon"></i>
-                    <p>
+                    <p style="color: coral">
                        СЭНДВИЧ ПАНЕЛИ
                          <i class="right fas fa-angle-left"></i>
                     </p>
@@ -132,7 +132,7 @@
 
                     <a href="#" class="nav-link">
                     <i class="nav-icon"></i>
-                    <p>
+                    <p style="color: coral">
                       МЕТАЛЛОКОНСТРУКЦИИ
                          <i class="right fas fa-angle-left"></i>
                     </p>
@@ -216,7 +216,7 @@
 
                       <a href="#" class="nav-link">
                       <i class="nav-icon"></i>
-                      <p>
+                      <p style="color: coral">
                         КИСЛОВОДСК
                            <i class="right fas fa-angle-left"></i>
                       </p>
@@ -269,7 +269,7 @@
   
   
                      <li class="nav-item" >
-                      <a href="#!" class="nav-link">
+                      <a href="{{ route('portfolioimage1.index') }}" class="nav-link">
                       <i class="nav-icon"></i>
                       <p>
                           Partfolio Image

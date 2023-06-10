@@ -334,7 +334,7 @@
                     </li>
   
                      <li class="nav-item" >
-                      <a href="{{ route('productvideo1.index') }}" class="nav-link">
+                      <a href="{{ route('productvideo2.index') }}" class="nav-link">
                       <i class="nav-icon"></i>
                       <p>
                         Product Video

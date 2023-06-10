@@ -48,10 +48,12 @@ use UniSharp\Laravel\LaravelFilemanager\Lfm;
 use App\Http\Controllers\Front\IndexController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\Blog1Controller;
+use App\Http\Controllers\Front\Blog2Controller;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\ParfolioController;
 use App\Http\Controllers\Front\Partfolio1Controller;
+use App\Http\Controllers\Front\Partfolio2Controller;
 
 Auth::routes();
 
@@ -124,6 +126,10 @@ Route::group(
          Route::get('products1/{slug}', [Blog1Controller::class, 'show'])->name('product1');
          Route::get('portfolios1', [Partfolio1Controller::class, 'portfolios1'])->name('portfolios1');
          Route::get('portfolios1/{slug}', [Partfolio1Controller::class, 'show'])->name('portfolio1');
+         Route::get('products2', [Blog2Controller::class, 'products2'])->name('products2');
+         Route::get('products2/{slug}', [Blog2Controller::class, 'show'])->name('product2');
+         Route::get('portfolios2', [Partfolio2Controller::class, 'portfolios2'])->name('portfolios2');
+         Route::get('portfolios2/{slug}', [Partfolio2Controller::class, 'show'])->name('portfolio2');
 
 
  });

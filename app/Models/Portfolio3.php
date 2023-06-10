@@ -31,15 +31,15 @@ class Portfolio3 extends Model
         'meta_description_en'
     ];
     
-    // public function portfolio_image2s()
-    // {
-    //     return $this->hasMany(PortfolioImage2::class, 'id', 'portfolio3_id');
-    // }
+    public function portfolio_image3s()
+    {
+        return $this->hasMany(PortfolioImage3::class, 'id', 'portfolio3_id');
+    }
 
-    // public function portfolio_video2s()
-    // {
-    //     return $this->hasMany(PortfolioVideo2::class, 'id', 'portfolio3_id');
-    // }
+    public function portfolio_video3s()
+    {
+        return $this->hasMany(PortfolioVideo3::class, 'id', 'portfolio3_id');
+    }
 
     public static function uploadImage($request): ?string
     {

@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 
-class Product3 extends Model
+class Portfolio3 extends Model
 {
     use HasFactory;
 
-    protected $table = 'product3s';
+    protected $table = 'portfolio3s';
 
     protected $fillable = [
         'image',
@@ -20,9 +20,6 @@ class Product3 extends Model
         'slug_ru',
         'slug_uz',
         'slug_en',
-        'info_ru',
-        'info_uz',
-        'info_en',
         'description_ru',
         'description_uz',
         'description_en',
@@ -33,17 +30,16 @@ class Product3 extends Model
         'meta_description_uz',
         'meta_description_en'
     ];
+    
+    // public function portfolio_image2s()
+    // {
+    //     return $this->hasMany(PortfolioImage2::class, 'id', 'portfolio3_id');
+    // }
 
-
-    public function product_image3s() {
-        return $this->hasMany(ProductImage3::class, 'id', 'product3_id');
-    }
-
-
-    public function product_video3s()
-    {
-        return $this->hasMany(ProductVideo3::class, 'id', 'product3_id');
-    }
+    // public function portfolio_video2s()
+    // {
+    //     return $this->hasMany(PortfolioVideo2::class, 'id', 'portfolio3_id');
+    // }
 
     public static function uploadImage($request): ?string
     {
@@ -53,43 +49,42 @@ class Product3 extends Model
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/product3/' . date('d-m-Y'),
+                    public_path() . '/upload/portfolio3/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/product3/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/portfolio3/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
         return null;
     }
 
-    public static function updateImage($request, $product3): string
+    public static function updateImage($request, $portfolio3): string
     {
         if ($request->hasFile('image')) {
-            if (File::exists(public_path() . $product3->image)) {
-                File::delete(public_path() . $product3->image);
+            if (File::exists(public_path() . $portfolio3->image)) {
+                File::delete(public_path() . $portfolio3->image);
             }
 
             self::checkDirectory();
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/product3/' . date('d-m-Y'),
+                    public_path() . '/upload/portfolio3/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/product3/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/portfolio3/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
-        return $product3->image;
+        return $portfolio3->image;
     }
 
     private static function checkDirectory(): bool
     {
-        if (!File::exists(public_path() . '/upload/product3/' . date('d-m-Y'))) {
-            File::makeDirectory(public_path() . '/upload/product3/' . date('d-m-Y'), $mode = 0777, true, true);
+        if (!File::exists(public_path() . '/upload/portfolio3/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/portfolio3/' . date('d-m-Y'), $mode = 0777, true, true);
         }
 
         return true;
     }
-
 
 }

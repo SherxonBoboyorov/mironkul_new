@@ -166,11 +166,11 @@
                     <a href="#!" class="header__menu__link">Кабельные лотки</a>
                     <ul class="header__none__menu">
                       <li>
-                        <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                        <a href="{{ route('products3') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                       </li>
 
                       <li>
-                        <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
+                        <a href="{{ route('portfolios3') }}" class="header__none__link">@lang('main.portfolio')</a>
                       </li>
                     </ul>
                   </li>
@@ -314,7 +314,7 @@
 
                 <ul class="slider__list__cart">
                   <li class="wow">
-                    <a href="{{ route('products') }}" class="slider__list__link">
+                    <a href="{{ route('products3') }}" class="slider__list__link">
                       <div class="slider__list__img">
                         <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
                       </div>
@@ -323,7 +323,7 @@
                   </li>
 
                   <li class="wow">
-                    <a href="{{ route('portfolios') }}" class="slider__list__link">
+                    <a href="{{ route('portfolios3') }}" class="slider__list__link">
                       <div class="slider__list__img">
                         <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
                       </div>

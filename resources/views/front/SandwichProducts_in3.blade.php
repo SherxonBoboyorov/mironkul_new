@@ -37,11 +37,11 @@
               <div class="header_in__item__list">
                 <ul class="header_in__menu">
                   <li>
-                    <a href="{{ route('products1') }}" class="header_in__menu__link">@lang('main.aboutproducts')</a>
+                    <a href="{{ route('products3') }}" class="header_in__menu__link">@lang('main.aboutproducts')</a>
                   </li>
 
                   <li>
-                    <a class="header_in__menu__link">{{ $metal->{'title_' . app()->getLocale()} }}  {{ $metal->{'info_' . app()->getLocale()} }}</a>
+                    <a class="header_in__menu__link">{{ $product2->{'title_' . app()->getLocale()} }}  {{ $product2->{'info_' . app()->getLocale()} }}</a>
                   </li>
                 </ul>
 
@@ -158,15 +158,15 @@
           <section class="container_in">
             <div class="products__item clearfix">
               <div class="products__item__img">
-                <img src="{{ asset($metal->image) }}" alt="products" />
+                <img src="{{ asset($product2->image) }}" alt="products" />
               </div>
 
               <section>
-                <h2 class="products__title__h2">{{ $metal->{'title_' . app()->getLocale()} }}</h2>
-                <h4 class="products__iten__title">{{ $metal->{'info_' . app()->getLocale()} }}</h4>
+                <h2 class="products__title__h2">{{ $product2->{'title_' . app()->getLocale()} }}</h2>
+                <h4 class="products__iten__title">{{ $product2->{'info_' . app()->getLocale()} }}</h4>
                 <div class="products__item__text">
                   <p>
-                    {!! $metal->{'description_' . app()->getLocale()} !!}
+                    {!! $product2->{'description_' . app()->getLocale()} !!}
                   </p>
                 </div>
               </section>
@@ -190,7 +190,7 @@
                   <h3 class="products__title__foto">@lang('main.video_materials')</h3>
                 </div>
 
-                <a href="{{ route('portfolios1') }}" class="products__item__video wow">
+                <a href="{{ route('portfolios3') }}" class="products__item__video wow">
                   <div class="products__foto__img">
                     <i class="far fa-images"></i>
                   </div>
@@ -208,12 +208,12 @@
             <section class="container_in">
               <section class="products__foto__video__all">
                 <div class="products__item__list products__foto active" data-item="fotoItem">
-                  @foreach($metalimages as $metalimage)
+                  @foreach($productimage2s as $productimage2)
                   <section class="products__item__wowjs wow">
                     <div class="products__list__item">
-                      <a href="{{ asset($metalimage->image) }}" data-fancybox="gallery">
+                      <a href="{{ asset($productimage2->image) }}" data-fancybox="gallery">
                         <div class="products__foto__item__img">
-                          <img src="{{ asset($metalimage->image) }}" alt="gallery" />
+                          <img src="{{ asset($productimage2->image) }}" alt="gallery" />
                           <h4 class="products__foto__eye">
                             <i class="fas fa-eye"></i>
                           </h4>
@@ -225,15 +225,15 @@
                 </div>
 
                 <div class="products__item__list products__foto" data-item="videoItem">
-                  @foreach($metalvideos as $metalvideo)
+                  @foreach($productvideo2s as $productvideo2)
                   
                   <section class="products__item__wowjs wow">
                     <div class="products__video__item">
                       <p class="text-center">
-                        <a data-fancybox class="about__item__video" href="{{ $metalvideo->video }}">
+                        <a data-fancybox class="about__item__video" href="{{ $productvideo2->video }}">
                           <section>
-                            <h3 class="products__list__title__h3">{{ $metalvideo->{'title_' . app()->getLocale()} }}</h3>
-                            <img class="inline" src="{{ asset($metalvideo->image) }}" alt="videoItem" />
+                            <h3 class="products__list__title__h3">{{ $productvideo2->{'title_' . app()->getLocale()} }}</h3>
+                            <img class="inline" src="{{ asset($productvideo2->image) }}" alt="videoItem" />
                             <!-- play start -->
 
                             <div class="button__min is-play">

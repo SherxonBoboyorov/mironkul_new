@@ -40,7 +40,7 @@
 
                     <a href="#" class="nav-link">
                     <i class="nav-icon"></i>
-                    <p>
+                    <p style="color: darkgoldenrod">
                        СЭНДВИЧ ПАНЕЛИ
                          <i class="right fas fa-angle-left"></i>
                     </p>
@@ -122,6 +122,8 @@
                     </ul>
                  </li>
                  {{-- end--}}
+
+                 <br>
                 
                  
                  
@@ -132,7 +134,7 @@
 
                     <a href="#" class="nav-link">
                     <i class="nav-icon"></i>
-                    <p>
+                    <p  style="color: darkgoldenrod">
                       МЕТАЛЛОКОНСТРУКЦИИ
                          <i class="right fas fa-angle-left"></i>
                     </p>
@@ -208,15 +210,15 @@
                </ul>
              </li>
                 {{-- end  --}}
+                <br>
                
-
 
                     {{-- start--}}
                     <li class="nav-item">
 
                       <a href="#" class="nav-link">
                       <i class="nav-icon"></i>
-                      <p>
+                      <p  style="color: darkgoldenrod">
                         КИСЛОВОДСК
                            <i class="right fas fa-angle-left"></i>
                       </p>
@@ -294,6 +296,11 @@
                  </ul>
                </li>
                   {{-- end  --}}
+
+                  <br>
+
+
+                 
                 
 
 
@@ -302,7 +309,7 @@
 
                       <a href="#" class="nav-link">
                       <i class="nav-icon"></i>
-                      <p>
+                      <p style="color: darkgoldenrod">
                         КАБЕЛЬНЫЕ ЛОТКИ
                            <i class="right fas fa-angle-left"></i>
                       </p>
@@ -380,6 +387,8 @@
                  </ul>
                </li>
                   {{-- end  --}}
+
+                  <br>
                
 
                   
@@ -389,7 +398,7 @@
 
                     <a href="#" class="nav-link">
                     <i class="nav-icon"></i>
-                    <p>
+                    <p style="color: darkgoldenrod">
                       СИСТЕМА ВЕНТИЛЯЦИИ
                          <i class="right fas fa-angle-left"></i>
                     </p>

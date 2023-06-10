@@ -83,23 +83,23 @@ class Product2Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (!Product1::find($id)) {
-            return redirect()->route('product1.index')->with('message', "not fount");
+        if (!Product2::find($id)) {
+            return redirect()->route('product2.index')->with('message', "not fount");
         }
 
-        $product1 = Product1::find($id);
+        $product2 = Product2::find($id);
 
         $data = $request->all();
-        $data['image'] = Product1::updateImage($request, $product1);
+        $data['image'] = Product2::updateImage($request, $product2);
 
         $data['slug_ru'] = Str::slug($request->title_ru, '-', 'ru');
         $data['slug_uz'] = Str::slug($request->title_uz, '-', 'uz');
         $data['slug_en'] = Str::slug($request->title_en, '-', 'en');
 
-        if ($product1->update($data)) {
-            return redirect()->route('product1.index')->with('message', "changed successfully");
+        if ($product2->update($data)) {
+            return redirect()->route('product2.index')->with('message', "changed successfully");
         }
-        return redirect()->route('product1.index')->with('message', "Unable to update");
+        return redirect()->route('product2.index')->with('message', "Unable to update");
     }
 
     /**
@@ -110,19 +110,19 @@ class Product2Controller extends Controller
      */
     public function destroy($id)
     {
-        if (!Product1::find($id)) {
-            return redirect()->route('product1.index')->with('message', "not found");
+        if (!Product2::find($id)) {
+            return redirect()->route('product2.index')->with('message', "not found");
         }
 
-        $product1 = Product1::find($id);
+        $product2 = Product2::find($id);
 
-        if (File::exists(public_path() . $product1->image)) {
-            File::delete(public_path() . $product1->image);
+        if (File::exists(public_path() . $product2->image)) {
+            File::delete(public_path() . $product2->image);
         }
 
-        if ($product1->delete()) {
-            return redirect()->route('product1.index')->with('message', "deleted successfully");
+        if ($product2->delete()) {
+            return redirect()->route('product2.index')->with('message', "deleted successfully");
         }
-        return redirect()->route('product1.index')->with('message', "unable to delete");
+        return redirect()->route('product2.index')->with('message', "unable to delete");
     }
 }

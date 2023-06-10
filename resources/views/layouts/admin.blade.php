@@ -295,6 +295,92 @@
                </li>
                   {{-- end  --}}
                   <br>
+
+
+                    {{-- start--}}
+                    <li class="nav-item">
+
+                      <a href="#" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p style="color: coral">
+                        КАБЕЛЬНЫЕ ЛОТКИ
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        
+  
+                      <li class="nav-item">
+  
+  
+                      <li class="nav-item" >
+                        <a href="{{ route('product2.index') }}" class="nav-link"> 
+                        <i class="nav-icon"></i>
+                        <p>
+                          Product
+                             <i class="right fas fa-angle-left"></i>
+                        </p>
+                        </a>
+                      </li>
+  
+                     <li class="nav-item" >
+                      <a href="{{ route('productimage1.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                        Product Image
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+  
+                     <li class="nav-item" >
+                      <a href="{{ route('productvideo1.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                        Product Video
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+  
+                     <li class="nav-item" >
+                      <a href="{{ route('portfolio1.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Partfolio
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+  
+  
+                     <li class="nav-item" >
+                      <a href="{{ route('portfolioimage1.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Partfolio Image
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+  
+  
+                  
+                     <li class="nav-item" >
+                      <a href="{{ route('portfoliovideo1.index') }}" class="nav-link">
+                      <i class="nav-icon"></i>
+                      <p>
+                          Partfolio Video
+                           <i class="right fas fa-angle-left"></i>
+                      </p>
+                      </a>
+                    </li>
+                  </li>
+  
+                 </ul>
+               </li>
+                  {{-- end  --}}
+                  <br>
            
 
 

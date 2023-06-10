@@ -442,7 +442,7 @@
 
 
                    <li class="nav-item" >
-                    <a href="{{ route('portfolioimage2.index') }}" class="nav-link">
+                    <a href="{{ route('portfolioimage3.index') }}" class="nav-link">
                     <i class="nav-icon"></i>
                     <p>
                         Partfolio Image

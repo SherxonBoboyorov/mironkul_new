@@ -84,7 +84,7 @@ class PortfolioImage2Controller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  App\Http\Requests\Admin\UpdatePortfolioImage1  $request
+     * @param  App\Http\Requests\Admin\UpdatePortfolioImage2  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

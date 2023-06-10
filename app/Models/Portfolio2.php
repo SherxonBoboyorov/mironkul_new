@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 
-class Portfolio1 extends Model
+class Portfolio2 extends Model
 {
     use HasFactory;
 
-    protected $table = 'portfolio1s';
+    protected $table = 'portfolio2s';
 
     protected $fillable = [
         'image',
@@ -31,15 +31,15 @@ class Portfolio1 extends Model
         'meta_description_en'
     ];
     
-    public function portfolio_image1s()
-    {
-        return $this->hasMany(PortfolioImage1::class, 'id', 'portfolio1_id');
-    }
+    // public function portfolio_image2s()
+    // {
+    //     return $this->hasMany(PortfolioImage2::class, 'id', 'portfolio2_id');
+    // }
 
-    public function portfolio_video1s()
-    {
-        return $this->hasMany(PortfolioVideo1::class, 'id', 'portfolio1_id');
-    }
+    // public function portfolio_videos()
+    // {
+    //     return $this->hasMany(PortfolioVideo::class, 'id', 'portfolio_id');
+    // }
 
     public static function uploadImage($request): ?string
     {
@@ -49,41 +49,42 @@ class Portfolio1 extends Model
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/portfolio1/' . date('d-m-Y'),
+                    public_path() . '/upload/portfolio2/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/portfolio1/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/portfolio2/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
         return null;
     }
 
-    public static function updateImage($request, $portfolio1): string
+    public static function updateImage($request, $portfolio2): string
     {
         if ($request->hasFile('image')) {
-            if (File::exists(public_path() . $portfolio1->image)) {
-                File::delete(public_path() . $portfolio1->image);
+            if (File::exists(public_path() . $portfolio2->image)) {
+                File::delete(public_path() . $portfolio2->image);
             }
 
             self::checkDirectory();
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/portfolio1/' . date('d-m-Y'),
+                    public_path() . '/upload/portfolio2/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/portfolio1/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/portfolio2/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
-        return $portfolio1->image;
+        return $portfolio2->image;
     }
 
     private static function checkDirectory(): bool
     {
-        if (!File::exists(public_path() . '/upload/portfolio1/' . date('d-m-Y'))) {
-            File::makeDirectory(public_path() . '/upload/portfolio1/' . date('d-m-Y'), $mode = 0777, true, true);
+        if (!File::exists(public_path() . '/upload/portfolio2/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/portfolio2/' . date('d-m-Y'), $mode = 0777, true, true);
         }
 
         return true;
     }
+
 }

@@ -40,7 +40,7 @@ class Product1 extends Model
     }
 
 
-    public function product1_videos()
+    public function product_video1s()
     {
         return $this->hasMany(ProductVideo1::class, 'id', 'product1_id');
     }

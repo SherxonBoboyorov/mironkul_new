@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 
-class Product2 extends Model
+class Product3 extends Model
 {
     use HasFactory;
 
-    protected $table = 'product2s';
+    protected $table = 'product3s';
 
     protected $fillable = [
         'image',
@@ -35,14 +35,14 @@ class Product2 extends Model
     ];
 
 
-    public function product_image2s() {
-        return $this->hasMany(ProductImage2::class, 'id', 'product2_id');
+    public function product_image3s() {
+        return $this->hasMany(ProductImage1::class, 'id', 'product3_id');
     }
 
 
-    public function product_video2s()
+    public function product_video3s()
     {
-        return $this->hasMany(ProductVideo2::class, 'id', 'product2_id');
+        return $this->hasMany(ProductVideo1::class, 'id', 'product3_id');
     }
 
     public static function uploadImage($request): ?string
@@ -53,41 +53,43 @@ class Product2 extends Model
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/product2/' . date('d-m-Y'),
+                    public_path() . '/upload/product3/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/product2/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/product3/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
         return null;
     }
 
-    public static function updateImage($request, $product2): string
+    public static function updateImage($request, $product3): string
     {
         if ($request->hasFile('image')) {
-            if (File::exists(public_path() . $product2->image)) {
-                File::delete(public_path() . $product2->image);
+            if (File::exists(public_path() . $product3->image)) {
+                File::delete(public_path() . $product3->image);
             }
 
             self::checkDirectory();
 
             $request->file('image')
                 ->move(
-                    public_path() . '/upload/product2/' . date('d-m-Y'),
+                    public_path() . '/upload/product3/' . date('d-m-Y'),
                     $request->file('image')->getClientOriginalName()
                 );
-            return '/upload/product2/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
+            return '/upload/product3/' . date('d-m-Y') . '/' . $request->file('image')->getClientOriginalName();
         }
 
-        return $product2->image;
+        return $product3->image;
     }
 
     private static function checkDirectory(): bool
     {
-        if (!File::exists(public_path() . '/upload/product2/' . date('d-m-Y'))) {
-            File::makeDirectory(public_path() . '/upload/product2/' . date('d-m-Y'), $mode = 0777, true, true);
+        if (!File::exists(public_path() . '/upload/product3/' . date('d-m-Y'))) {
+            File::makeDirectory(public_path() . '/upload/product3/' . date('d-m-Y'), $mode = 0777, true, true);
         }
 
         return true;
     }
+
+
 }

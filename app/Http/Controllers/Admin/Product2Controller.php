@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CreateProduct2;
+use App\Http\Requests\Admin\UpdateProduct2;
 use App\Models\Product2;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -34,10 +36,10 @@ class Product2Controller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param App\Http\Requests\Admin\CreateProduct2  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProduct2 $request)
     {
         $data = $request->all();
         $data['image'] = Product2::uploadImage($request);
@@ -77,11 +79,11 @@ class Product2Controller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\Admin\UpdateProduct2  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateProduct2 $request, $id)
     {
         if (!Product2::find($id)) {
             return redirect()->route('product2.index')->with('message', "not fount");

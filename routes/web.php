@@ -36,6 +36,7 @@ use App\Http\Controllers\Admin\ProductImage3Controller;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\ProductVideo1Controller;
 use App\Http\Controllers\Admin\ProductVideo2Controller;
+use App\Http\Controllers\Admin\ProductVideo3Controller;
 use App\Http\Controllers\Admin\ProductVideoController;
 use App\Http\Controllers\Admin\VideoController;
 use UniSharp\Laravel\LaravelFilemanager\Lfm;
@@ -89,7 +90,8 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'portfolioimage2' => PortfolioImage2Controller::class,
         'portfoliovideo2' => PortfolioVideo2Controller::class,
         'product3' => Product3Controller::class,
-        'productimage3' => ProductImage3Controller::class
+        'productimage3' => ProductImage3Controller::class,
+        'productvideo3' => ProductVideo3Controller::class,
         
     ]);
 });

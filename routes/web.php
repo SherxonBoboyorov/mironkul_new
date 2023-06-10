@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\Product3Controller;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductImage1Controller;
 use App\Http\Controllers\Admin\ProductImage2Controller;
+use App\Http\Controllers\Admin\ProductImage3Controller;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\ProductVideo1Controller;
 use App\Http\Controllers\Admin\ProductVideo2Controller;
@@ -88,6 +89,7 @@ Route::middleware(['role:admin'])->prefix('dashboard')->group(static function ()
         'portfolioimage2' => PortfolioImage2Controller::class,
         'portfoliovideo2' => PortfolioVideo2Controller::class,
         'product3' => Product3Controller::class,
+        'productimage3' => ProductImage3Controller::class
         
     ]);
 });

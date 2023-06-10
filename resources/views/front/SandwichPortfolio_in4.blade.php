@@ -37,11 +37,11 @@
             <div class="header_in__item__list">
               <ul class="header_in__menu">
                 <li>
-                  <a href="{{ route('portfolios') }}" class="header_in__menu__link">@lang('main.portfolio')</a>
+                  <a href="{{ route('portfolios4') }}" class="header_in__menu__link">@lang('main.portfolio')</a>
                 </li>
 
                 <li>
-                  <a class="header_in__menu__link">{{ $portfolio->{'title_' . app()->getLocale()} }}</a>
+                  <a class="header_in__menu__link">{{ $portfolio3->{'title_' . app()->getLocale()} }}</a>
                 </li>
               </ul>
 
@@ -68,7 +68,7 @@
                     <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
                   </li>
 
-                     
+                      
                   <li class="header__menu__item wow">
                     <a href="#!" class="header__menu__link">@lang('main.sandwich_panels')</a>
                     <ul class="header__none__menu">
@@ -157,10 +157,10 @@
         <section class="container_in">
           <div class="products__item clearfix">
             <section>
-              <h2 class="products__title__h2">{{ $portfolio->{'title_' . app()->getLocale()} }}</h2>
+              <h2 class="products__title__h2">{{ $portfolio3->{'title_' . app()->getLocale()} }}</h2>
               <div class="products__item__text">
                 <p>
-                  {!! $portfolio->{'description_' . app()->getLocale()} !!}
+                  {!! $portfolio3->{'description_' . app()->getLocale()} !!}
                 </p>
               </div>
             </section>
@@ -195,12 +195,12 @@
           <section class="container_in">
             <section class="products__foto__video__all">
               <div class="products__item__list products__foto active" data-item="fotoItem">
-                @foreach($portfolioimages as $portfolioimage)
+                @foreach($portfolioimage3s as $portfolioimage3)
                 <section class="products__item__wowjs wow">
                   <div class="products__list__item">
-                    <a href="{{ asset($portfolioimage->image) }}" data-fancybox="gallery">
+                    <a href="{{ asset($portfolioimage3->image) }}" data-fancybox="gallery">
                       <div class="products__foto__item__img">
-                        <img src="{{ asset($portfolioimage->image) }}" alt="gallery" />
+                        <img src="{{ asset($portfolioimage3->image) }}" alt="gallery" />
                         <h4 class="products__foto__eye">
                           <i class="fas fa-eye"></i>
                         </h4>
@@ -213,14 +213,14 @@
               </div>
 
               <div class="products__item__list products__foto" data-item="videoItem">
-                @foreach($portfoliovideos as $portfoliovideo)
+                @foreach($portfoliovideo3s as $portfoliovideo3)
                 <section class="products__item__wowjs wow">
                   <div class="products__video__item">
                     <p class="text-center">
-                      <a data-fancybox class="about__item__video" href="{{ $portfoliovideo->video }}">
+                      <a data-fancybox class="about__item__video" href="{{ $portfoliovideo3->video }}">
                         <section>
-                          <h3 class="products__list__title__h3">{{ $portfoliovideo->{'title_' . app()->getLocale()} }}</h3>
-                          <img class="inline" src="{{ asset($portfoliovideo->image) }}" alt="videoItem" />
+                          <h3 class="products__list__title__h3">{{ $portfoliovideo3->{'title_' . app()->getLocale()} }}</h3>
+                          <img class="inline" src="{{ asset($portfoliovideo3->image) }}" alt="videoItem" />
                           <!-- play start -->
 
                           <div class="button__min is-play">

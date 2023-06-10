@@ -16,5 +16,8 @@ return [
    'video_materials' => 'Video materials',
    'sandwich_panels' => 'Sandwich panels',
    'send' => 'Send',
-   'metalstructures' => 'Metal structures'
+   'metalstructures' => 'Metal structures',
+   'kislovodsk' => 'Kislovodsk',
+   'cable_trays' => 'Cable Trays',
+   'ventilation_system' => 'Ventilation system'
 ];

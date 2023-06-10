@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <header>
+     <!-- header start -->
+
+     <header>
       <div class="header_in">
         <div class="header_in__list">
           <div class="header_in__item">
@@ -35,11 +37,11 @@
               <div class="header_in__item__list">
                 <ul class="header_in__menu">
                   <li>
-                    <a href="{{ route('/') }}" class="header_in__menu__link">@lang('main.main')</a>
+                    <a href="{{ route('products4') }}" class="header_in__menu__link">@lang('main.aboutproducts')</a>
                   </li>
 
                   <li>
-                    <a class="header_in__menu__link">@lang('main.contacts')</a>
+                    <a class="header_in__menu__link">{{ $product3->{'title_' . app()->getLocale()} }}  {{ $product3->{'info_' . app()->getLocale()} }}</a>
                   </li>
                 </ul>
 
@@ -66,7 +68,7 @@
                       <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
                     </li>
 
-                       
+                        
                     <li class="header__menu__item wow">
                       <a href="#!" class="header__menu__link">@lang('main.sandwich_panels')</a>
                       <ul class="header__none__menu">
@@ -132,7 +134,6 @@
                       </ul>
                     </li>
 
-
                     <li class="header__menu__item wow">
                       <a href="{{ route('contact') }}" class="header__menu__link">@lang('main.contacts')</a>
                     </li>
@@ -154,115 +155,106 @@
       <div class="products__list">
         <div class="products__list__scrull">
           <section class="container_in">
-            <div class="products__item">
-              <div class="contacts__list">
-                <div class="contacts__item wow">
-                  <h2 class="products__title__h2">{{ $options->where('key', 'title_' . app()->getLocale())->first()->value }}</h2>
-                  <ul class="contacts__address__list">
-                    <li>
-                      <a class="contacts__address__link">
-                        <span>Адрес</span>
-                        {{ $options->where('key', 'address_' . app()->getLocale())->first()->value }}
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="contacts__address__link">
-                        <span>телефон</span>
-                        {{ $options->where('key', 'phone')->first()->value }}
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="mailto:{{ $options->where('key', 'email')->first()->value }}" class="contacts__address__link">
-                        <span>Email</span>
-                        {{ $options->where('key', 'email')->first()->value }}
-                      </a>
-                    </li>
-                    
-                  </ul>
-                  <a href="{{ $options->where('key', 'map')->first()->value }}" class="contacts__link__map" target="{{ $options->where('key', 'map')->first()->value }}">
-                    @lang('main.show_on_the_map')
-                    <span><i class="fas fa-map-marker-alt"></i></span>
-                  </a>
-                </div>
-                
-
-                <div class="contacts__item wow">
-                  @foreach($offices as $office)
-                    
-                  <h2 class="products__title__h2">{{ $office->{'title_' . app()->getLocale()} }}</h2>
-                  <ul class="contacts__address__list">
-                    <li>
-                      <a class="contacts__address__link">
-                        <span>Адрес</span>
-                        {{ $office->{'addres_' . app()->getLocale()} }}
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="tel:{{ $office->number }}" class="contacts__address__link">
-                        <span>телефон</span>
-                        {{ $office->number }}
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="mailto:{{ $office->gmail }}" class="contacts__address__link">
-                        <span>Email</span>
-                        {{ $office->gmail }}
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="tel:{{ $office->second_number }}" class="contacts__address__link">
-                        <span>телефон</span>
-                        {{ $office->second_number }}
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="mailto:{{ $office->second_gmail }}" class="contacts__address__link">
-                        <span>Email</span>
-                        {{ $office->second_gmail }}
-                      </a>
-                    </li>
-                  </ul>
-                  <a href="{{ $office->map }}!#" class="contacts__link__map" target="{{ $office->map }}">
-                   @lang('main.show_on_the_map')
-                    <span><i class="fas fa-map-marker-alt"></i></span>
-                  </a>
-                  @endforeach
-
-                </div>
+            <div class="products__item clearfix">
+              <div class="products__item__img">
+                <img src="{{ asset($product3->image) }}" alt="products" />
               </div>
+
+              <section>
+                <h2 class="products__title__h2">{{ $product3->{'title_' . app()->getLocale()} }}</h2>
+                <h4 class="products__iten__title">{{ $product3->{'info_' . app()->getLocale()} }}</h4>
+                <div class="products__item__text">
+                  <p>
+                    {!! $product3->{'description_' . app()->getLocale()} !!}
+                  </p>
+                </div>
+              </section>
             </div>
           </section>
-        </div>
 
-        <div class="products__item__cart">
-          <section
-            class="products__cart__fons"
-            style="background-image: url({{ asset('front/foto/contacts.png') }})" ></section>
-
-          @include('alert')
-          <section class="products__list__scrull">
+          <div class="products__foto__video">
             <section class="container_in">
-              <div class="contacts__cart">
-                <h2 class="products__title__h2">@lang('main.feedback')</h2>
+              <div class="products__foto__video__list">
+                <div class="products__item__video wow active" data-item="fotoItem">
+                  <div class="products__foto__img">
+                    <i class="far fa-images"></i>
+                  </div>
+                  <h3 class="products__title__foto">@lang('main.photo_materials')</h3>
+                </div>
 
-                <form action="{{ route('yourSave') }}" class="contacts__form" method="POST">
-                  <input type="text" name="fullname" class="contacts__input wow fadeInLeft" placeholder="ФИО" required/>
-                  <input type="tel" name="phone" class="contacts__input wow fadeInRight" placeholder="Телефон" required/>
-                  <textarea class="contacts__textarea wow fadeInLeft" placeholder="Комментарий"name="comment" required></textarea>
-                  <button class="contacts__button wow fadeInRight">
-                    @lang('main.send')
-                    <span><i class="fas fa-angle-double-right"></i></span>
-                  </button>
-                </form>
+                <div class="products__item__video wow" data-item="videoItem">
+                  <div class="products__foto__img">
+                    <i class="far fa-play-circle"></i>
+                  </div>
+                  <h3 class="products__title__foto">@lang('main.video_materials')</h3>
+                </div>
+
+                <a href="{{ route('portfolios4') }}" class="products__item__video wow">
+                  <div class="products__foto__img">
+                    <i class="far fa-images"></i>
+                  </div>
+                  <h3 class="products__title__foto">@lang('main.portfolio')</h3>
+                </a>
               </div>
             </section>
+          </div>
+          <section class="container_in">
+            <div class="fotoVideoMideo"></div>
           </section>
+        </div>
+        <div class="products__item__cart">
+          <div class="products__list__scrull">
+            <section class="container_in">
+              <section class="products__foto__video__all">
+                <div class="products__item__list products__foto active" data-item="fotoItem">
+                  @foreach($productimage3s as $productimage3)
+                  <section class="products__item__wowjs wow">
+                    <div class="products__list__item">
+                      <a href="{{ asset($productimage3->image) }}" data-fancybox="gallery">
+                        <div class="products__foto__item__img">
+                          <img src="{{ asset($productimage3->image) }}" alt="gallery" />
+                          <h4 class="products__foto__eye">
+                            <i class="fas fa-eye"></i>
+                          </h4>
+                        </div>
+                      </a>
+                    </div>
+                  </section>
+                  @endforeach
+                </div>
+
+                <div class="products__item__list products__foto" data-item="videoItem">
+                  @foreach($productvideo3s as $productvideo3)
+                  
+                  <section class="products__item__wowjs wow">
+                    <div class="products__video__item">
+                      <p class="text-center">
+                        <a data-fancybox class="about__item__video" href="{{ $productvideo3->video }}">
+                          <section>
+                            <h3 class="products__list__title__h3">{{ $productvideo3->{'title_' . app()->getLocale()} }}</h3>
+                            <img class="inline" src="{{ asset($productvideo3->image) }}" alt="videoItem" />
+                            <!-- play start -->
+
+                            <div class="button__min is-play">
+                              <div class="button-outer-circle has-scale-animation"></div>
+                              <div
+                                class="button-outer-circle has-scale-animation has-delay-short"></div>
+                              <div class="button-icon is-play">
+                                <img class="about__item__img__play"  alt="All" src="{{ asset('front/foto/icons/pley.svg') }}"/>
+                              </div>
+                            </div>
+
+                            <!-- play end -->
+                          </section>
+                        </a>
+                      </p>
+                    </div>
+                  </section>
+                  @endforeach
+                </div>
+              </section>
+            </section>
+          </div>
 
           <section class="container_in">
             <section class="products__footer">
@@ -271,7 +263,6 @@
                   <span><i class="fas fa-phone"></i></span>
                   <section>
                     <p>{{ $options->where('key', 'phone')->first()->value }}</p>
-                    
                   </section>
                 </a>
 
@@ -288,4 +279,4 @@
 
     <!-- Products end -->
 
-   @endsection
+  @endsection

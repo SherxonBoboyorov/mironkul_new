@@ -99,40 +99,40 @@
                 </li>
 
                 <li class="header__menu__item wow">
-                  <a href="#!" class="header__menu__link">Кисловодск</a>
+                  <a href="#!" class="header__menu__link">@lang('main.kislovodsk')</a>
                   <ul class="header__none__menu">
                     <li>
-                      <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                      <a href="{{ route('products2') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                     </li>
 
                     <li>
-                      <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
+                      <a href="{{ route('portfolios2') }}" class="header__none__link">@lang('main.portfolio')</a>
                     </li>
                   </ul>
                 </li>
 
                 <li class="header__menu__item wow">
-                  <a href="#!" class="header__menu__link">Кабельные лотки</a>
+                  <a href="#!" class="header__menu__link">@lang('main.cable_trays')</a>
                   <ul class="header__none__menu">
                     <li>
-                      <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                      <a href="{{ route('products3') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                     </li>
 
                     <li>
-                      <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
+                      <a href="{{ route('portfolios3') }}" class="header__none__link">@lang('main.portfolio')</a>
                     </li>
                   </ul>
                 </li>
 
                 <li class="header__menu__item wow">
-                  <a href="#!" class="header__menu__link">Система вентиляции</a>
+                  <a href="#!" class="header__menu__link">@lang('main.ventilation_system')</a>
                   <ul class="header__none__menu">
                     <li>
-                      <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                      <a href="{{ route('products4') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                     </li>
 
                     <li>
-                      <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
+                      <a href="{{ route('portfolios4') }}" class="header__none__link">@lang('main.portfolio')</a>
                     </li>
                   </ul>
                 </li>

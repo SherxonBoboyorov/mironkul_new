@@ -16,5 +16,8 @@ return [
     'video_materials' => 'Video materiallar',
     'sandwich_panels' => 'Sendvich panellar',
     'send' => 'Yuborish',
-    'metalstructures' => 'Metall konstruktsiyalar'
+    'metalstructures' => 'Metall konstruktsiyalar',
+    'kislovodsk' => 'Kislovodsk',
+    'cable_trays' => 'Kabel tovoqlari',
+    'ventilation_system' => 'Ventilyatsiya tizimi'
 ];

@@ -16,5 +16,8 @@ return [
    'video_materials' => 'Видео материалы',
    'sandwich_panels' => 'Сэндвич панели',
    'send' => 'Отправить',
-   'metalstructures' => 'Металлоконструкции'
+   'metalstructures' => 'Металлоконструкции',
+   'kislovodsk' => 'Кисловодск',
+   'cable_trays' => 'Кабельные лотки',
+   'ventilation_system' => 'Система вентиляции'
 ]; 

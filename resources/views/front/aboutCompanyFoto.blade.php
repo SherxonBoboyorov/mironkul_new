@@ -73,70 +73,70 @@
                             </li>
 
                                 
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">@lang('main.sandwich_panels')</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">@lang('main.metalstructures')</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products1') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios1') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Кисловодск</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Кабельные лотки</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Система вентиляции</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
+                            <li class="header__menu__item wow">
+                              <a href="#!" class="header__menu__link">@lang('main.sandwich_panels')</a>
+                              <ul class="header__none__menu">
+                                <li>
+                                  <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                                </li>
+          
+                                <li>
+                                  <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
+                                </li>
+                              </ul>
+                            </li>
+          
+                            <li class="header__menu__item wow">
+                              <a href="#!" class="header__menu__link">@lang('main.metalstructures')</a>
+                              <ul class="header__none__menu">
+                                <li>
+                                  <a href="{{ route('products1') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                                </li>
+          
+                                <li>
+                                  <a href="{{ route('portfolios1') }}" class="header__none__link">@lang('main.portfolio')</a>
+                                </li>
+                              </ul>
+                            </li>
+          
+                            <li class="header__menu__item wow">
+                              <a href="#!" class="header__menu__link">@lang('main.kislovodsk')</a>
+                              <ul class="header__none__menu">
+                                <li>
+                                  <a href="{{ route('products2') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                                </li>
+          
+                                <li>
+                                  <a href="{{ route('portfolios2') }}" class="header__none__link">@lang('main.portfolio')</a>
+                                </li>
+                              </ul>
+                            </li>
+          
+                            <li class="header__menu__item wow">
+                              <a href="#!" class="header__menu__link">@lang('main.cable_trays')</a>
+                              <ul class="header__none__menu">
+                                <li>
+                                  <a href="{{ route('products3') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                                </li>
+          
+                                <li>
+                                  <a href="{{ route('portfolios3') }}" class="header__none__link">@lang('main.portfolio')</a>
+                                </li>
+                              </ul>
+                            </li>
+          
+                            <li class="header__menu__item wow">
+                              <a href="#!" class="header__menu__link">@lang('main.ventilation_system')</a>
+                              <ul class="header__none__menu">
+                                <li>
+                                  <a href="{{ route('products4') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                                </li>
+          
+                                <li>
+                                  <a href="{{ route('portfolios4') }}" class="header__none__link">@lang('main.portfolio')</a>
+                                </li>
+                              </ul>
+                            </li>
             
                             <li class="header__menu__item wow">
                               <a href="{{ route('contact') }}" class="header__menu__link">@lang('main.contacts')</a>

@@ -50,12 +50,14 @@ use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\Blog1Controller;
 use App\Http\Controllers\Front\Blog2Controller;
 use App\Http\Controllers\Front\Blog3Controller;
+use App\Http\Controllers\Front\Blog4Controller;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\ParfolioController;
 use App\Http\Controllers\Front\Partfolio1Controller;
 use App\Http\Controllers\Front\Partfolio2Controller;
 use App\Http\Controllers\Front\Partfolio3Controller;
+use App\Http\Controllers\Front\Partfolio4Controller;
 
 Auth::routes();
 
@@ -137,6 +139,11 @@ Route::group(
          Route::get('products3/{slug}', [Blog3Controller::class, 'show'])->name('product3');
          Route::get('portfolios3', [Partfolio3Controller::class, 'portfolios3'])->name('portfolios3');
          Route::get('portfolios3/{slug}', [Partfolio3Controller::class, 'show'])->name('portfolio3');
+
+         Route::get('products4', [Blog4Controller::class, 'products4'])->name('products4');
+         Route::get('products4/{slug}', [Blog4Controller::class, 'show'])->name('product4');
+         Route::get('portfolios4', [Partfolio4Controller::class, 'portfolios4'])->name('portfolios4');
+         Route::get('portfolios4/{slug}', [Partfolio4Controller::class, 'show'])->name('portfolio4');
 
 
  });

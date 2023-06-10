@@ -150,7 +150,7 @@
                   </li>
 
                   <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Кисловодск</a>
+                    <a href="#!" class="header__menu__link">@lang('main.kislovodsk')</a>
                     <ul class="header__none__menu">
                       <li>
                         <a href="{{ route('products2') }}" class="header__none__link">@lang('main.aboutproducts')</a>
@@ -163,7 +163,7 @@
                   </li>
 
                   <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Кабельные лотки</a>
+                    <a href="#!" class="header__menu__link">@lang('main.cable_trays')</a>
                     <ul class="header__none__menu">
                       <li>
                         <a href="{{ route('products3') }}" class="header__none__link">@lang('main.aboutproducts')</a>
@@ -176,14 +176,14 @@
                   </li>
 
                   <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">Система вентиляции</a>
+                    <a href="#!" class="header__menu__link">@lang('main.ventilation_system')</a>
                     <ul class="header__none__menu">
                       <li>
-                        <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                        <a href="{{ route('products4') }}" class="header__none__link">@lang('main.aboutproducts')</a>
                       </li>
 
                       <li>
-                        <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
+                        <a href="{{ route('portfolios4') }}" class="header__none__link">@lang('main.portfolio')</a>
                       </li>
                     </ul>
                   </li>
@@ -228,22 +228,22 @@
                   </div>
 
                   <div class="slider__button">
-                    <h3 class="slider__title__h3">Металлоконструкции</h3>
+                    <h3 class="slider__title__h3">@lang('main.metalstructures')</h3>
                     <h4 class="slider__title__h4">Stroy service</h4>
                   </div>
 
                   <div class="slider__button">
-                    <h3 class="slider__title__h3">Кисловодск</h3>
+                    <h3 class="slider__title__h3">@lang('main.kislovodsk')</h3>
                     <h4 class="slider__title__h4">Space frame</h4>
                   </div>
 
                   <div class="slider__button">
-                    <h3 class="slider__title__h3">Кабельные лотки</h3>
+                    <h3 class="slider__title__h3">@lang('main.cable_trays')</h3>
                     <h4 class="slider__title__h4">Cable trays</h4>
                   </div>
 
                   <div class="slider__button">
-                    <h3 class="slider__title__h3">Система вентиляции</h3>
+                    <h3 class="slider__title__h3">@lang('main.ventilation_system')</h3>
                     <h4 class="slider__title__h4">Vents</h4>
                   </div>
                 </div>
@@ -334,7 +334,7 @@
 
                 <ul class="slider__list__cart">
                   <li class="wow">
-                    <a href="{{ route('products') }}" class="slider__list__link">
+                    <a href="{{ route('products4') }}" class="slider__list__link">
                       <div class="slider__list__img">
                         <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
                       </div>
@@ -343,7 +343,7 @@
                   </li>
 
                   <li class="wow">
-                    <a href="{{ route('portfolios') }}" class="slider__list__link">
+                    <a href="{{ route('portfolios4') }}" class="slider__list__link">
                       <div class="slider__list__img">
                         <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
                       </div>

@@ -38,11 +38,11 @@
                   <ul class="header_in__menu">
 
                     <li>
-                      <a href="#!" class="header_in__menu__link">@lang('main.kislovodsk')</a>
+                      <a href="#!" class="header_in__menu__link">@lang('main.ventilation_system')</a>
                     </li>
   
                     <li>
-                      <a href="{{ route('products2') }}" class="header_in__menu__link">@lang('main.aboutproducts')</a>
+                      <a href="{{ route('products4') }}" class="header_in__menu__link">@lang('main.aboutproducts')</a>
                     </li>
                   </ul>
   
@@ -161,16 +161,16 @@
                 <h2 class="products__title__h2">@lang('main.portfolio')</h2>
   
                 <div class="products__item__list">
-                  @foreach($portfolio1s as $portfolio1)
+                  @foreach($portfolio3s as $portfolio3)
                     
                   <section class="products__item__wowjs wow">
                     <div class="products__list__item">
-                      <a href="{{ route('portfolio2', $portfolio1->{'slug_' . app()->getLocale()}) }}" class="products__portfolio__link">
+                      <a href="{{ route('portfolio4', $portfolio3->{'slug_' . app()->getLocale()}) }}" class="products__portfolio__link">
                         <div class="products__list__img">
-                          <img src="{{ asset($portfolio1->image) }}" alt="products" />
-                          <h3 class="products__list__title__h3">{{ $portfolio1->{'title_' . app()->getLocale()} }}</h3>
+                          <img src="{{ asset($portfolio3->image) }}" alt="products" />
+                          <h3 class="products__list__title__h3">{{ $portfolio3->{'title_' . app()->getLocale()} }}</h3>
                           <h4 class="products__list__title__h4">
-                            {!! $portfolio1->{'description_' . app()->getLocale()} !!}
+                            {!! $portfolio3->{'description_' . app()->getLocale()} !!}
                           </h4> 
                           <h5 class="products__portfolio__eye">
                             <i class="fas fa-eye"></i>
@@ -196,11 +196,11 @@
                 <div>
                   <ul class="products__menu">
                     <li class="wow">
-                      <a href="{{ route('products2') }}" class="products__menu__link">@lang('main.aboutproducts')</a>
+                      <a href="{{ route('products4') }}" class="products__menu__link">@lang('main.aboutproducts')</a>
                     </li>
   
                     <li class="wow">
-                      <a href="{{ route('portfolios2') }}" class="products__menu__link active">
+                      <a href="{{ route('portfolios4') }}" class="products__menu__link active">
                         @lang('main.portfolio')
                       </a>
                     </li>

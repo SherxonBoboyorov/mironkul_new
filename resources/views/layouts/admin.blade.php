@@ -454,7 +454,7 @@
 
                 
                    <li class="nav-item" >
-                    <a href="{{ route('portfoliovideo2.index') }}" class="nav-link">
+                    <a href="{{ route('portfoliovideo3.index') }}" class="nav-link">
                     <i class="nav-icon"></i>
                     <p>
                         Partfolio Video

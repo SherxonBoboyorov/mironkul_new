@@ -240,18 +240,17 @@
           </section>
         </div>
 
-        <div class="products__item__cart">
-          <section
-            class="products__cart__fons"
-            style="background-image: url({{ asset('front/foto/contacts.png') }})" ></section>
+        {{-- <div class="products__item__cart">
+          <section class="products__cart__fons"style="background-image: url({{ asset('front/foto/contacts.png') }})" ></section>
 
-          @include('alert')
+          {{-- @include('alert')
           <section class="products__list__scrull">
             <section class="container_in">
               <div class="contacts__cart">
                 <h2 class="products__title__h2">@lang('main.feedback')</h2>
 
                 <form action="{{ route('yourSave') }}" class="contacts__form" method="POST">
+                  @csrf
                   <input type="text" name="fullname" class="contacts__input wow fadeInLeft" placeholder="ФИО" required/>
                   <input type="tel" name="phone" class="contacts__input wow fadeInRight" placeholder="Телефон" required/>
                   <textarea class="contacts__textarea wow fadeInLeft" placeholder="Комментарий"name="comment" required></textarea>
@@ -262,9 +261,9 @@
                 </form>
               </div>
             </section>
-          </section>
+          </section> --}}
 
-          <section class="container_in">
+          {{-- <section class="container_in">
             <section class="products__footer">
               <div class="footer__list">
                 <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="footer__contacts__link">
@@ -278,6 +277,29 @@
                 <h4 class="footer__title__h4">
                   © Copyright <span></span> - Web developed by
                   <a href="https://sos.uz/" target="_blank">SOS Group</a>
+                </h4>
+              </div>
+            </section>
+          </section>
+        </div> --}} 
+
+
+        <div class="products__item__cart">
+          <section class="products__cart__fons"style="background-image: url({{ asset('front/foto/contacts.png') }})" ></section>
+
+
+          <section></section>
+
+          <section class="container_in">
+            <section class="products__footer">
+              <div class="footer__list">
+                <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="footer__contacts__link">
+                  <span><i class="fas fa-phone"></i></span>
+                  <section><p>{{ $options->where('key', 'phone')->first()->value }}</p></section>
+                </a>
+    
+                <h4 class="footer__title__h4">
+                  © Copyright <span></span> - Web developed by <a href="https://sos.uz/" target="_blank">SOS Group</a>
                 </h4>
               </div>
             </section>

@@ -161,21 +161,21 @@
                   <ul class="contacts__address__list">
                     <li>
                       <a class="contacts__address__link">
-                        <span>Адрес</span>
+                        <span>@lang('main.address')</span>
                         {{ $options->where('key', 'address_' . app()->getLocale())->first()->value }}
                       </a>
                     </li>
 
                     <li>
                       <a href="tel:{{ $options->where('key', 'phone')->first()->value }}" class="contacts__address__link">
-                        <span>телефон</span>
+                        <span>@lang('main.phone')</span>
                         {{ $options->where('key', 'phone')->first()->value }}
                       </a>
                     </li>
 
                     <li>
                       <a href="mailto:{{ $options->where('key', 'email')->first()->value }}" class="contacts__address__link">
-                        <span>Email</span>
+                        <span>@lang('main.email')</span>
                         {{ $options->where('key', 'email')->first()->value }}
                       </a>
                     </li>
@@ -195,14 +195,14 @@
                   <ul class="contacts__address__list">
                     <li>
                       <a class="contacts__address__link">
-                        <span>Адрес</span>
+                        <span>@lang('main.address')</span>
                         {{ $office->{'addres_' . app()->getLocale()} }}
                       </a>
                     </li>
 
                     <li>
                       <a href="tel:{{ $office->number }}" class="contacts__address__link">
-                        <span>телефон</span>
+                        <span>@lang('main.phone')</span>
                         {{ $office->number }}
                       </a>
                     </li>
@@ -216,14 +216,14 @@
 
                     <li>
                       <a href="tel:{{ $office->second_number }}" class="contacts__address__link">
-                        <span>телефон</span>
+                        <span>@lang('main.phone')</span>
                         {{ $office->second_number }}
                       </a>
                     </li>
 
                     <li>
                       <a href="mailto:{{ $office->second_gmail }}" class="contacts__address__link">
-                        <span>Email</span>
+                        <span>@lang('main.email')</span>
                         {{ $office->second_gmail }}
                       </a>
                     </li>

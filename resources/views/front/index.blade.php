@@ -20,345 +20,208 @@
     <link rel="stylesheet" href="{{ asset('front/css/fancybox-main.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/slick.css') }}" />
     <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}" />
-    
+
     {!! Meta::toHtml() !!}
   </head>
 
-  <body>
+  <body class="homepage-body">
     <!-- loading start -->
 
-    <section id="loading">
+    <div id="loading">
       <div id="preloader" class="start-animation loaded hidden" style="height: 1594px">
         <div class="loading__img wow fadeInLeft">
-          <img src="{{ asset('front/foto/icons/loading.svg') }}" alt="" />
+            <img src="{{ asset('front/foto/icons/loading.svg') }}" alt="" />
         </div>
-        <section class="loading__list__img">
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 120" class="icons1 svg-1">
-            <defs></defs>
-            <text id="MIRONKUL" data-name="M I R O N K U L" class="preloader-1" x="402" y="96">
-              <tspan x="402">
-                M
-                <tspan class="preloader-2"></tspan>
-                I
-                <tspan class="preloader-2"></tspan>
-                R
-                <tspan class="preloader-2"></tspan>
-                A
-                <tspan class="preloader-2"></tspan>
-                N
-                <tspan class="preloader-2"></tspan>
-                K
-                <tspan class="preloader-2"></tspan>
-                U
-                <tspan class="preloader-2"></tspan>
-                L
-              </tspan>
-            </text>
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 100" class="icons2 svg-2">
-            <text id="GROUP" data-name="G R O U P" class="preloader-3" x="399" y="81">
-              <tspan x="390">
-                G
-                <tspan class="preloader-4"></tspan>
-                R
-                <tspan class="preloader-4"></tspan>
-                O
-                <tspan class="preloader-4"></tspan>
-                U
-                <tspan class="preloader-4"></tspan>
-                P
-              </tspan>
-            </text>
-          </svg>
-        </section>
-      </div>
-    </section>
-
-    <!-- loading end -->
-
-    <!-- header start -->
-
-    <header>
-      <div class="header">
-        <section class="container">
-          <div class="header__cart">
-            <div class="header__list">
-              <ul class="header__locales">
-                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                <li>
-                   <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                     {{ $properties['native'] }}
-                  </a>
-              </li>
-             @endforeach
-            </ul>
-
-              <div class="header__logo">
-                <a href="{{ route('/') }}">
-                  <img src="{{ asset('front/foto/logo.svg') }}" alt="logo" />
-                </a>
-              </div>
-
-              <button class="header__burger__menu">
-                <i class="fas fa-bars"></i>
-              </button>
-
-              <div class="header__menu">
-                <ul class="header__locales">
-                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                  <li>
-                     <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                       {{ $properties['native'] }}
-                    </a>
-                </li>
-               @endforeach
-              </ul>
-                <button class="header__menu__none">
-                  <i class="fas fa-times"></i>
-                </button>
-
-                <ul class="header__menu__list">
-                  <li class="header__menu__item wow">
-                    <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
-                  </li>
-
-                  
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">@lang('main.sandwich_panels')</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">@lang('main.metalstructures')</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products1') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios1') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">@lang('main.kislovodsk')</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products2') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios2') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">@lang('main.cable_trays')</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products3') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios3') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="header__menu__item wow">
-                    <a href="#!" class="header__menu__link">@lang('main.ventilation_system')</a>
-                    <ul class="header__none__menu">
-                      <li>
-                        <a href="{{ route('products4') }}" class="header__none__link">@lang('main.aboutproducts')</a>
-                      </li>
-
-                      <li>
-                        <a href="{{ route('portfolios4') }}" class="header__none__link">@lang('main.portfolio')</a>
-                      </li>
-                    </ul>
-                  </li>
-
-
-                  <li class="header__menu__item wow">
-                    <a href="{{ route('contact') }}" class="header__menu__link">@lang('main.contacts')</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <section class="sidenav-overlay"></section>
-    </header>
-
-    <!-- header end -->
-
-    <!-- slider start -->
-
-    <div class="slider">
-      <div class="slider__cart">
-        <div class="slider__list">
-          <div class="slide active" style="background-image: url('{{ asset('front/foto/slide.png') }}')"></div>
-
-          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_2.png') }}')"></div>
-
-          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_3.png') }}')"></div>
-
-          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_4.png') }}')"></div>
-
-          <div class="slide" style="background-image: url('{{ asset('front/foto/slide_5.png') }}')"></div>
-
-          <section class="slider__center">
-            <div class="slider__menu">
-              <section class="container">
-                <div class="slider__menu__list">
-                  <div class="slider__button">
-                    <h3 class="slider__title__h3">@lang('main.sandwich_panels')</h3>
-                    <h4 class="slider__title__h4">Sandwich panels</h4>
-                  </div>
-
-                  <div class="slider__button">
-                    <h3 class="slider__title__h3">@lang('main.metalstructures')</h3>
-                    <h4 class="slider__title__h4">Stroy service</h4>
-                  </div>
-
-                  <div class="slider__button">
-                    <h3 class="slider__title__h3">@lang('main.kislovodsk')</h3>
-                    <h4 class="slider__title__h4">Space frame</h4>
-                  </div>
-
-                  <div class="slider__button">
-                    <h3 class="slider__title__h3">@lang('main.cable_trays')</h3>
-                    <h4 class="slider__title__h4">Cable trays</h4>
-                  </div>
-
-                  <div class="slider__button">
-                    <h3 class="slider__title__h3">@lang('main.ventilation_system')</h3>
-                    <h4 class="slider__title__h4">Vents</h4>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-            <section class="container">
-              <div class="slider__menu__cart">
-                <ul class="slider__list__cart">
-                  <li class="wow">
-                    <a href="{{ route('products') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.aboutproducts')
-                    </a>
-                  </li>
-
-                  <li class="wow">
-                    <a href="{{ route('portfolios') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.portfolio')
-                    </a>
-                  </li>
-                </ul>
-
-                <ul class="slider__list__cart">
-                  <li class="wow">
-                    <a href="{{ route('products1') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.aboutproducts')
-                    </a>
-                  </li>
-
-                  <li class="wow">
-                    <a href="{{ route('portfolios1') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.portfolio')
-                    </a>
-                  </li>
-                </ul>
-
-                <ul class="slider__list__cart">
-                  <li class="wow">
-                    <a href="{{ route('products2') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.aboutproducts')
-                    </a>
-                  </li>
-
-                  <li class="wow">
-                    <a href="{{ route('portfolios2') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.portfolio')
-                    </a>
-                  </li>
-                </ul>
-
-                <ul class="slider__list__cart">
-                  <li class="wow">
-                    <a href="{{ route('products3') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.aboutproducts')
-                    </a>
-                  </li>
-
-                  <li class="wow">
-                    <a href="{{ route('portfolios3') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.portfolio')
-                    </a>
-                  </li>
-                </ul>
-
-                <ul class="slider__list__cart">
-                  <li class="wow">
-                    <a href="{{ route('products4') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.aboutproducts')
-                    </a>
-                  </li>
-
-                  <li class="wow">
-                    <a href="{{ route('portfolios4') }}" class="slider__list__link">
-                      <div class="slider__list__img">
-                        <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
-                      </div>
-                      @lang('main.portfolio')
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </section>
+        <div class="loading__text wow fadeInRight">
+            <span>MIRANKUL</span><span>GROUP</span>
         </div>
       </div>
     </div>
 
-    <!-- slider end -->
+    <!-- loading end -->
+
+    <div class="header-and-main-content homepage-main-content">
+      <!-- header start -->
+      <header>
+        <div class="header">
+          <div class="container">
+            <div class="header__cart">
+              <div class="header__list">
+                <ul class="header__locales">
+                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                  <li>
+                    <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                      {{ $properties['native'] }}
+                    </a>
+                  </li>
+                  @endforeach
+                </ul>
+
+                <div class="header__logo">
+                  <a href="{{ route('/') }}">
+                    <img src="{{ asset('front/foto/logo.svg') }}" alt="logo" />
+                  </a>
+                </div>
+
+                <button class="header__burger__menu">
+                  <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="header__menu">
+                  <ul class="header__locales">
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li>
+                      <a rel="alternate"class="header__locales__link" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        {{ $properties['native'] }}
+                      </a>
+                    </li>
+                    @endforeach
+                  </ul>
+                  <button class="header__menu__none">
+                    <i class="fas fa-times"></i>
+                  </button>
+
+                  <ul class="header__menu__list">
+                    <li class="header__menu__item wow">
+                      <a href="{{ route('about') }}" class="header__menu__link">@lang('main.aboutcompany')</a>
+                    </li>
+
+                    <li class="header__menu__item wow">
+                      <a href="#!" class="header__menu__link">@lang('main.sandwich_panels')</a>
+                      <ul class="header__none__menu">
+                        <li>
+                          <a href="{{ route('products') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                        </li>
+
+                        <li>
+                          <a href="{{ route('portfolios') }}" class="header__none__link">@lang('main.portfolio')</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="header__menu__item wow">
+                      <a href="#!" class="header__menu__link">@lang('main.metalstructures')</a>
+                      <ul class="header__none__menu">
+                        <li>
+                          <a href="{{ route('products1') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                        </li>
+
+                        <li>
+                          <a href="{{ route('portfolios1') }}" class="header__none__link">@lang('main.portfolio')</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="header__menu__item wow">
+                      <a href="#!" class="header__menu__link">@lang('main.kislovodsk')</a>
+                      <ul class="header__none__menu">
+                        <li>
+                          <a href="{{ route('products2') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                        </li>
+
+                        <li>
+                          <a href="{{ route('portfolios2') }}" class="header__none__link">@lang('main.portfolio')</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="header__menu__item wow">
+                      <a href="#!" class="header__menu__link">@lang('main.cable_trays')</a>
+                      <ul class="header__none__menu">
+                        <li>
+                          <a href="{{ route('products3') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                        </li>
+
+                        <li>
+                          <a href="{{ route('portfolios3') }}" class="header__none__link">@lang('main.portfolio')</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="header__menu__item wow">
+                      <a href="#!" class="header__menu__link">@lang('main.ventilation_system')</a>
+                      <ul class="header__none__menu">
+                        <li>
+                          <a href="{{ route('products4') }}" class="header__none__link">@lang('main.aboutproducts')</a>
+                        </li>
+
+                        <li>
+                          <a href="{{ route('portfolios4') }}" class="header__none__link">@lang('main.portfolio')</a>
+                        </li>
+                      </ul>
+                    </li>
+
+
+                    <li class="header__menu__item wow">
+                      <a href="{{ route('contact') }}" class="header__menu__link">@lang('main.contacts')</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidenav-overlay"></div>
+      </header>
+      <!-- header end -->
+
+      <!-- slider start -->
+      <div class="slider">
+        <div class="container">
+          <div class="slider__bg">
+            <div class="slider__bg__item active" style="background-image: url('{{ asset('front/foto/slide.png') }}')"></div>
+            <div class="slider__bg__item" style="background-image: url('{{ asset('front/foto/slide_2.png') }}')"></div>
+            <div class="slider__bg__item" style="background-image: url('{{ asset('front/foto/slide_3.png') }}')"></div>
+            <div class="slider__bg__item" style="background-image: url('{{ asset('front/foto/slide_4.png') }}')"></div>
+            <div class="slider__bg__item" style="background-image: url('{{ asset('front/foto/slide_5.png') }}')"></div>
+          </div>
+
+          <div class="slider__menu">
+            <div class="slider__menu__item">
+              <h3>@lang('main.sandwich_panels')</h3>
+              <p>Sandwich panels</p>
+            </div>
+
+            <div class="slider__menu__item">
+              <h3>@lang('main.metalstructures')</h3>
+              <p>Stroy service</p>
+            </div>
+
+            <div class="slider__menu__item">
+              <h3>@lang('main.kislovodsk')</h3>
+              <p>Space frame</p>
+            </div>
+
+            <div class="slider__menu__item">
+              <h3>@lang('main.cable_trays')</h3>
+              <p>Cable trays</p>
+            </div>
+
+            <div class="slider__menu__item">
+              <h3>@lang('main.ventilation_system')</h3>
+              <p>Vents</p>
+            </div>
+          </div>
+
+          <ul class="slider__link__list">
+            <li>
+              <a href="{{ route('products') }}">
+                <img src="{{ asset('front/foto/icons/icons_1.svg') }}" alt="icons" />
+                @lang('main.aboutproducts')
+              </a>
+            </li>
+
+            <li>
+              <a href="{{ route('portfolios') }}">
+                <img src="{{ asset('front/foto/icons/icons_2.svg') }}" alt="icons" />
+                @lang('main.portfolio')
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- slider end -->
+    </div>
 
     <!-- footer start -->
 
@@ -385,7 +248,7 @@
                 <span><i class="fas fa-phone"></i></span>
                 <section>
                   <p>{{ $options->where('key', 'phone')->first()->value }}</p>
-          
+
                 </section>
               </a>
 
@@ -400,7 +263,7 @@
     </footer>
 
     <!-- footer end -->
-    
+
   <script src="{{ asset('front/js/jquery-3.6.1.min.js') }}"></script>
   <script src="{{ asset('front/js/wow.min.js') }}"></script>
   <script src="{{ asset('front/js/index.js') }}"></script>

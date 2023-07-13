@@ -37,7 +37,7 @@
                 <div class="header_in__item__list">
                   <ul class="header_in__menu">
                     <li>
-                      <a class="header_in__menu__link">Сэндвич панели</a>
+                      <a class="header_in__menu__link">@lang('main.sandwich_panels')</a>
                     </li>
   
                     <li>

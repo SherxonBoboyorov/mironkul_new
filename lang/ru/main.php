@@ -19,5 +19,8 @@ return [
    'metalstructures' => 'Металлоконструкции',
    'kislovodsk' => 'Кисловодск',
    'cable_trays' => 'Кабельные лотки',
-   'ventilation_system' => 'Система вентиляции'
+   'ventilation_system' => 'Система вентиляции',
+   'address' => 'Адрес',
+   'phone' => 'Телефон',
+   'email' => 'Электронная почта'
 ]; 

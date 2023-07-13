@@ -19,5 +19,8 @@ return [
    'metalstructures' => 'Metal structures',
    'kislovodsk' => 'Kislovodsk',
    'cable_trays' => 'Cable Trays',
-   'ventilation_system' => 'Ventilation system'
+   'ventilation_system' => 'Ventilation system',
+   'address' => 'Address',
+   'phone' => 'Phone',
+   'email' => 'Email'
 ];
